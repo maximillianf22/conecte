@@ -201,7 +201,7 @@
                     </div>
                     <div class="row">
                       <div class="col-6 offset-2">                        
-                          <button type="submit" class="btn btn-success btn-lg pull-right">Siguiente</button>
+                          <button class="btn btn-success btn-lg pull-right">Siguiente</button>
                       </div>
                     </div>
                   </div>
