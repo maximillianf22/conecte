@@ -16,30 +16,39 @@ Route::get('/', function () {
     return view('home');
 });
 
-/* Ruta auth Persona */
-Route::get('persona/login', function () {
-    return view('auth/default/persona/login');
+Route::get('user/home', function () {
+    return view('default/index');
 });
+/* Ruta del Login*/
 
-Route::get('persona/register', function () {
-    return view('auth/default/persona/register');
-});
-
-Route::get('persona/recovery-pass', function () {
-    return view('auth/default/persona/recoverypass');
-});
-
-/* Ruta auth Artista */
-Route::get('artista/login', function () {
-    return view('auth/default/artista/login');
-});
-
-Route::get('artista/register', function () {
-    return view('auth/default/artista/register');
+Route::get('login', function () {
+    return view('auth/default/login');
 });
 
 Route::get('artista/recovery-pass', function () {
     return view('auth/default/artista/recoverypass');
 });
+
+/* Ruta auth Persona */
+
+Route::get('persona/register', function () {
+    return view('auth/default/persona/register');
+});
+
+Route::get('persona/register/fin', function () {
+    return view('auth/default/persona/register-fin');
+});
+
+/* Ruta auth Artista */
+
+Route::get('artista/register', function () {
+    return view('auth/default/artista/register');
+});
+
+Route::get('artista/register/fin', function () {
+    return view('auth/default/artista/register-fin');
+});
+
+
 
 

@@ -57,7 +57,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link btn btn-neutral btn-round btn-simple" data-toggle="modal" data-target="#myModal1">
+            <a class="nav-link btn btn-neutral btn-round btn-simple" href="login">
               <i class="fas fa-user"></i> Iniciar Sesión
             </a>
           </li>
@@ -81,8 +81,8 @@
             <div class="content-center text-left col-md-5 mt-5 offset-md-3">
               <h1 class="h1-seo p-0 m-0 text-white display-2"><strong>Tu artista favorito <br>a solo un click</strong></h1>
               <h4 class="m-0 mb-4 p-0  text-white"><small></small><strong>Conecta</strong> con tu persona favorita</h4>
-              <a href="#" class="btn btn-facebook btn-round pl-5 pr-5 active"><i class="fas fa-user"></i> Registro como <strong>Persona</strong></a><br>
-              <a href="#" class="btn btn-primary btn-border btn-round pl-5 pr-5 active"><i class="fas fa-music"></i> Registro como <strong>Artista&nbsp;</strong></a>
+              <a href="persona/register" class="btn btn-facebook btn-round pl-5 pr-5 active"><i class="fas fa-user"></i> Registro como <strong>Persona</strong></a><br>
+              <a href="artista/register" class="btn btn-primary btn-border btn-round pl-5 pr-5 active"><i class="fas fa-music"></i> Registro como <strong>Artista&nbsp;</strong></a>
             </div>
         </div>
       </div>
@@ -268,39 +268,7 @@
   <div class="container-fluid card mx-auto p-0 m-0 d-none d-sm-none d-md-block">
     <img src="{{asset('assets/img/bg/antfoot.jpg')}}" class="img-fluid">
  </div>
-
-
-  <!-- Modal Login-->
- <div class="modal fade modal-mini modal-primary modal-mini" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="background-image: linear-gradient(to right top, #000000, #060003, #090009, #080110, #030316);">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header justify-content-center">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                <i class="tim-icons icon-simple-remove text-white"></i>
-              </button>
-              <div class="modal-profile">
-                <i class="fas fa-user"></i>
-              </div>
-            </div>
-            <div class="modal-body">
-              <p>Seleccione el tipo de Usuario</p>
-            </div>
-            <div class="modal-footer">
-                <a  href="persona/login">
-                  <button type="button" class="btn  btn-neutral">
-                    <strong class="text-dark">Persona</strong>
-                  </button>
-                </a>
-                <a  href="artista/login">
-                  <button type="button" class="btn  btn-neutral" href="login/artista" data-dismiss="modal">
-                    <strong class="text-dark">Artista</strong>
-                 </button>
-                </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </body>
   @include('template.default.footer.webfoot')
+  </body>
 
 @endsection
