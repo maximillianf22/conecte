@@ -78,11 +78,13 @@
       <div class="squares square7"></div>
       <div class="container">
         <div class="row">
-            <div class="content-center text-left col-md-5 mt-5 offset-md-3">
+            <div class="content-center text-left col-md-5 mt-5 offset-md-2">
               <h1 class="h1-seo p-0 m-0 text-white display-2"><strong>Tu artista favorito <br>a solo un click</strong></h1>
-              <h4 class="m-0 mb-4 p-0  text-white"><small></small><strong>Conecta</strong> con tu persona favorita</h4>
-              <a href="persona/register" class="btn btn-facebook btn-round pl-5 pr-5 active"><i class="fas fa-user"></i> Registro como <strong>Persona</strong></a><br>
-              <a href="artista/register" class="btn btn-primary btn-border btn-round pl-5 pr-5 active"><i class="fas fa-music"></i> Registro como <strong>Artista&nbsp;</strong></a>
+              <h3 class="m-0 mb-4 p-0  text-white"><small></small><strong>Conecta</strong> con tu persona favorita</h3>
+              <a href="persona/register" class="btn btn-facebook btn-round pl-5 pr-5 active">
+                <h3 class="p-0 m-0 text-white"><i class="fas fa-user"></i> Registro como <strong>Persona</strong></h3></a><br>
+              <a href="artista/register" class="btn btn-primary btn-border btn-round pl-5 pr-5 active">
+                <h3 class="p-0 m-0 text-white"><i class="fas fa-music"></i> Registro como <strong>Artista&nbsp;&nbsp;&nbsp;</strong></h3></a>
             </div>
         </div>
       </div>

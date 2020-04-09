@@ -16,8 +16,13 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('user/home', function () {
-    return view('default/index');
+/* Ruta del Home usuarios logeados*/
+Route::get('artista/home', function () {
+    return view('default/artista/home');
+});
+
+Route::get('persona/home', function () {
+    return view('default/persona/home');
 });
 /* Ruta del Login*/
 
