@@ -57,7 +57,7 @@ Route::get('persona/pago/exito', function () {
     return view('default/persona/pagoExito');
 });
 
-
+  
 /* Ruta del Login*/
 
 Route::get('login', function () {
