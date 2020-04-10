@@ -51,15 +51,15 @@
               <h3 class="text-uppercase text-white">Artistas Recomendados</h3>
             </div>
                 <div class="col-md-4 p-4 mt-0">
-                  <img src="{{ asset('assets/img/artistas/jbalvin.jpg')}}" alt="Raised circle image"width="200px" class="img-fluid  rounded shadow-lg img-thumbnail" style="width: 70px;"><br>
+                  <img src="{{ asset('assets/img/faces/jbalvin.jpg')}}" alt="Raised circle image"width="200px" class="img-fluid  rounded shadow-lg img-thumbnail" style="width: 70px;"><br>
                   <span class="text-center text-white h4"><i class="fas fa-music"></i> J Balvin</span>
                 </div>
                 <div class="col-md-4 p-4 mt-0">
-                  <img src="{{ asset('assets/img/artistas/jbalvin.jpg')}}" alt="Raised circle image"width="200px" class="img-fluid  rounded shadow-lg img-thumbnail" style="width: 70px;"><br>
+                  <img src="{{ asset('assets/img/faces/jbalvin.jpg')}}" alt="Raised circle image"width="200px" class="img-fluid  rounded shadow-lg img-thumbnail" style="width: 70px;"><br>
                   <span class="text-center text-white h4"><i class="fas fa-music"></i> J Balvin</span>
                 </div>
                 <div class="col-md-4 p-4 mt-0">
-                  <img src="{{ asset('assets/img/artistas/jbalvin.jpg')}}" alt="Raised circle image"width="200px" class="img-fluid  rounded shadow-lg img-thumbnail" style="width: 70px;"><br>
+                  <img src="{{ asset('assets/img/faces/jbalvin.jpg')}}" alt="Raised circle image"width="200px" class="img-fluid  rounded shadow-lg img-thumbnail" style="width: 70px;"><br>
                   <span class="text-center text-white h4"><i class="fas fa-music"></i> J Balvin</span>
                 </div>
               </div>
@@ -68,15 +68,15 @@
               <h3 class="text-uppercase text-white">Artistas Nuevos</h3>
             </div>
                 <div class="col-md-4 p-4 mt-0">
-                  <img src="{{ asset('assets/img/artistas/jbalvin.jpg')}}" alt="Raised circle image"width="200px" class="img-fluid  rounded shadow-lg img-thumbnail" style="width: 70px;"><br>
+                  <img src="{{ asset('assets/img/faces/jbalvin.jpg')}}" alt="Raised circle image"width="200px" class="img-fluid  rounded shadow-lg img-thumbnail" style="width: 70px;"><br>
                   <span class="text-center text-white h4"><i class="fas fa-music"></i> J Balvin</span>
                 </div>
                 <div class="col-md-4 p-4 mt-0">
-                  <img src="{{ asset('assets/img/artistas/jbalvin.jpg')}}" alt="Raised circle image"width="200px" class="img-fluid  rounded shadow-lg img-thumbnail" style="width: 70px;"><br>
+                  <img src="{{ asset('assets/img/faces/jbalvin.jpg')}}" alt="Raised circle image"width="200px" class="img-fluid  rounded shadow-lg img-thumbnail" style="width: 70px;"><br>
                   <span class="text-center text-white h4"><i class="fas fa-music"></i> J Balvin</span>
                 </div>
                 <div class="col-md-4 p-4 mt-0">
-                  <img src="{{ asset('assets/img/artistas/jbalvin.jpg')}}" alt="Raised circle image"width="200px" class="img-fluid  rounded shadow-lg img-thumbnail" style="width: 70px;"><br>
+                  <img src="{{ asset('assets/img/faces/jbalvin.jpg')}}" alt="Raised circle image"width="200px" class="img-fluid  rounded shadow-lg img-thumbnail" style="width: 70px;"><br>
                   <span class="text-center text-white h4"><i class="fas fa-music"></i> J Balvin</span>
                 </div>
               </div>

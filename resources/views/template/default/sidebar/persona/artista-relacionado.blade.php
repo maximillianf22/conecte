@@ -12,7 +12,7 @@
                 <span class="text-center">Ozuna</span>
               </div>
               <div class="col-md-3 p-2">
-                <img src="{{ asset('assets/img/jbalvin.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
+                <img src="{{ asset('assets/img/faces/jbalvin.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
                 <span class="text-center">Jbalvin</span>
               </div>
               <div class="col-md-3 p-2">
