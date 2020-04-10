@@ -25,7 +25,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            	
+              
           </div>
         </div>
       </div>
@@ -33,27 +33,54 @@
     <div class="main">
       <div class="container-fluid">
         <div class="row">
- 		@include('template.default.sidebar.artista.')
-          <div class="col-lg-6 bg-light pt-4">
-            <div class="info info-hover">
-              <div class="icon icon-info">
-                <img class="bg-blob" src="../assets/img/feature-blob/info.png">
-                <i class="tim-icons icon-email-85"></i>
-              </div>
-              <h4 class="info-title">Email</h4>
-              <p class="description"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0b787e7b7b64797f4b72647e796e666a626725686466">[email&#160;protected]</a></p>
+        @include('template.default.sidebar.artista.perfil')
+          <div class="col-lg-6 bg-light pt-4 p-5">
+            <div class="container">
+            <form class="form-inline rounded m-0 ">
+                <div class="form-group no-border">
+                  <input type="text" class="form-control bg-white text-dark" placeholder="Search">
+                </div>&nbsp;&nbsp;
+                <button type="submit" class="btn btn-neutral btn-icon float-right btn-round ml-3">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form> 
             </div>
-          </div>
-          <div class="col-lg-3 pt-4">
-            <div class="info info-hover">
-              <div class="icon icon-warning">
-                <img class="bg-blob" src="../assets/img/feature-blob/warning.png">
-                <i class="tim-icons icon-mobile"></i>
-              </div>
-              <h4 class="info-title">Phone Number</h4>
-              <p class="description">+1(424) 535 3523</p>
+            <div class="row mx-auto mt-5 bg-default shadow-lg border-rounded">
+            <div class="title container mb-0">
+              <h3 class="text-uppercase text-white">Artistas Recomendados</h3>
             </div>
+                <div class="col-md-4 p-4 mt-0">
+                  <img src="{{ asset('assets/img/mike.jpg')}}" alt="Raised circle image"width="200px" class="img-fluid  rounded shadow-lg img-thumbnail" style="width: 70px;"><br>
+                  <span class="text-center text-white h4"><i class="fas fa-music"></i> Maluma</span>
+                </div>
+                <div class="col-md-4 p-4 mt-0">
+                  <img src="{{ asset('assets/img/mike.jpg')}}" alt="Raised circle image"width="200px" class="img-fluid  rounded shadow-lg img-thumbnail" style="width: 70px;"><br>
+                  <span class="text-center text-white h4"><i class="fas fa-music"></i> Maluma</span>
+                </div>
+                <div class="col-md-4 p-4 mt-0">
+                  <img src="{{ asset('assets/img/mike.jpg')}}" alt="Raised circle image"width="200px" class="img-fluid  rounded shadow-lg img-thumbnail" style="width: 70px;"><br>
+                  <span class="text-center text-white h4"><i class="fas fa-music"></i> Maluma</span>
+                </div>
+              </div>
+              <div class="row mx-auto mt-5 bg-default shadow-lg border-rounded">
+            <div class="title container mb-0">
+              <h3 class="text-uppercase text-white">Artistas Nuevos</h3>
+            </div>
+                <div class="col-md-4 p-4 mt-0">
+                  <img src="{{ asset('assets/img/mike.jpg')}}" alt="Raised circle image"width="200px" class="img-fluid  rounded shadow-lg img-thumbnail" style="width: 70px;"><br>
+                  <span class="text-center text-white h4"><i class="fas fa-music"></i> Maluma</span>
+                </div>
+                <div class="col-md-4 p-4 mt-0">
+                  <img src="{{ asset('assets/img/mike.jpg')}}" alt="Raised circle image"width="200px" class="img-fluid  rounded shadow-lg img-thumbnail" style="width: 70px;"><br>
+                  <span class="text-center text-white h4"><i class="fas fa-music"></i> Maluma</span>
+                </div>
+                <div class="col-md-4 p-4 mt-0">
+                  <img src="{{ asset('assets/img/mike.jpg')}}" alt="Raised circle image"width="200px" class="img-fluid  rounded shadow-lg img-thumbnail" style="width: 70px;"><br>
+                  <span class="text-center text-white h4"><i class="fas fa-music"></i> Maluma</span>
+                </div>
+              </div>
           </div>
+         @include('template.default.sidebar.artista.solicitudes')
         </div>
       </div>
     </div>
@@ -62,3 +89,5 @@
   <!-- End Main -->
 </body>
 @endsection
+
+<img src="  " width="200px">

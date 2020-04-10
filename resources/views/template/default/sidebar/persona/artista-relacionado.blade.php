@@ -3,90 +3,90 @@
  	<div class="title container mb-0">
  		<h5 class="text-uppercase">Artistas Relacionados</h5>
  	</div>
-      <div class="col-md-3 p-2">
-        <img src="{{ asset('assets/img/mike.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
-        <span class="text-center">Maluma</span>
-      </div>
-      <div class="col-md-3 p-2">
-        <img src="{{ asset('assets/img/mike.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
-        <span class="text-center">Maluma</span>
-      </div>
-      <div class="col-md-3 p-2">
-        <img src="{{ asset('assets/img/mike.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
-        <span class="text-center">Maluma</span>
-      </div>
-      <div class="col-md-3 p-2">
-        <img src="{{ asset('assets/img/mike.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
-        <span class="text-center">Maluma</span>
-      </div>
-    </div>
-    <div class="row mx-auto">
-      <div class="col-md-3 p-2">
-        <img src="{{ asset('assets/img/mike.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
-        <span class="text-center">Maluma</span>
-      </div>
-      <div class="col-md-3 p-2">
-        <img src="{{ asset('assets/img/mike.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
-        <span class="text-center">Maluma</span>
-      </div>
-      <div class="col-md-3 p-2">
-        <img src="{{ asset('assets/img/mike.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
-        <span class="text-center">Maluma</span>
-      </div>
-      <div class="col-md-3 p-2">
-        <img src="{{ asset('assets/img/mike.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
-        <span class="text-center">Maluma</span>
-      </div>
-      <div class="container ml-2 mt-2">
-        <span class="badge badge-pill badge-primary">#Regaeton</span>
-        <span class="badge badge-pill badge-info">#Regaeton</span>
-        <span class="badge badge-pill badge-success">#Regaeton</span>
-        <span class="badge badge-pill badge-danger">#Regaeton</span>
-        <span class="badge badge-pill badge-warning">#Regaeton</span>
-        <span class="badge badge-pill badge-default">#Regaeton</span>
-      </div>
-    </div>
-    <div class="container mt-4 content-center">
-    	<img src="{{ asset('assets/img/cocacola.png')}}" class="shadow-lg text-center ml-2">
-    	<br>
-    	<ul class="navbar-nav">
-    	 <div class="row mx-auto p-0 m-0">
-    <li class="col-3  p-2">
-      <a class="nav-link" rel="tooltip" title="Siguenos en Twitter" data-placement="bottom" href="#" target="_blank">
-        <i class="fab fa-twitter"></i>
-        <p class="d-lg-none d-xl-none">Twitter</p>
-      </a>
-    </li>
-    <li class="col-3  p-2">
-      <a class="nav-link" rel="tooltip" title="Me Gusta en Facebook" data-placement="bottom" href="#" target="_blank">
-        <i class="fab fa-facebook-square"></i>
-        <p class="d-lg-none d-xl-none">Facebook</p>
-      </a>
-    </li>
-    <li class="col-3 p-2">
-      <a class="nav-link" rel="tooltip" title="Siguenos en Instagram" data-placement="bottom" href="#" target="_blank">
-        <i class="fab fa-instagram"></i>
-        <p class="d-lg-none d-xl-none">Instagram</p>
-      </a>
-    </li>
-    <li class="col-3  p-2">
-      <a class="nav-link" rel="tooltip" title="Siguenos en Youtube" data-placement="bottom" href="#" target="_blank">
-        <i class="fab fa-youtube"></i>
-        <p class="d-lg-none d-xl-none">Youtube</p>
-      </a>
-    </li>
-   </div>
-  </ul>
-    </div>
-    <div class="container">
-      <div class="row content-center mt-4">
-      <img src="{{ asset('assets/img/brand/logoc.png')}}" width="70%" class=" mx-auto">
-      </div>
-    </div>
-    <div class="row mb-4 mt-3 p-2">
-      <div class="col-md-3 lead">Privacidad</div>
-      <div class="col-md-3 lead">Condicion</div>
-      <div class="col-md-3 lead">Publicidad</div>
-      <div class="col-md-3 lead">Ayuda</div>
-    </div>
+              <div class="col-md-3 p-2">
+                <img src="{{ asset('assets/img/artistas/maluma.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
+                <span class="text-center">Maluma</span>
+              </div>
+              <div class="col-md-3 p-2">
+                <img src="{{ asset('assets/img/artistas/ozuna.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
+                <span class="text-center">Ozuna</span>
+              </div>
+              <div class="col-md-3 p-2">
+                <img src="{{ asset('assets/img/artistas/jbalvin.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
+                <span class="text-center">Jbalvin</span>
+              </div>
+              <div class="col-md-3 p-2">
+                <img src="{{ asset('assets/img/artistas/silvestre.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
+                <span class="text-center">Silvestre</span>
+              </div>
+            </div>
+            <div class="row mx-auto">
+              <div class="col-md-3 p-2">
+                <img src="{{ asset('assets/img/artistas/karolg.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
+                <span class="text-center">Karol G</span>
+              </div>
+              <div class="col-md-3 p-2">
+                <img src="{{ asset('assets/img/artistas/anuel.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
+                <span class="text-center">Anuel</span>
+              </div>
+              <div class="col-md-3 p-2">
+                <img src="{{ asset('assets/img/artistas/sech.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
+                <span class="text-center">Sech</span>
+              </div>
+              <div class="col-md-3 p-2">
+                <img src="{{ asset('assets/img/artistas/beckyg.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
+                <span class="text-center">Becky G</span>
+              </div>
+              <div class="container ml-2 mt-2">
+                <span class="badge badge-pill badge-primary">#Regaeton</span>
+                <span class="badge badge-pill badge-info">#Regaeton</span>
+                <span class="badge badge-pill badge-success">#Regaeton</span>
+                <span class="badge badge-pill badge-danger">#Regaeton</span>
+                <span class="badge badge-pill badge-warning">#Regaeton</span>
+                <span class="badge badge-pill badge-default">#Regaeton</span>
+              </div>
+            </div>
+            <div class="container mt-4 content-center">
+            	<img src="{{ asset('assets/img/cocacola.png')}}" class="shadow-lg text-center ml-2">
+            	<br>
+            	<ul class="navbar-nav">
+            	 <div class="row mx-auto p-0 m-0">
+            <li class="col-3  p-2">
+              <a class="nav-link" rel="tooltip" title="Siguenos en Twitter" data-placement="bottom" href="#" target="_blank">
+                <i class="fab fa-twitter"></i>
+                <p class="d-lg-none d-xl-none">Twitter</p>
+              </a>
+            </li>
+            <li class="col-3  p-2">
+              <a class="nav-link" rel="tooltip" title="Me Gusta en Facebook" data-placement="bottom" href="#" target="_blank">
+                <i class="fab fa-facebook-square"></i>
+                <p class="d-lg-none d-xl-none">Facebook</p>
+              </a>
+            </li>
+            <li class="col-3 p-2">
+              <a class="nav-link" rel="tooltip" title="Siguenos en Instagram" data-placement="bottom" href="#" target="_blank">
+                <i class="fab fa-instagram"></i>
+                <p class="d-lg-none d-xl-none">Instagram</p>
+              </a>
+            </li>
+            <li class="col-3  p-2">
+              <a class="nav-link" rel="tooltip" title="Siguenos en Youtube" data-placement="bottom" href="#" target="_blank">
+                <i class="fab fa-youtube"></i>
+                <p class="d-lg-none d-xl-none">Youtube</p>
+              </a>
+            </li>
+           </div>
+          </ul>
+            </div>
+            <div class="container">
+              <div class="row content-center mt-4">
+              <img src="{{ asset('assets/img/brand/logoc.png')}}" width="70%" class=" mx-auto">
+              </div>
+            </div>
+            <div class="row mb-4 mt-3 p-2">
+              <div class="col-md-3 lead">Privacidad</div>
+              <div class="col-md-3 lead">Condicion</div>
+              <div class="col-md-3 lead">Publicidad</div>
+              <div class="col-md-3 lead">Ayuda</div>
+            </div>
 </div>

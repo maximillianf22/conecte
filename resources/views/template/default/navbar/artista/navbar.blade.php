@@ -26,15 +26,12 @@
           </div>
         </div>
         <div class="collapse navbar-collapse">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav mr-5">
                 <li class="nav-item active">
                     <a href="home" class="nav-link">Explorar</a>
                 </li>
                 <li class="nav-item">
                     <a href="perfil" class="nav-link">Perfil</a>
-                </li>
-                <li class="nav-item">
-                    <a href="javascript:;" class="nav-link">Grupos</a>
                 </li>
             </ul>
 
@@ -48,24 +45,203 @@
             </form>
         </div>
         <ul class="navbar-nav">
-          <li class="nav-item p-0">
-            <a class="nav-link" rel="tooltip" title="Notificaciones" data-placement="bottom" href="#" target="_blank">
-              <i class="fas fa-bell"></i>
-              <p class="d-lg-none d-xl-none">Notificaciones</p>
-            </a>
-          </li>
-          <li class="nav-item p-0">
-            <a class="nav-link" rel="tooltip" title="Regalos" data-placement="bottom" href="#" target="_blank">
-              <i class="fas fa-gift"></i>
-              <p class="d-lg-none d-xl-none">Regalos</p>
-            </a>
-          </li>
-          <li class="nav-item p-0">
-            <a class="nav-link" rel="tooltip" title="Mensajes" data-placement="bottom" href="#" target="_blank">
-              <i class="fas fa-envelope"></i>
-              <p class="d-lg-none d-xl-none">Mensajes</p>
-            </a>
-          </li>
+          <li class="nav-item dropdown">
+              <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-bell"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-xl  dropdown-menu-right  py-0 overflow-hidden">
+                <!-- Dropdown header -->
+                <div class="px-3 py-3">
+                  <h6 class="text-sm text-muted m-0">Tienes <strong class="text-primary">4</strong> notificaciones.</h6>
+                </div>
+                <!-- List group -->
+                <div class="list-group list-group-flush">
+                  <a href="#!" class="list-group-item list-group-item-action btnDetail">
+                    <div class="row align-items-center">
+                      <div class="col-auto">
+                        <!-- Avatar -->
+                        <img alt="img-fluid  rounded shadow-lg img-thumbnail"  width="80px" src="{{ asset('assets/img/christian.jpg')}}" class="">
+                      </div>
+                      <div class="col ml--2">
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <h4 class="mb-0 text-dark text-sm">Mike Alfredo te envio una solicitud de saludo</h4>
+                          </div>
+                          <div class="text-right text-muted">
+                            <small>hace 8 minutos</small>
+                          </div>
+                        </div>
+                        <p class="text-sm mb-0 text-dark"><i class="fas fa-money-bill-alt"></i> $ 215.000.000,00</p>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="#!" class="list-group-item list-group-item-action btnDetail">
+                    <div class="row align-items-center">
+                      <div class="col-auto">
+                        <!-- Avatar -->
+                        <img alt="img-fluid  rounded shadow-lg img-thumbnail"  width="80px" src="{{ asset('assets/img/julie.jpg')}}" class="">
+                      </div>
+                      <div class="col ml--2">
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <h4 class="mb-0 text-dark text-sm">Alicia Keys te envio una solicitud de saludo</h4>
+                          </div>
+                          <div class="text-right text-muted">
+                            <small>hace 30 minutos</small>
+                          </div>
+                        </div>
+                        <p class="text-sm mb-0 text-dark"><i class="fas fa-money-bill-alt"></i> $ 215.000.000,00</p>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="#!" class="list-group-item list-group-item-action btnDetail">
+                    <div class="row align-items-center">
+                      <div class="col-auto">
+                        <!-- Avatar -->
+                        <img alt="img-fluid  rounded shadow-lg img-thumbnail"  width="80px" src="{{ asset('assets/img/lora.jpg')}}" class="">
+                      </div>
+                      <div class="col ml--2">
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <h4 class="mb-0 text-dark text-sm">Lina Hernandez te envio una solicitud de saludo</h4>
+                          </div>
+                          <div class="text-right text-muted">
+                            <small>hace 6 horas</small>
+                          </div>
+                        </div>
+                        <p class="text-sm mb-0 text-dark"><i class="fas fa-money-bill-alt"></i> $ 215.000.000,00</p>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="#!" class="list-group-item list-group-item-action btnDetail">
+                    <div class="row align-items-center">
+                      <div class="col-auto">
+                        <!-- Avatar -->
+                        <img alt="img-fluid  rounded shadow-lg img-thumbnail"  width="80px"  src="{{ asset('assets/img/james.jpg')}}" class="">
+                      </div>
+                      <div class="col ml--2">
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <h4 class="mb-0 text-dark text-sm">Jaime Snow te envio una solicitud de saludo</h4>
+                          </div>
+                          <div class="text-right text-muted">
+                            <small>hace 9 horas</small>
+                          </div>
+                        </div>
+                        <p class="text-sm mb-0 text-dark"><i class="fas fa-money-bill-alt"></i> $ 215.000.000,00</p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <!-- View all -->
+              </div>
+            </li>
+          <li class="nav-item dropdown">
+              <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-gift"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-xl  dropdown-menu-right  py-0 overflow-hidden">
+                <!-- Dropdown header -->
+                <div class="px-3 py-3">
+                  <h6 class="text-sm text-muted m-0">Tienes <strong class="text-primary">4</strong> Regalos.</h6>
+                </div>
+                <!-- List group -->
+                <div class="list-group list-group-flush">
+                  <a href="#!" class="list-group-item list-group-item-action btnDetail">
+                    <div class="row align-items-center">
+                      <div class="col-auto">
+                        <!-- Avatar -->
+                        <img alt="img-fluid  rounded shadow-lg img-thumbnail"  width="80px" src="{{ asset('assets/img/christian.jpg')}}" class="">
+                      </div>
+                      <div class="col ml--2">
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <h4 class="mb-0 text-dark text-sm">Mike Alfredo te envio un Regalo</h4>
+                          </div>
+                          <div class="text-right text-muted">
+                            <small>hace 8 minutos</small>
+                          </div>
+                        </div>
+                        <p class="text-sm mb-0 text-dark"><i class="fas fa-money-bill-alt"></i> $ 21.000,00</p>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="#!" class="list-group-item list-group-item-action btnDetail">
+                    <div class="row align-items-center">
+                      <div class="col-auto">
+                        <!-- Avatar -->
+                        <img alt="img-fluid  rounded shadow-lg img-thumbnail"  width="80px" src="{{ asset('assets/img/lora.jpg')}}" class="">
+                      </div>
+                      <div class="col ml--2">
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <h4 class="mb-0 text-dark text-sm">Lina Hernandez te envio un regalo</h4>
+                          </div>
+                          <div class="text-right text-muted">
+                            <small>hace 6 horas</small>
+                          </div>
+                        </div>
+                        <p class="text-sm mb-0 text-dark"><i class="fas fa-money-bill-alt"></i> $ 21.000,00</p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <!-- View all -->
+              </div>
+            </li>
+          <li class="nav-item dropdown">
+              <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-envelope"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-xl  dropdown-menu-right  py-0 overflow-hidden">
+                <!-- Dropdown header -->
+                <div class="px-3 py-3">
+                  <h6 class="text-sm text-muted m-0">Tienes <strong class="text-primary">4</strong> Regalos.</h6>
+                </div>
+                <!-- List group -->
+                <div class="list-group list-group-flush">
+                  <a href="#" class="list-group-item list-group-item-action btnDetail">
+                    <div class="row align-items-center">
+                      <div class="col-auto">
+                        <!-- Avatar -->
+                        <img alt="img-fluid  rounded shadow-lg img-thumbnail"  width="80px" src="{{ asset('assets/img/christian.jpg')}}" class="">
+                      </div>
+                      <div class="col ml--2">
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <h4 class="mb-0 text-dark text-sm">Mike Alfredo te envio un Mensaje</h4>
+                          </div>
+                          <div class="text-right text-muted">
+                            <small>hace 8 minutos</small>
+                          </div>
+                        </div>
+                        <p class="text-sm mb-0 text-dark"><i class="fas fa-money-bill-alt"></i> Te amo J Balvin </p>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="#" class="list-group-item list-group-item-action btnDetail">
+                    <div class="row align-items-center">
+                      <div class="col-auto">
+                        <!-- Avatar -->
+                        <img alt="img-fluid  rounded shadow-lg img-thumbnail"  width="80px" src="{{ asset('assets/img/lora.jpg')}}" class="">
+                      </div>
+                      <div class="col ml--2">
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <h4 class="mb-0 text-dark text-sm">Lina Hernandez te envio un Mensaje</h4>
+                          </div>
+                          <div class="text-right text-muted">
+                            <small>hace 6 horas</small>
+                          </div>
+                        </div>
+                        <p class="text-sm mb-0 text-dark"><i class="fas fa-money-bill-alt"></i> J Balvin te luciste en los premios</p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <!-- View all -->
+              </div>
+            </li>
           <li class="nav-item">
             <a class="nav-link btn btn-neutral btn-round btn-simple">
               <i class="fas fa-user"></i> J Balvin

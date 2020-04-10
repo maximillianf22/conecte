@@ -27,14 +27,23 @@
         </div>
   </footer>
   <!-- End Footer -->
-  <!--   Core JS Files   -->
-  <script src="{{ asset('assets/js/core/jquery.min.js') }}" type="text/javascript"></script>
+
+  <!-- Argon Scripts -->
+  <!-- Core -->
+  <script src="{{ asset('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
   <script src="{{ asset('assets/js/core/popper.min.js') }}" type="text/javascript"></script>
   <script src="{{ asset('assets/js/core/bootstrap.min.js') }}" type="text/javascript"></script>
   <script src="{{ asset('assets/js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
-  <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
+  <script src="{{ asset('assets/vendor/js-cookie/js.cookie.js') }}"></script>
+  <script src="{{ asset('assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js') }}"></script>
+  <!-- Optional JS -->
+  <script src="{{ asset('assets/vendor/chart.js/dist/Chart.min.js') }}"></script>
   <script src="{{ asset('assets/js/plugins/bootstrap-switch.js') }}"></script>
-  <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+  <script src="{{ asset('assets/js/components/charts/chart-bars.js') }}"></script>
+  <script src="{{ asset('assets/vendor/chart.js/dist/Chart.extension.js') }}"></script>
   <script src="{{ asset('assets/js/plugins/nouislider.min.js') }}" type="text/javascript"></script>
+  <script src="{{ asset('assets/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
+  <!-- Argon JS -->
+  <script src="{{ asset('assets/js/argon.js?v=1.2.0') }}"></script>
   <script src="{{ asset('assets/js/blk-design-system.min.js?v=1.0.0') }}" type="text/javascript"></script>
 </body>
