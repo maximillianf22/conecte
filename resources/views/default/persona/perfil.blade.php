@@ -218,42 +218,42 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td class="text-center"><img src="{{ asset('assets/img/artistas/ozuna.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 50px;"></td>
+                        <td class="text-center"><img src="{{ asset('assets/img/ozuna.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 50px;"></td>
                         <td>Ozuna</td>
                         <td>Completado</td>
                         <td>25/10/2020</td>
                         <td class="text-right">&dollar; 99,225</td>
                       </tr>
                       <tr>
-                        <td class="text-center"><img src="{{ asset('assets/img/artistas/jbalvin.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 50px;"></td>
+                        <td class="text-center"><img src="{{ asset('assets/img/faces/jbalvin.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 50px;"></td>
                         <td>Jbalvin</td>
                         <td>Completado</td>
                         <td>25/10/2020</td>
                         <td class="text-right">&dollar; 89,241</td>
                       </tr>
                       <tr>
-                        <td class="text-center"><img src="{{ asset('assets/img/artistas/maluma.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 50px;"></td>
+                        <td class="text-center"><img src="{{ asset('assets/img/maluma.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 50px;"></td>
                         <td>Maluma</td>
                         <td>Completado</td>
                         <td>25/10/2020</td>
                         <td class="text-right">&dollar; 92,144</td>
                       </tr>
                       <tr>
-                        <td class="text-center"><img src="{{ asset('assets/img/artistas/ozuna.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 50px;"></td>
+                        <td class="text-center"><img src="{{ asset('assets/img/ozuna.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 50px;"></td>
                         <td>Ozuna</td>
                         <td>Completado</td>
                         <td>25/10/2020</td>
                         <td class="text-right">&dollar; 99,225</td>
                       </tr>
                       <tr>
-                        <td class="text-center"><img src="{{ asset('assets/img/artistas/jbalvin.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 50px;"></td>
+                        <td class="text-center"><img src="{{ asset('assets/img/faces/jbalvin.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 50px;"></td>
                         <td>Jbalvin</td>
                         <td>Completado</td>
                         <td>25/10/2020</td>
                         <td class="text-right">&dollar; 89,241</td>
                       </tr>
                       <tr>
-                        <td class="text-center"><img src="{{ asset('assets/img/artistas/maluma.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 50px;"></td>
+                        <td class="text-center"><img src="{{ asset('assets/img/maluma.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 50px;"></td>
                         <td>Maluma</td>
                         <td>Completado</td>
                         <td>25/10/2020</td>
