@@ -4,37 +4,37 @@
 	         		<h5 class="text-uppercase">Artistas Independientes</h5>
 	         	</div>
                 <div class="col-md-3 p-2">
-                  <img src="{{ asset('assets/img/artistas/maluma.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
+                  <img src="{{ asset('assets/img/maluma.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
                   <span class="text-center">Maluma</span>
                 </div>
                 <div class="col-md-3 p-2">
-                  <img src="{{ asset('assets/img/artistas/ozuna.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
+                  <img src="{{ asset('assets/img/ozuna.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
                   <span class="text-center">Ozuna</span>
                 </div>
                 <div class="col-md-3 p-2">
-                  <img src="{{ asset('assets/img/artistas/jbalvin.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
+                  <img src="{{ asset('assets/img/jbalvin.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
                   <span class="text-center">Jbalvin</span>
                 </div>
                 <div class="col-md-3 p-2">
-                  <img src="{{ asset('assets/img/artistas/silvestre.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
+                  <img src="{{ asset('assets/img/silvestre.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
                   <span class="text-center">Silvestre</span>
                 </div>
               </div>
               <div class="row mx-auto">
                 <div class="col-md-3 p-2">
-                  <img src="{{ asset('assets/img/artistas/karolg.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
+                  <img src="{{ asset('assets/img/karolg.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
                   <span class="text-center">Karol G</span>
                 </div>
                 <div class="col-md-3 p-2">
-                  <img src="{{ asset('assets/img/artistas/anuel.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
+                  <img src="{{ asset('assets/img/anuel.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
                   <span class="text-center">Anuel</span>
                 </div>
                 <div class="col-md-3 p-2">
-                  <img src="{{ asset('assets/img/artistas/sech.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
+                  <img src="{{ asset('assets/img/sech.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
                   <span class="text-center">Sech</span>
                 </div>
                 <div class="col-md-3 p-2">
-                  <img src="{{ asset('assets/img/artistas/beckyg.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
+                  <img src="{{ asset('assets/img/beckyg.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
                   <span class="text-center">Becky G</span>
                 </div>
               </div>
