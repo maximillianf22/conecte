@@ -1,6 +1,62 @@
 @extends('template.default.layout.default')
 @section('content')
 <body class="index-page" style="background-color: #e0e1e3">
+  <nav class="navbar navbar-expand-lg navbar-transparent fixed-top">
+    <div class="container">
+      <div class="navbar-translate">
+        <a class="navbar-brand" href="inicio" rel="tooltip" title="Designed and Coded by Developapp" data-placement="bottom">
+          <img src="{{ asset('assets/img/brand/logoc.png')}}" width="55%">
+        </a>
+        <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-bar bar1"></span>
+          <span class="navbar-toggler-bar bar2"></span>
+          <span class="navbar-toggler-bar bar3"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse justify-content-end" id="navigation">
+        <div class="navbar-collapse-header">
+          <div class="row">
+            <div class="col-6 collapse-brand">
+              <a>
+                <img src="{{ asset('assets/img/brand/logoa.png')}}" width="60%">
+              </a>
+            </div>
+            <div class="col-6 collapse-close text-right">
+              <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="tim-icons icon-simple-remove"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <ul class="navbar-nav">
+          <li class="nav-item p-0">
+            <a class="nav-link" rel="tooltip" title="Siguenos en Twitter" data-placement="bottom" href="#" target="_blank">
+              <i class="fab fa-twitter"></i>
+              <p class="d-lg-none d-xl-none">Twitter</p>
+            </a>
+          </li>
+          <li class="nav-item p-0">
+            <a class="nav-link" rel="tooltip" title="Me Gusta en Facebook" data-placement="bottom" href="#" target="_blank">
+              <i class="fab fa-facebook-square"></i>
+              <p class="d-lg-none d-xl-none">Facebook</p>
+            </a>
+          </li>
+          <li class="nav-item p-0">
+            <a class="nav-link" rel="tooltip" title="Siguenos en Instagram" data-placement="bottom" href="#" target="_blank">
+              <i class="fab fa-instagram"></i>
+              <p class="d-lg-none d-xl-none">Instagram</p>
+            </a>
+          </li>
+          <li class="nav-item p-0">
+            <a class="nav-link" rel="tooltip" title="Siguenos en Youtube" data-placement="bottom" href="#" target="_blank">
+              <i class="fab fa-youtube"></i>
+              <p class="d-lg-none d-xl-none">Youtube</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
    <!-- Header -->
     <div class="wrapper section-signup m-0 p-0" style="background-image: url('{{asset('assets/img/bg/login.jpg')}}'); background-attachment: fixed; background-size:     cover;  background-repeat:   no-repeat;  background-position: center center;">
     <div class="page-header container">
@@ -33,9 +89,21 @@
                 <input type="password" class="form-control" placeholder="Contraseña">
               </div>
             </div>
+      <!-- MODAL TEMPORAL PARA EL DEMO-->
+      <!-- MODAL TEMPORAL PARA EL DEMO-->
+      <!-- MODAL TEMPORAL PARA EL DEMO-->
+      <!-- MODAL TEMPORAL PARA EL DEMO-->
+      <!-- MODAL TEMPORAL PARA EL DEMO-->
+      <!-- MODAL TEMPORAL PARA EL DEMO-->
             <div class="card-footer text-center">
-              <a href="user/home" class="btn btn-primary btn-round btn-lg btn-block">Iniciar sesión</a>
+              <a  data-toggle="modal" data-target="#myModal2" class="btn btn-primary btn-round btn-lg btn-block">Iniciar sesión</a>
             </div>
+      <!-- MODAL TEMPORAL PARA EL DEMO-->
+      <!-- MODAL TEMPORAL PARA EL DEMO-->
+      <!-- MODAL TEMPORAL PARA EL DEMO-->
+      <!-- MODAL TEMPORAL PARA EL DEMO-->
+      <!-- MODAL TEMPORAL PARA EL DEMO-->
+      <!-- MODAL TEMPORAL PARA EL DEMO-->
             <div class="pull-left ml-3 mt-2 mb-3">
               <h6>
                 <a class="link footer-link"  href="#" data-toggle="modal" data-target="#myModal1">Registrar</a>
@@ -83,6 +151,57 @@
           </div>
         </div>
       </div>
+
+
+
+      <!-- MODAL TEMPORAL PARA EL DEMO-->
+      <!-- MODAL TEMPORAL PARA EL DEMO-->
+      <!-- MODAL TEMPORAL PARA EL DEMO-->
+      <!-- MODAL TEMPORAL PARA EL DEMO-->
+      <!-- MODAL TEMPORAL PARA EL DEMO-->
+      <!-- MODAL TEMPORAL PARA EL DEMO-->
+      <!-- MODAL TEMPORAL PARA EL DEMO-->
+      <!-- MODAL TEMPORAL PARA EL DEMO-->
+      <div class="modal fade modal modal-primary modal" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="background-image: linear-gradient(to right top, #000000, #060003, #090009, #080110, #030316);">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header justify-content-center">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                <i class="tim-icons icon-simple-remove text-white"></i>
+              </button>
+              <div class="modal-profile">
+                <i class="fas fa-user"></i>
+              </div>
+            </div>
+            <div class="modal-body text-center">
+              <p>Seleccione el tipo de Usuario A logear</p>
+              <p><small>Temporal solo para el demo</small></p>
+            </div>
+            <div class="modal-footer">
+                <a  href="persona/home">
+                  <button type="button" class="btn  btn-neutral">
+                    <strong class="text-dark">Persona</strong>
+                  </button>
+                </a>
+                <a  href="artista/home">
+                  <button type="button" class="btn  btn-neutral">
+                    <strong class="text-dark">Artista</strong>
+                 </button>
+                </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- MODAL TEMPORAL PARA EL DEMO-->
+      <!-- MODAL TEMPORAL PARA EL DEMO-->
+      <!-- MODAL TEMPORAL PARA EL DEMO-->
+      <!-- MODAL TEMPORAL PARA EL DEMO-->
+      <!-- MODAL TEMPORAL PARA EL DEMO-->
+      <!-- MODAL TEMPORAL PARA EL DEMO-->
+      <!-- MODAL TEMPORAL PARA EL DEMO-->
+      <!-- MODAL TEMPORAL PARA EL DEMO-->
+      <!-- MODAL TEMPORAL PARA EL DEMO-->
+      <!-- MODAL TEMPORAL PARA EL DEMO-->
   <!-- End Header -->
 </body>
 @include('template.default.footer.webfoot')

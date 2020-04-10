@@ -1,7 +1,7 @@
   <nav class="navbar navbar-expand-lg fixed-top" style="background-image: linear-gradient(to right top, #000000, #060003, #090009, #080110, #030316);">
     <div class="container">
       <div class="navbar-translate">
-        <a class="navbar-brand" href="#" rel="tooltip" title="Designed and Coded by Developapp" data-placement="bottom" target="_blank">
+        <a class="navbar-brand" href="#" rel="tooltip" title="Designed and Coded by Developapp" data-placement="bottom">
           <img src="{{ asset('assets/img/brand/logoc.png')}}" width="55%">
         </a>
         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,17 +28,17 @@
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a href="javascript:;" class="nav-link">Explorar</a>
+                    <a href="home" class="nav-link">Explorar</a>
                 </li>
                 <li class="nav-item">
-                    <a href="javascript:;" class="nav-link">Perfil</a>
+                    <a href="perfil" class="nav-link">Perfil</a>
                 </li>
                 <li class="nav-item">
                     <a href="javascript:;" class="nav-link">Grupos</a>
                 </li>
             </ul>
 
-            <form class="form-inline bg-white rounded">
+            <form class="form-inline bg-white rounded m-0">
                 <div class="form-group no-border">
                   <input type="text" class="form-control bg-white text-dark" placeholder="Search">
                 </div>
@@ -61,14 +61,14 @@
             </a>
           </li>
           <li class="nav-item p-0">
-            <a class="nav-link" rel="tooltip" title="MEnsajes" data-placement="bottom" href="#" target="_blank">
+            <a class="nav-link" rel="tooltip" title="Mensajes" data-placement="bottom" href="#" target="_blank">
               <i class="fas fa-envelope"></i>
               <p class="d-lg-none d-xl-none">Mensajes</p>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link btn btn-neutral btn-round btn-simple">
-              <i class="fas fa-user"></i> Maximillian 
+              <i class="fas fa-user"></i> J Balvin
             </a>
           </li>
         </ul>

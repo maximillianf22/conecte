@@ -4,7 +4,7 @@
   <nav class="navbar navbar-expand-lg fixed-top" style="background-image: linear-gradient(to right top, #000000, #060003, #090009, #080110, #030316);">
     <div class="container">
       <div class="navbar-translate">
-        <a class="navbar-brand" href="#" rel="tooltip" title="Designed and Coded by Developapp" data-placement="bottom" target="_blank">
+        <a class="navbar-brand" href="../inicio" rel="tooltip" title="Designed and Coded by Developapp" data-placement="bottom">
           <img src="{{ asset('assets/img/brand/logoc.png')}}" width="55%">
         </a>
         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
