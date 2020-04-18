@@ -12,6 +12,30 @@ class VerifyCsrfToken extends BaseVerifier
      * @var array
      */
     protected $except = [
-        //
+        '/video/crear',
+        '/artista/login',
+        '/artista/dedicatoria',
+        'artista/dedicatoria/historial',
+        '/artista/dedicatoria/responder',
+        '/artista/movimientos',
+        '/artista/liquidacion',
+        '/cliente/generos',
+        '/cliente/artistas',
+        '/cliente/movimientos',
+        '/cliente/saldo',
+        '/cliente/list/pendientes',
+        '/cliente/genero/artista',
+        '/clientes/search',
+        '/cliente/list/finalizados',
+        '/cliente/solicitar/dedicatoria',
+        '/cliente/login',
+        '/cliente/registro',
+        '/payu/confirmation',
+        'cliente/contratacion/detalle',
+        'cliente/contratacion/send/messaje',
+        'cliente/estado/contratacion',
+        'cliente/editarPerfil',
+        'cliente/generos/celebridades',
+        '/payu/confirmation/recarga',
     ];
 }

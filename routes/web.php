@@ -12,9 +12,7 @@
 */
 
 /* Ruta del Home*/
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', ['uses' => 'HomeController@index', 'as' => 'index']);
 
 /* Ruta al home que esta en los navbars*/
 Route::get('/inicio', function () {
@@ -58,11 +56,6 @@ Route::get('persona/pago/exito', function () {
 });
 
   
-/* Ruta del Login*/
-
-Route::get('login', function () {
-    return view('auth/default/login');
-});
 
 Route::get('artista/recovery-pass', function () {
     return view('auth/default/artista/recoverypass');
@@ -89,5 +82,47 @@ Route::get('artista/register/fin', function () {
 });
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Start autentificación */
+    Auth::routes();
+    Route::get('/login/?', ['uses' => 'Auth\LoginController@login', 'as' => 'loginView']);
+    Route::get('/login/administrador', ['uses' => 'Auth\LoginController@loginAdmin', 'as' => 'loginViewAdmin']);
+    Route::get('/logout', ['uses' => 'Auth\LoginController@getLogout', 'as' => 'getLogout']);
+    Route::post('/loginPost', ['uses' => 'Auth\LoginController@loginPost', 'as' => 'loginPost']);
+    Route::post('/loginPostAdmin', ['uses' => 'Auth\LoginController@loginPostAdmin', 'as' => 'loginPostAdmin']);
+    
+    Route::get('/recoveryaccount', ['uses' => 'Auth\LoginController@RecoveryAccount', 'as' => 'recoveryaccount']);
+    Route::post('/recoveryaccount', ['uses' => 'Auth\LoginController@PostRecoveryAccount', 'as' => 'recoveryaccount']);
+    Route::get('/confirmationEmail/identificacion/{id}/token/{token_}', ['uses' => 'Auth\LoginController@ConfirmationRecoveryAccount', 'as' => 'confirmationEmail']);
+    Route::post('/resetpasswordaccount', ['uses' => 'Auth\LoginController@ResetPassAccount', 'as' => 'resetpasswordaccount']);
+
+
+    Route::get('/registro-usuarios', ['uses' => 'Auth\RegisterController@registros_usuarios', 'as' => 'register.usuarios']);
+    Route::get('/registro-artistas', ['uses' => 'Auth\RegisterController@registros_artistas', 'as' => 'register.artista']);
+
+    Route::post('/registroArtistaPost', ['uses' => 'Auth\RegisterController@registroArtistaPost', 'as' => 'registroArtistaPost']);
+    Route::post('/registroUsuariosPost', ['uses' => 'Auth\RegisterController@registroUsuariosPost', 'as' => 'registroUsuariosPost']);
+
+    //Route::get('/administrador/login', ['uses' => 'Auth\LoginController@login', 'as' => 'loginView']);
+    Route::get('/auth/confirm/email/{email}/confirm_token/{confirm_token}', ['uses' => 'Auth\RegisterController@confirmRegister', 'as' => 'confirmarCorreo']);
+/* End autentificación */
 
 
