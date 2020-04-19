@@ -184,7 +184,7 @@
             </li>
           <li class="nav-item">
             <a class="nav-link btn btn-neutral btn-round btn-simple">
-              <i class="fas fa-user"></i> Alicia Keys
+              <i class="fas fa-user"></i> {{$user->name}}
             </a>
           </li>
         </ul>

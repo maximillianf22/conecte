@@ -1,5 +1,6 @@
 @extends('template.default.layout.default')
 @section('content')
+
 <body class="index-page" style="background-color: #e0e1e3">
   <nav class="navbar navbar-expand-lg navbar-transparent fixed-top">
     <div class="container">
@@ -57,8 +58,8 @@
       </div>
     </div>
   </nav>
-   <!-- Header -->
-    <div class="wrapper section-signup m-0 p-0" style="background-image: url('{{asset('assets/img/bg/login.jpg')}}'); background-attachment: fixed; background-size:     cover;  background-repeat:   no-repeat;  background-position: center center;">
+  <!-- Header -->
+  <div class="wrapper section-signup m-0 p-0" style="background-image: url('{{asset('assets/img/bg/login.jpg')}}'); background-attachment: fixed; background-size:     cover;  background-repeat:   no-repeat;  background-position: center center;">
     <div class="page-header container">
       <div class="squares square1"></div>
       <div class="squares square2"></div>
@@ -68,88 +69,86 @@
       <div class="squares square7"></div>
       <div class="container">
         <div class="row">
-            <div class="content-center text-left col-md-5 offset-md-3">
-              <div class="card card-contact card-raised p-3" style="background-image: linear-gradient(to right top, #000000, #060003, #090009, #080110, #030316);">
-          {{ csrf_field() }}
-            <div class="card-header text-center">
-              <img src="{{ asset('assets/img/brand/logoc.png')}}" width="55%" class="d-none d-lg-block mx-auto">
-              <h4 class="card-title text-white display-4"> Inicia sesion para disfrutar de <strong>Todo lo bueno</strong> que traemos para ti...</h4>
-            </div>
-            <div class="card-body pb-0">
-              <form role="form" method="POST" action="{{ url('/loginPost') }}">
-                    {{ csrf_field() }}
-                    <div class="form-group has-feedback">
-                        <input id="email" type="email" class="form-control" name="email" placeholder="Correo" value="{{ old('email') }}" required autofocus>
-                        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+          <div class="content-center text-left col-md-5 offset-md-3">
+            <div class="card card-contact card-raised p-3" style="background-image: linear-gradient(to right top, #000000, #060003, #090009, #080110, #030316);">
+              <div class="card-header text-center">
+                <img src="{{ asset('assets/img/brand/logoc.png')}}" width="55%" class="d-none d-lg-block mx-auto">
+                <h4 class="card-title text-white display-4"> Inicia sesion para disfrutar de <strong>Todo lo bueno</strong> que traemos para ti...</h4>
+              </div>
+              <div class="card-body pb-0">
+                <form role="form" method="POST" action="{{ url('/loginPost') }}">
+                  {{ csrf_field() }}
+                  <div class="form-group has-feedback">
+                    <input id="email" type="email" class="form-control" name="email" placeholder="Correo" value="{{ old('email') }}" required autofocus>
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                  </div>
+                  <div class="form-group has-feedback">
+                    <input id="password" type="password" class="form-control" name="password" placeholder="Contraseña" required>
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                  </div>
+                  @if(session('message_error'))
+                  <p class="text-danger">{{session('message_error')}}</p>
+                  @endif
+                  <div class="card-footer text-center">
+                    <div class="col-xs-12" style="padding-bottom: 15px;">
+                      <button type="submit" class="btn btn-primary btn-round btn-lg btn-block">Iniciar sesión</button>
                     </div>
-                    <div class="form-group has-feedback">
-                        <input id="password" type="password" class="form-control" name="password" required>
-                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                    </div>
-                    <div class="card-footer text-center">
-                        <div class="col-xs-12" style="padding-bottom: 15px;">
-                          <button type="submit" class="btn btn-primary btn-round btn-lg btn-block">Iniciar sesión</button>
-                        </div>
-                    </div>
+                  </div>
                 </form>
-            </div>
-            <div class="card-footer text-center mt-0">
-              <div class="pull-left ml-3 mt-2 mb-3">
-                <h6>
-                  <a class="link footer-link"  href="#" data-toggle="modal" data-target="#myModal1">Registrar</a>
-                </h6>
               </div>
-              <div class="pull-right mr-3 mt-2 mb-3">
-                <h6>
-                  <a href="{{ url('/password/reset') }}"  class="link footer-link">¿olvido su clave?</a>
-                </h6>
+              <div class="card-footer text-center mt-0">
+                <div class="pull-left ml-3 mt-2 mb-3">
+                  <h6>
+                    <a class="link footer-link" href="#" data-toggle="modal" data-target="#myModal1">Registrar</a>
+                  </h6>
+                </div>
+                <div class="pull-right mr-3 mt-2 mb-3">
+                  <h6>
+                    <a href="{{ url('/password/reset') }}" class="link footer-link">¿olvido su clave?</a>
+                  </h6>
+                </div>
               </div>
-            </div>           
-            </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-
-   <div class="modal fade modal-mini modal-primary modal-mini" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="background-image: linear-gradient(to right top, #000000, #060003, #090009, #080110, #030316);">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header justify-content-center">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                <i class="tim-icons icon-simple-remove text-white"></i>
-              </button>
-              <div class="modal-profile">
-                <i class="fas fa-user"></i>
-              </div>
-            </div>
-            <div class="modal-body">
-              <p>Seleccione el tipo de Usuario</p>
-            </div>
-            <div class="modal-footer">
-                <a  href="persona/register">
-                  <button type="button" class="btn  btn-neutral">
-                    <strong class="text-dark">Persona</strong>
-                  </button>
-                </a>
-                <a  href="artista/register">
-                  <button type="button" class="btn  btn-neutral">
-                    <strong class="text-dark">Artista</strong>
-                 </button>
-                </a>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="modal fade modal-mini modal-primary modal-mini" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="background-image: linear-gradient(to right top, #000000, #060003, #090009, #080110, #030316);">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header justify-content-center">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            <i class="tim-icons icon-simple-remove text-white"></i>
+          </button>
+          <div class="modal-profile">
+            <i class="fas fa-user"></i>
+          </div>
+        </div>
+        <div class="modal-body">
+          <p>Seleccione el tipo de Usuario</p>
+        </div>
+        <div class="modal-footer">
+          <a href="persona/register">
+            <button type="button" class="btn  btn-neutral">
+              <strong class="text-dark">Persona</strong>
+            </button>
+          </a>
+          <a href="artista/register">
+            <button type="button" class="btn  btn-neutral">
+              <strong class="text-dark">Artista</strong>
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- End Header -->
 </body>
 @include('template.default.footer.webfoot')
 @endsection
 
 @section('js')
-    @if (count($errors) > 0)
-        @foreach ($errors->all() as $error)
-            <script>toastr.info("{{$error}}")</script>
-        @endforeach
-    @endif
+
 @endsection

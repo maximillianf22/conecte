@@ -35,9 +35,9 @@ Route::get('persona/home', function () {
     return view('default/persona/home');
 });
 
-Route::get('persona/perfil', function () {
-    return view('default/persona/perfil');
-});
+// Route::get('persona/perfil', function () {
+//     return view('default/persona/perfil');
+// });
 
 Route::get('persona/pago', function () {
     return view('default/persona/pago');
@@ -127,3 +127,5 @@ Route::post('/registroUsuariosPost', ['uses' => 'Auth\RegisterController@registr
 //Route::get('/administrador/login', ['uses' => 'Auth\LoginController@login', 'as' => 'loginView']);
 Route::get('/auth/confirm/email/{email}/confirm_token/{confirm_token}', ['uses' => 'Auth\RegisterController@confirmRegister', 'as' => 'confirmarCorreo']);
 /* End autentificación */
+
+Route::get('/persona/perfil', ['uses' => 'HomeController@perfil', 'as' => 'perfil']);

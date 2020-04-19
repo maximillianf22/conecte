@@ -8,7 +8,7 @@ use App\tbl_movimientos;
 use App\tbl_parametros;
 use App\tbl_solicitudes_de_contratacion;
 use App\tbl_solicitudes_de_dedicatorias;
-use App\User,App\tbl_slide;
+use App\User, App\tbl_slide;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -16,10 +16,11 @@ use Mail;
 use DB;
 use Redirect;
 use Session;
-use App\tbl_evento,App\tbl_listado_genero;
+use App\tbl_evento, App\tbl_listado_genero;
 use App\tbl_genero, App\artistas_celebridade;
 
-class HomeController extends Controller{
+class HomeController extends Controller
+{
     /**
      * Create a new controller instance.
      *
@@ -30,58 +31,62 @@ class HomeController extends Controller{
         //$this->middleware('auth');
     }
 
-    public function index(){
+    public function index()
+    {
         //-- Celebridades
-       
 
-        $Generos_ = tbl_genero::where('idState',1)->get();
 
-        $titulos = tbl_parametros::where('ID_VALOR','11')->get();
-        $redesSociales = tbl_parametros::where('ID_VALOR','12')->get();
+        $Generos_ = tbl_genero::where('idState', 1)->get();
+
+        $titulos = tbl_parametros::where('ID_VALOR', '11')->get();
+        $redesSociales = tbl_parametros::where('ID_VALOR', '12')->get();
 
         $precio = tbl_parametros::findOrFail(61);
 
         return view('home')->with([
             "redesSociales" => $redesSociales,
-            "Genero"=> $Generos_,
+            "Genero" => $Generos_,
         ]);
-
     }
 
-    public function music(){
+    public function music()
+    {
         //-- Musica 
         $Artistasfilter = artistas_celebridade::get()->take(8);
         $Artistas = artistas_celebridade::get();
-       // return $Artistas;
-        $Generos_ = tbl_genero::where('idState',1)->get();
-        $Slider_ = tbl_slide::where('idState',1)->get();
-        $titulos = tbl_parametros::where('ID_VALOR','11')->get();
-        $redesSociales = tbl_parametros::where('ID_VALOR','12')->get();
+        // return $Artistas;
+        $Generos_ = tbl_genero::where('idState', 1)->get();
+        $Slider_ = tbl_slide::where('idState', 1)->get();
+        $titulos = tbl_parametros::where('ID_VALOR', '11')->get();
+        $redesSociales = tbl_parametros::where('ID_VALOR', '12')->get();
         $precio = tbl_parametros::findOrFail(61);
-        return view('default.musica',compact('Generos_','Slider_','redesSociales','Artistas','Artistasfilter'));
+        return view('default.musica', compact('Generos_', 'Slider_', 'redesSociales', 'Artistas', 'Artistasfilter'));
     }
 
-    public function explorer(){
+    public function explorer()
+    {
         //-- Musica
-        $events_ = tbl_evento::where('idState',1)->get();
-        $redesSociales = tbl_parametros::where('ID_VALOR','12')->get();
+        $events_ = tbl_evento::where('idState', 1)->get();
+        $redesSociales = tbl_parametros::where('ID_VALOR', '12')->get();
         return view('default.explorar.index')->with([
-            "eventos"=> $events_,
+            "eventos" => $events_,
             "redesSociales" => $redesSociales,
         ]);
     }
 
-    public function videoConverter(){
+    public function videoConverter()
+    {
         return view('default.videos.convertidor');
     }
 
-    public function favorites(){  
-        
-        $Artistas = artistas_celebridade::orderBy('name','Asc')->get()->random(4);
-        $Listado_generos_ = tbl_listado_genero::where('idState',1)->get();
-        $TopFive = artistas_celebridade::where('dedicatorias','>',0)->orderBy('dedicatorias','DESC')->get()->take(5);
-        $titulos = tbl_parametros::where('ID_VALOR','11')->get();
-        $redesSociales = tbl_parametros::where('ID_VALOR','12')->get();
+    public function favorites()
+    {
+
+        $Artistas = artistas_celebridade::orderBy('name', 'Asc')->get()->random(4);
+        $Listado_generos_ = tbl_listado_genero::where('idState', 1)->get();
+        $TopFive = artistas_celebridade::where('dedicatorias', '>', 0)->orderBy('dedicatorias', 'DESC')->get()->take(5);
+        $titulos = tbl_parametros::where('ID_VALOR', '11')->get();
+        $redesSociales = tbl_parametros::where('ID_VALOR', '12')->get();
         $precio = tbl_parametros::findOrFail(61);
         return view('default.top.index')->with([
             "listado_genero" => $Listado_generos_,
@@ -89,67 +94,71 @@ class HomeController extends Controller{
             "titulos" => $titulos,
             "redesSociales" => $redesSociales,
             "precio" => $precio,
-            "TopFive"=> $TopFive,
+            "TopFive" => $TopFive,
         ]);
     }
-    
-    public function filtroGenero(Request $request){
-        if(!empty($request->nameGenero_)){
-            $Artistas = artistas_celebridade::where('id_genero',$request->nameGenero_)
-            ->where('nombre_artistico', 'LIKE', '%'.$request->nombreArtista.'%')
-            ->orderBy('nombre_artistico',$request->orderBy_)->get();
-        }else{
-            $Artistas = artistas_celebridade::where('nombre_artistico', 'LIKE', '%'.$request->nombreArtista.'%')
-            ->orderBy('nombre_artistico',$request->orderBy_)->get(); 
+
+    public function filtroGenero(Request $request)
+    {
+        if (!empty($request->nameGenero_)) {
+            $Artistas = artistas_celebridade::where('id_genero', $request->nameGenero_)
+                ->where('nombre_artistico', 'LIKE', '%' . $request->nombreArtista . '%')
+                ->orderBy('nombre_artistico', $request->orderBy_)->get();
+        } else {
+            $Artistas = artistas_celebridade::where('nombre_artistico', 'LIKE', '%' . $request->nombreArtista . '%')
+                ->orderBy('nombre_artistico', $request->orderBy_)->get();
         }
-        
+
 
         return view('default.top.filterSearch')->with([
             "Artistas" => $Artistas
         ]);
     }
 
-    public function generos($idGenero_){
-        $Artistasfilter = artistas_celebridade::where('id_Genero',$idGenero_)->get();
+    public function generos($idGenero_)
+    {
+        $Artistasfilter = artistas_celebridade::where('id_Genero', $idGenero_)->get();
         $Artistas = artistas_celebridade::get();
-        $Slider_ = tbl_slide::where('idState',1)->get();
-        $Generos_ = tbl_genero::where('idState',1)->get();
-        $NameGenero_= tbl_genero::where('idState',1)->where('idparametro',$idGenero_)->first(['nombreGenero']);
-        $titulos = tbl_parametros::where('ID_VALOR','11')->get();
-        $redesSociales = tbl_parametros::where('ID_VALOR','12')->get();
+        $Slider_ = tbl_slide::where('idState', 1)->get();
+        $Generos_ = tbl_genero::where('idState', 1)->get();
+        $NameGenero_ = tbl_genero::where('idState', 1)->where('idparametro', $idGenero_)->first(['nombreGenero']);
+        $titulos = tbl_parametros::where('ID_VALOR', '11')->get();
+        $redesSociales = tbl_parametros::where('ID_VALOR', '12')->get();
         $precio = tbl_parametros::findOrFail(61);
-        return view('default.generos.filterGenero',compact('Generos_','Slider_','NameGenero_','redesSociales','Artistas','Artistasfilter'));
+        return view('default.generos.filterGenero', compact('Generos_', 'Slider_', 'NameGenero_', 'redesSociales', 'Artistas', 'Artistasfilter'));
     }
 
-    public function profile($name){
+    public function profile($name)
+    {
         //-- Musica 
-        $Profile = artistas_celebridade::where('nombre_artistico',$name)->first();
-        if(!empty($Profile)){
+        $Profile = artistas_celebridade::where('nombre_artistico', $name)->first();
+        if (!empty($Profile)) {
             $details = tbl_configuraciones_artistas::where('ID_ARTISTA', $Profile->id)->first();
-            $events_ = tbl_evento::where('idState',1)->get();
+            $events_ = tbl_evento::where('idState', 1)->get();
 
-            $titulos = tbl_parametros::where('ID_VALOR','11')->get();
-            $redesSociales = tbl_parametros::where('ID_VALOR','12')->get();
+            $titulos = tbl_parametros::where('ID_VALOR', '11')->get();
+            $redesSociales = tbl_parametros::where('ID_VALOR', '12')->get();
             $precio = tbl_parametros::findOrFail(61);
             return view('default.artist_profile.index')->with([
                 "Profile" => $Profile,
-                "eventos"=> $events_,
+                "eventos" => $events_,
                 "titulos" => $titulos,
                 "redesSociales" => $redesSociales,
                 "precio" => $precio,
                 "details" => $details
             ]);
-        }else{
+        } else {
             return back();
         }
     }
-    
-    public function profile_campaigns($name){
+
+    public function profile_campaigns($name)
+    {
         //-- Musica 
-        $Profile = artistas_celebridade::where('nombre_artistico',$name)->first();
-        if(!empty($Profile)){
-            $titulos = tbl_parametros::where('ID_VALOR','11')->get();
-            $redesSociales = tbl_parametros::where('ID_VALOR','12')->get();
+        $Profile = artistas_celebridade::where('nombre_artistico', $name)->first();
+        if (!empty($Profile)) {
+            $titulos = tbl_parametros::where('ID_VALOR', '11')->get();
+            $redesSociales = tbl_parametros::where('ID_VALOR', '12')->get();
             $precio = tbl_parametros::findOrFail(61);
             return view('default.artist_profile.campaigns')->with([
                 "Profile" => $Profile,
@@ -157,31 +166,32 @@ class HomeController extends Controller{
                 "redesSociales" => $redesSociales,
                 "precio" => $precio,
             ]);
-        }else{
+        } else {
             return back();
         }
     }
 
-    public function welcome(Request $request){
+    public function welcome(Request $request)
+    {
         if ($request) {
             $query = trim($request->get('query'));
 
             //$genero = trim($request->get('genero'));
 
             //Artistas para ti
-            $artistas = artistas_celebridade::where('nombre_artistico', 'LIKE', '%' .$query. '%')
-                ->orderBy('name','ASC')
+            $artistas = artistas_celebridade::where('nombre_artistico', 'LIKE', '%' . $query . '%')
+                ->orderBy('name', 'ASC')
                 ->take(4)
                 ->get();
 
             //Generos
             $generos = tbl_parametros::where('ID_VALOR', '1')
-                ->where('ID','<>',60)
+                ->where('ID', '<>', 60)
                 ->get();
             $generoscelebridades = tbl_parametros::where('ID_VALOR', '14')
-                ->where('ID','<>',60)
+                ->where('ID', '<>', 60)
                 ->get();
-            
+
             $artistasGeneros = User::where('id_perfil', '1')
                 ->where('name', 'like', '%' . $query . '%')
                 ->where('id_genero', $generos->first()->ID)
@@ -190,15 +200,15 @@ class HomeController extends Controller{
 
             //Celebridades
             $tipocelebridad = tbl_parametros::where('ID_VALOR', '14')
-            ->where('ID','<>',60)
-            ->get();
+                ->where('ID', '<>', 60)
+                ->get();
             // dd($tipocelebridad);
 
-            $celebridades = artistas_celebridade::where('nombre_artistico', 'LIKE', '%' .$query. '%')
-                ->orderBy('name','ASC')
+            $celebridades = artistas_celebridade::where('nombre_artistico', 'LIKE', '%' . $query . '%')
+                ->orderBy('name', 'ASC')
                 ->take(4)
                 ->get();
-                
+
 
             if (Auth::user()) {
                 $user = User::findOrFail(Auth::user()->id);
@@ -216,19 +226,19 @@ class HomeController extends Controller{
             "generos" => $generos,
             "generoscelebridades" => $generoscelebridades,
             "celebridades" => $celebridades,
-            "tipocelebridad"=> $tipocelebridad,
+            "tipocelebridad" => $tipocelebridad,
             "query" => $query,
             "artistasGeneros" => $artistasGeneros,
             "user" => $user,
             "precio" => $precio,
             "welcome" => "welcome",
         ]);
-
     }
 
-    public function artista($name){
+    public function artista($name)
+    {
         //Informaciòn del artista
-        $Profile = artistas_celebridade::where('nombre_artistico',$name)->first();
+        $Profile = artistas_celebridade::where('nombre_artistico', $name)->first();
         $artista = User::where('id', $Profile->id)->first();
         $artista->configuraciones;
         $artista->posts;
@@ -240,10 +250,10 @@ class HomeController extends Controller{
         } else {
             $user = "";
         }
-        $redesSociales = tbl_parametros::where('ID_VALOR','12')->get();
+        $redesSociales = tbl_parametros::where('ID_VALOR', '12')->get();
         $precio = tbl_parametros::findOrFail(61);
         return view('default.artista')->with([
-            "perfil" => $Profile ,
+            "perfil" => $Profile,
             "artista" => $artista,
             "user" => $user,
             "redesSociales" => $redesSociales,
@@ -253,11 +263,12 @@ class HomeController extends Controller{
         return view('default.artista');
     }
 
-    public function profile_dedication($name){
+    public function profile_dedication($name)
+    {
         //-- Musica 
-        $Profile = artistas_celebridade::where('nombre_artistico',$name)->first();
-        $titulos = tbl_parametros::where('ID_VALOR','11')->get();
-        $redesSociales = tbl_parametros::where('ID_VALOR','12')->get();
+        $Profile = artistas_celebridade::where('nombre_artistico', $name)->first();
+        $titulos = tbl_parametros::where('ID_VALOR', '11')->get();
+        $redesSociales = tbl_parametros::where('ID_VALOR', '12')->get();
         $precio = tbl_parametros::findOrFail(61);
         return view('default.artist_profile.dedication')->with([
             "Profile" => $Profile,
@@ -268,7 +279,8 @@ class HomeController extends Controller{
     }
 
 
-    public function pedirDedicatoria(Request $request){
+    public function pedirDedicatoria(Request $request)
+    {
 
         $this->validate($request, [
             'ID_ARTISTA' => 'required',
@@ -293,9 +305,9 @@ class HomeController extends Controller{
             ->get();
         */
         $dedicatorias = tbl_solicitudes_de_dedicatorias::where('ID_CLIENTE', Auth::user()->id)
-        ->where('ID_ARTISTA',$request->ID_ARTISTA)
-        ->whereIn('ID_ESTADO', [12, 13])
-        ->get();
+            ->where('ID_ARTISTA', $request->ID_ARTISTA)
+            ->whereIn('ID_ESTADO', [12, 13])
+            ->get();
 
 
         //Información del artista
@@ -313,7 +325,7 @@ class HomeController extends Controller{
         //Billetera del artista
         $billeteraArtista = tbl_billeteras::where('ID_USER', $artista->id)->get();
         $billeteraArtista = $billeteraArtista->first();
-        
+
 
         //Billetera del administrador
         $billeteraAdmin = tbl_billeteras::where('ID_USER', 1)->get();
@@ -384,11 +396,11 @@ class HomeController extends Controller{
             $content = array("en" => "Tienes una nueva solicitud");
             $data = array("type" => "1", "data" => $dedicatoria);
             $fields = array(
-              'app_id' => '57065a04-a63b-4563-be64-8b9f2cf2a268',
-              'include_external_user_ids' => array("$externalUserIds"),
-              'data' => $data,
-              'contents' => $content,
-              'headings' => $heading
+                'app_id' => '57065a04-a63b-4563-be64-8b9f2cf2a268',
+                'include_external_user_ids' => array("$externalUserIds"),
+                'data' => $data,
+                'contents' => $content,
+                'headings' => $heading
             );
 
             ob_start();
@@ -415,12 +427,10 @@ class HomeController extends Controller{
 
             Session::flash('message', 'Solicitud enviada satisfactoriamente, una vez respodida se notificara por correo electronico');
             return redirect::to('artista/' . $artista->nombre_artistico);
-
         } else {
             Session::flash('message_error', 'No hemos podido enviar tu solicitud ya que no cuentas con fondos suficientes');
             return redirect::to('artista/' . $artista->nombre_artistico);
         }
-
     }
 
     public function solicitarContratacion(Request $request)
@@ -474,7 +484,7 @@ class HomeController extends Controller{
         }
 
         $contratacion = tbl_solicitudes_de_contratacion::where('ID_CLIENTE', Auth::user()->id)
-            ->where('ID_ARTISTA',$request->ID_ARTISTA)
+            ->where('ID_ARTISTA', $request->ID_ARTISTA)
             ->whereIn('ID_ESTADO', [33, 34, 35, 46, 47])
             ->get();
 
@@ -501,11 +511,11 @@ class HomeController extends Controller{
         $solicitud->DESDE = '';
         $solicitud->HASTA = '';
         $solicitud->HORA = '';
-        
+
         $solicitud->DESDE = $request->FECHA1;
         $solicitud->HASTA = $request->FECHA2;
         $solicitud->HORA = $request->HORA;
-       
+
         $solicitud->MENSAJE = $request->MENSAJE;
         $solicitud->save();
 
@@ -525,7 +535,6 @@ class HomeController extends Controller{
 
         Session::flash('message', 'Solicitud enviada satisfactoriamente, una vez respodida se notificara por correo electronico');
         return redirect::to('artista/' . $artista->nombre_artistico);
-
     }
 
     public function listarArtitasGeneros(Request $request)
@@ -539,7 +548,6 @@ class HomeController extends Controller{
                 ->get();
 
             return $artistas;
-
         }
     }
 
@@ -557,7 +565,6 @@ class HomeController extends Controller{
             $movimientos = tbl_movimientos::where('ID_ARTISTA', Auth::user()->id)
                 ->orderBy('ID', 'DESC')
                 ->paginate(15);
-               
         }
 
         $movimientos->each(function ($movimientos) {
@@ -595,12 +602,12 @@ class HomeController extends Controller{
                 ->where('ID_ESTADO', 42)
                 ->get();
 
-            $totalDisponibles = 0;//$user->billetera()->first()->SALDO;
+            $totalDisponibles = 0; //$user->billetera()->first()->SALDO;
 
         } else if ($user->id_perfil === 1) {
 
             $movimientos = tbl_movimientos::where('ID_ARTISTA', Auth::user()->id)
-                ->orderBy('ID','Desc')
+                ->orderBy('ID', 'Desc')
                 ->take(7)
                 ->get();
 
@@ -616,8 +623,12 @@ class HomeController extends Controller{
             $totalDisponibles = 0;
             $balance = $totalDisponibles - $balance;
             $generos = tbl_parametros::where('ID_VALOR', 1)->get();
-            
         }
+        $artistas = artistas_celebridade::
+            orderBy('name', 'ASC')
+            ->take(4)
+            ->get();
+
         if ($user->id_perfil === 2) {
             $movimientos = tbl_movimientos::where('ID_CLIENTE', Auth::user()->id)
                 ->where('ID_ESTADO', 42)
@@ -633,13 +644,14 @@ class HomeController extends Controller{
         });
 
 
-        return view('default.perfil')->with([
+        return view('default.persona.perfil')->with([
             "user" => $user,
             "movimientos" => $movimientos,
             "totalDisponibles" => $totalDisponibles,
             "balance" => $balance,
             "generos" => $generos,
             "precio" => $precio,
+            "artistas" => $artistas,
             "miPerfil" => "miPerfil",
         ]);
     }
@@ -662,7 +674,7 @@ class HomeController extends Controller{
 
             $user = User::findOrFail(Auth::user()->id);
             $user->name = $request->NAME;
-                        
+
             if ($request->hasFile('FOTO_PERFIL')) {
                 $file = Input::file('FOTO_PERFIL');
                 $name = Auth::user()->id . '.' . $file->getClientOriginalExtension();
@@ -670,8 +682,7 @@ class HomeController extends Controller{
                 $user->foto_perfil = $name;
             }
             $user->update();
-
-        }elseif ($request->TIPO === '2') {
+        } elseif ($request->TIPO === '2') {
             $this->validate($request, [
                 'password' => 'required|min:6|confirmed',
             ], [
@@ -681,13 +692,12 @@ class HomeController extends Controller{
 
             $user = User::findOrFail(Auth::user()->id);
             $user->password = bcrypt($request->password);
-            $user->update();    
+            $user->update();
         }
 
 
         Session::flash('message', 'Información actualizada satisfactoriamente');
         return Redirect::back();
-
     }
 
     public function actulizarArtista(Request $request)
@@ -719,7 +729,7 @@ class HomeController extends Controller{
                     $name = $id . '.' . $file->getClientOriginalExtension();
                     $file->move(public_path() . '/assets/img/artistas/', $name);
                     $user->foto_perfil = $name;
-                }else{
+                } else {
                     Session::flash('message_error', 'La imagen debe ser de 350x350');
                     return Redirect::back();
                 }
@@ -732,10 +742,10 @@ class HomeController extends Controller{
                 $alto = $imagen[1];
                 if ($ancho == 1440 || $alto == 600) {
                     $extencion = 'jpg';
-                    $name = 'cover-'.$user->nombre_artistico.'.'.$extencion;
+                    $name = 'cover-' . $user->nombre_artistico . '.' . $extencion;
                     $file->move(public_path() . '/assets/img/artist_profile/', $name);
                     $user->cover_perfil = $name;
-                }else{
+                } else {
                     Session::flash('message_error', 'La imagen debe ser de 1440x600');
                     return Redirect::back();
                 }
@@ -743,7 +753,6 @@ class HomeController extends Controller{
 
             $user->id_genero = $request->GENERO;
             $user->update();
-
         } elseif ($request->TIPO === '1') {
 
             $this->validate($request, [
@@ -758,7 +767,6 @@ class HomeController extends Controller{
             $configuracion->ACEPTO_SOLICITUDES_DE_DEDICATORIAS = $request->ACEPTO_SOLICITUDES_DE_DEDICATORIAS;
             $configuracion->ACEPTO_CONTRATOS = $request->ACEPTO_CONTRATOS;
             $configuracion->update();
-
         } elseif ($request->TIPO === '2') {
             $this->validate($request, [
                 'password' => 'required|min:6|confirmed',
@@ -774,7 +782,6 @@ class HomeController extends Controller{
 
         Session::flash('message', 'Información actulizada satisfactoriamente');
         return Redirect::back();
-
     }
 
     public function verRespuesta($id)
@@ -804,7 +811,7 @@ class HomeController extends Controller{
         $precio = tbl_parametros::findOrFail(61);
 
         if ($user->id_perfil == 0) {
-            
+
             $historialDeDedicatorias = tbl_solicitudes_de_dedicatorias::where('ID_CLIENTE', Auth::user()->id)
                 ->whereIn('ID_ESTADO', [14, 15, 16])
                 ->get();
@@ -822,7 +829,7 @@ class HomeController extends Controller{
                 $historialDeContratacion->estado;
                 $historialDeContratacion->estado;
             });
-        } elseif ($user->id_perfil == 1) {  
+        } elseif ($user->id_perfil == 1) {
             $historialDeDedicatorias = tbl_solicitudes_de_dedicatorias::where('ID_ARTISTA', Auth::user()->id)
                 ->whereIn('ID_ESTADO', [14, 15, 16])
                 ->get();
@@ -830,7 +837,6 @@ class HomeController extends Controller{
             $historialDeDedicatorias->each(function ($historialDeDedicatorias) {
                 $historialDeDedicatorias->artista;
                 $historialDeDedicatorias->cliente;
-
             });
 
             $historialDeContratacion = tbl_solicitudes_de_contratacion::where('ID_ARTISTA', Auth::user()->id)
@@ -882,7 +888,6 @@ class HomeController extends Controller{
                 $historialDeContratacion->estado;
                 $historialDeContratacion->estado;
             });
-
         } elseif ($user->id_perfil == 1) {
             $historialDeDedicatorias = tbl_solicitudes_de_dedicatorias::where('ID_ARTISTA', Auth::user()->id)
                 ->where('ID_ESTADO', '13')
@@ -891,7 +896,6 @@ class HomeController extends Controller{
             $historialDeDedicatorias->each(function ($historialDeDedicatorias) {
                 $historialDeDedicatorias->artista;
                 $historialDeDedicatorias->cliente;
-
             });
 
             $historialDeContratacion = tbl_solicitudes_de_contratacion::where('ID_ARTISTA', Auth::user()->id)
