@@ -5,7 +5,7 @@
     </div>
     @foreach($artistas as $artista)
     <div class="col-md-3 p-2">
-      <img src="{{asset('assets/img/artistas')}}/{{$artista->foto_perfil}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;">
+      <img src="{{asset('storage/profile_images/artistas/'.$artista->foto_perfil)}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;">
       <span class="text-center">{{$artista->nombre_artistico}}</span>
     </div>
     @endforeach

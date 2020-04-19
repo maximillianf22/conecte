@@ -252,15 +252,13 @@ class HomeController extends Controller
         }
         $redesSociales = tbl_parametros::where('ID_VALOR', '12')->get();
         $precio = tbl_parametros::findOrFail(61);
-        return view('default.artista')->with([
+        return view('default.persona.pago')->with([
             "perfil" => $Profile,
             "artista" => $artista,
             "user" => $user,
             "redesSociales" => $redesSociales,
             "precio" => $precio,
         ]);
-
-        return view('default.artista');
     }
 
     public function profile_dedication($name)
@@ -662,14 +660,15 @@ class HomeController extends Controller
         $this->validate($request, [
             'TIPO' => 'required',
         ]);
-
         if ($request->TIPO === '1') {
             $this->validate($request, [
                 'NAME' => 'required',
                 'FOTO_PERFIL' => 'image|mimes:jpeg,png,jpg,svg',
+                'celular' => 'required'
             ], [
                 'name.required' => 'El nombre es requerido',
-                'ESTADO.required' => 'El estado es requerido'
+                //'ESTADO.required' => 'El estado es requerido',
+                'celular.required' => 'El telefono es requerido'
             ]);
 
             $user = User::findOrFail(Auth::user()->id);

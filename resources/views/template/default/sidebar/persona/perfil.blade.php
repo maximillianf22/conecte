@@ -3,7 +3,7 @@
     margin-bottom: -160;">
   <div class="card card-profile" data-background="full" style="height: 435px;">
     <a href="javascript:;">
-      <img class="img img-raised rounded" src="{{ asset('assets/img/kareya-saleh.jpg') }}" style="height: 435px; width: ">
+      <img class="img img-raised rounded" src="{{ asset('storage/profile_images/usuarios/'.$user->foto_perfil) }}" style="height: 435px; width: ">
     </a>
     <div class="card-image">
       <div class="dropdown">

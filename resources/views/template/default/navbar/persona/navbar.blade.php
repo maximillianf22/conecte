@@ -31,7 +31,7 @@
                     <a href="home" class="nav-link">Explorar</a>
                 </li>
                 <li class="nav-item">
-                    <a href="perfil" class="nav-link">Perfil</a>
+                    <a href="{{route('perfil')}}" class="nav-link">Perfil</a>
                 </li>
             </ul>
 

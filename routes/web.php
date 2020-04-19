@@ -39,9 +39,9 @@ Route::get('persona/home', function () {
 //     return view('default/persona/perfil');
 // });
 
-Route::get('persona/pago', function () {
-    return view('default/persona/pago');
-});
+// Route::get('persona/pago', function () {
+//     return view('default/persona/pago');
+// });
 
 Route::get('persona/pago/opcional', function () {
     return view('default/persona/pagoOpcional');
@@ -129,3 +129,7 @@ Route::get('/auth/confirm/email/{email}/confirm_token/{confirm_token}', ['uses' 
 /* End autentificación */
 
 Route::get('/persona/perfil', ['uses' => 'HomeController@perfil', 'as' => 'perfil']);
+Route::get('/artista/{name}', ['uses' => 'HomeController@artista', 'as' => 'artista']);
+
+Route::post('/actulizarCliente', ['uses' => 'HomeController@actulizarCliente', 'as' => 'actulizarCliente']);
+Route::post('/actulizarArtista', ['uses' => 'HomeController@actulizarArtista', 'as' => 'actulizarArtista']);

@@ -45,7 +45,9 @@
             <div class="col-md-12 card bg-light mt-2">
               <div class="tab-content">
                 <div class="tab-pane active" id="tab1">
-                  <form role="form" class=" mb-0" id="contact-form" method="post">
+                  <form role="form" class=" mb-0" id="contact-form" method="post" action="{{route('actulizarCliente')}}" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                    <input type="hidden" name="TIPO" value="1">
                     <div class="card-header text-center">
                       <h4 class="card-title text-white display-3"> <strong>Persona</strong></h4>
                     </div>
@@ -57,7 +59,7 @@
                               <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-name"></i></span>
                               </div>
-                              <input class="form-control" placeholder="Nombre" value="{{$user->name}}" aria-label="Nombre" type="text">
+                              <input class="form-control" placeholder="Nombre" name="NAME" value="{{$user->name}}" aria-label="Nombre" type="text">
                             </div>
                           </div>
                         </div>
@@ -79,7 +81,7 @@
                               <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                               </div>
-                              <input class="form-control" placeholder="Email" value="{{$user->email}}" aria-label="Email" type="email">
+                              <input class="form-control" placeholder="Email" value="{{$user->email}}" aria-label="Email" type="email" readonly>
                             </div>
                           </div>
                         </div>
@@ -111,7 +113,7 @@
                               <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="ni ni-collection"></i></span>
                               </div>
-                              <input type="text" class="form-control" placeholder="Telefono" value="{{$user->celular}}" aria-label="Telefono">
+                              <input type="text" class="form-control" name="celular" placeholder="Telefono" value="{{$user->celular}}" aria-label="Telefono">
                             </div>
                           </div>
                         </div>
@@ -163,9 +165,9 @@
                             <div class="fileinput-preview fileinput-exists thumbnail img-circle img-raised"></div>
                             <div>
                               <span class="btn btn-raised btn-round btn-default btn-file">
-                                <span class="fileinput-new">Suir Foto</span>
+                                <span class="fileinput-new">Subir Foto</span>
                                 <span class="fileinput-exists">Cambiar</span>
-                                <input type="file" name="...">
+                                <input type="file" name="FOTO_PERFIL">
                               </span>
                               <br>
                               <a href="javascript:;" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="tim-icons icon-simple-remove"></i> Remove</a>
