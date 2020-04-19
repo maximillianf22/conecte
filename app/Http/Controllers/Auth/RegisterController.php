@@ -40,30 +40,30 @@ class RegisterController extends Controller {
 
 	protected function registroArtistaPost(Request $request) {
 
-		$this->validate($request, [
-			'name' => 'required|max:255',
-			'terminos_y_condiciones' => 'required',
-			'email' => 'required|email|max:255|unique:users',
-			'nombre_artistico' => 'required|unique:users'
-		], [
-			'name.max' => 'El nombre es demasiado largo',
-			'email.unique' => 'Este correo electronico ya existe en nuestro sistema',
-			'passwordConfirmation.same' => 'La contraseña no coinciden',
-			'name.required' => 'Verifique la información ingresada e intente nuevamente',
-			'valuePerfil.required' => 'Verifique la información ingresada e intente nuevamente',
-			'terminos_y_condiciones.required' => 'Es necesario aceptar los terminos y condiciones',
-			'passwordConfirmation.required' => 'Verifique la información ingresada e intente nuevamente',
-			'email.required' => 'Verifique la información ingresada e intente nuevamente',
-			'nombre_artistico.required' => 'Verifique la información ingresada e intente nuevamente',
-			'nombre_artistico.unique' => 'Este Nombre artistico ya existe en nuestro sistema',
-		]);
+		// $this->validate($request, [
+		// 	'name' => 'required|max:255',
+		// 	'terminos_y_condiciones' => 'required',
+		// 	'email' => 'required|email|max:255|unique:users',
+		// 	'nombre_artistico' => 'required|unique:users'
+		// ], [
+		// 	'name.max' => 'El nombre es demasiado largo',
+		// 	'email.unique' => 'Este correo electronico ya existe en nuestro sistema',
+		// 	'passwordConfirmation.same' => 'La contraseña no coinciden',
+		// 	'name.required' => 'Verifique la información ingresada e intente nuevamente',
+		// 	'valuePerfil.required' => 'Verifique la información ingresada e intente nuevamente',
+		// 	'terminos_y_condiciones.required' => 'Es necesario aceptar los terminos y condiciones',
+		// 	'passwordConfirmation.required' => 'Verifique la información ingresada e intente nuevamente',
+		// 	'email.required' => 'Verifique la información ingresada e intente nuevamente',
+		// 	'nombre_artistico.required' => 'Verifique la información ingresada e intente nuevamente',
+		// 	'nombre_artistico.unique' => 'Este Nombre artistico ya existe en nuestro sistema',
+		// ]);
 
 		$msg = tbl_parametros::where('ID', '18')->get();
 
 		$user = new User();
 		$user->name = $request->name;
 		$user->email = $request->email;
-		$user->nombre_artistico = $request->nombre_artistico;
+		//$user->nombre_artistico = $request->nombre_artistico;
 		$user->password = bcrypt($request->password);
 		/*
 		$user->id_sexo = $request->valueGenero;
@@ -72,9 +72,9 @@ class RegisterController extends Controller {
 		/*
 		$user->fecha_nac = $request->fechanac;
 		*/
-		$user->nombre_manager = $request->name_manager;
-		$user->email_manager = $request->email_manager;
-		$user->celular_manager = intval(preg_replace('/[^0-9]+/','', $request->celular_manager), 10);
+		//$user->nombre_manager = $request->name_manager;
+		//$user->email_manager = $request->email_manager;
+		//$user->celular_manager = intval(preg_replace('/[^0-9]+/','', $request->celular_manager), 10);
 
 		$user->id_perfil = 1;
 		$user->id_estado = 10;
@@ -105,7 +105,7 @@ class RegisterController extends Controller {
 					});
 
 					Session::flash('message', 'Registro Exitoso, Gracias por ser parte de conecte.com, hemos enviado un correo de confirmacion');
-					return redirect::to('/login');
+					return redirect::to('/artista/register/fin');
 				}
 			}
 		}
@@ -113,21 +113,21 @@ class RegisterController extends Controller {
 
 	protected function registroUsuariosPost(Request $request) {
 
-		$this->validate($request, [
-			'name' => 'required|max:255',
-			'terminos_y_condiciones' => 'required',
-			'email' => 'required|email|max:255|unique:users',
-			'password' => 'required|min:6|confirmed',
-		], [
-			'name.max' => 'El nombre es demasiado largo',
-			'email.unique' => 'Este correo electronico ya existe en nuestro sistema',
-			'passwordConfirmation.same' => 'La contraseña no coinciden',
-			'name.required' => 'Verifique la información ingresada e intente nuevamente',
-			'valuePerfil.required' => 'Verifique la información ingresada e intente nuevamente',
-			'terminos_y_condiciones.required' => 'Es necesario aceptar los terminos y condiciones',
-			'passwordConfirmation.required' => 'Verifique la información ingresada e intente nuevamente',
-			'email.required' => 'Verifique la información ingresada e intente nuevamente',
-		]);
+		// $this->validate($request, [
+		// 	'name' => 'required|max:255',
+		// 	'terminos_y_condiciones' => 'required',
+		// 	'email' => 'required|email|max:255|unique:users',
+		// 	'password' => 'required|min:6|confirmed',
+		// ], [
+		// 	'name.max' => 'El nombre es demasiado largo',
+		// 	'email.unique' => 'Este correo electronico ya existe en nuestro sistema',
+		// 	//'passwordConfirmation.same' => 'La contraseña no coinciden',
+		// 	'name.required' => 'Verifique la información ingresada e intente nuevamente',
+		// 	'valuePerfil.required' => 'Verifique la información ingresada e intente nuevamente',
+		// 	'terminos_y_condiciones.required' => 'Es necesario aceptar los terminos y condiciones',
+		// 	//'passwordConfirmation.required' => 'Verifique la información ingresada e intente nuevamente',
+		// 	'email.required' => 'Verifique la información ingresada e intente nuevamente',
+		// ]);
 
 		$msg = tbl_parametros::where('ID', '18')->get();
 
@@ -135,9 +135,9 @@ class RegisterController extends Controller {
 		$user->name = $request->name;
 		$user->email = $request->email;
 		$user->password = bcrypt($request->password);
-		$user->id_sexo = $request->valueGenero;
+		$user->id_sexo = 66;
 		$user->celular = intval(preg_replace('/[^0-9]+/','', $request->celular_usuario), 10);
-		$user->fecha_nac = $request->fechanac;
+		$user->fecha_nac = '2020-04-18';
 		$user->id_perfil = 0;
 		$user->foto_perfil = 'user.png';
 		$user->id_estado = 10;
@@ -160,7 +160,7 @@ class RegisterController extends Controller {
 			$mail->to($data['email'], $data['name']);
 		});
 		Session::flash('message', 'Registro Exitoso, Gracias por ser parte de conecte.co, hemos enviado un correo de confirmacion');
-		return redirect::to('/login');
+		return redirect::to('/persona/register/fin');
 	}
 
 	public function confirmRegister($email, $confirm_token) {
