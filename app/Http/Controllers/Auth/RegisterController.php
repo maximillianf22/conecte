@@ -31,11 +31,11 @@ class RegisterController extends Controller {
 	}
 	public function registros_usuarios() {
 		$Genero_ = tbl_parametros::where('ID_VALOR', '13')->get();
-		return view('auth.registro_usuarios',compact('Genero_'));
+		return view('auth.default.persona.register',compact('Genero_'));
 	}
 	public function registros_artistas() {
 		$Genero_ = tbl_parametros::where('ID_VALOR', '13')->get();
-		return view('auth.registro_artistas',compact('Genero_'));
+		return view('auth.default.artista.register',compact('Genero_'));
 	}
 
 	protected function registroArtistaPost(Request $request) {
