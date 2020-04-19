@@ -24,13 +24,14 @@
           <option>Salsa</option>
         </select>
       </div>
-      <div class="mx-auto p-2">
-        <span class="badge badge-pill badge-primary">#Regaeton</span>
-        <span class="badge badge-pill badge-info">#Regaeton</span>
-        <span class="badge badge-pill badge-success">#Regaeton</span>
-        <span class="badge badge-pill badge-danger">#Regaeton</span>
-        <span class="badge badge-pill badge-warning">#Regaeton</span>
-        <span class="badge badge-pill badge-default">#Regaeton</span>
+      <div class="mx-auto p-0 m-0">
+        @foreach ($generos as $index => $item)
+            @if($index == 0)
+               <button class="badge badge-pill btn-sm p-1 m-0" onclick="changeGeneros({{$item->ID}})" id="{{ $item->ID}}">#{{$item->NOMBRE}}</button>
+            @else
+                <button class="badge badge-pill btn-sm p-1" onclick="changeGeneros({{$item->ID}})" id="{{ $item->ID}}">#{{$item->NOMBRE}}</button>
+            @endif
+        @endforeach
       </div>
       <div class="form-group">
         <label for="exampleFormControlSelect1">Red Social</label>

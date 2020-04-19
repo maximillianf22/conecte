@@ -1,7 +1,7 @@
   <nav class="navbar navbar-expand-lg fixed-top" style="background-image: linear-gradient(to right top, #000000, #060003, #090009, #080110, #030316);">
     <div class="container">
       <div class="navbar-translate">
-        <a class="navbar-brand" href="#" rel="tooltip" title="Designed and Coded by Developapp" data-placement="bottom">
+        <a class="navbar-brand m-0" href="#" rel="tooltip" title="Designed and Coded by Developapp" data-placement="bottom">
           <img src="{{ asset('assets/img/brand/logoc.png')}}" width="55%">
         </a>
         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,19 +28,19 @@
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav mr-5">
                 <li class="nav-item active">
-                    <a href="home" class="nav-link">Explorar</a>
+                    <a href="welcome" class="nav-link">Explorar</a>
                 </li>
                 <li class="nav-item">
                     <a href="{{route('perfil')}}" class="nav-link">Perfil</a>
                 </li>
             </ul>
 
-            <form class="form-inline bg-white rounded m-0">
+            <form class="form-inline bg-white rounded m-0 text-nowrap">
                 <div class="form-group no-border">
                   <input type="text" class="form-control bg-white text-dark" placeholder="Search">
                 </div>
-                <button type="submit" class="btn btn-neutral btn-icon btn-round">
-                    <i class="fas fa-search"></i>
+                <button type="submit" class="btn btn-neutral btn-icon btn-round text-nowrap">
+                    <i class="fas fa-search text-nowrap"></i>
                 </button>
             </form>
         </div>
@@ -183,7 +183,7 @@
               </div>
             </li>
           <li class="nav-item">
-            <a class="nav-link btn btn-neutral btn-round btn-simple">
+            <a class="nav-link btn btn-neutral btn-round btn-simple  text-nowrap">
               <i class="fas fa-user"></i> {{$user->name}}
             </a>
           </li>

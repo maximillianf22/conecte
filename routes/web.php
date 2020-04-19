@@ -100,7 +100,7 @@ Route::get('artista/register/fin', function () {
 
 
 
-
+Route::get('/welcome', ['uses' => 'HomeController@welcome', 'as' => 'welcome']);
 
 
 

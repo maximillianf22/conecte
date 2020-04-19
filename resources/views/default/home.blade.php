@@ -71,12 +71,14 @@
                 </div>
             @endif
             </div>
+            
           </div>
          @include('template.default.sidebar.persona.artista-relacionado')
         </div>
       </div>
     </div>
     </div>
+
 
   <!-- End Main -->
 </body>

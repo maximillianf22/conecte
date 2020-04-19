@@ -37,7 +37,7 @@
                 <img src="{{ asset('assets/img/beckyg.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
                 <span class="text-center">Becky G</span>
               </div>
-              <div class="container ml-2 mt-2">
+              <div class="ml-2 mx-auto mt-4">
                 <span class="badge badge-pill badge-primary">#Regaeton</span>
                 <span class="badge badge-pill badge-info">#Regaeton</span>
                 <span class="badge badge-pill badge-success">#Regaeton</span>
@@ -46,7 +46,7 @@
                 <span class="badge badge-pill badge-default">#Regaeton</span>
               </div>
             </div>
-            <div class="container mt-4 content-center">
+            <div class="mx-auto mt-4 content-center">
             	<img src="{{ asset('assets/img/cocacola.png')}}" class="shadow-lg text-center ml-2">
             	<br>
             	<ul class="navbar-nav">

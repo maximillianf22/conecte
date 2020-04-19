@@ -221,7 +221,7 @@ class HomeController extends Controller
 
         $precio = tbl_parametros::findOrFail(61);
 
-        return view('default.welcome')->with([
+        return view('default.home')->with([
             "artistas" => $artistas,
             "generos" => $generos,
             "generoscelebridades" => $generoscelebridades,
