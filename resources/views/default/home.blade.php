@@ -53,7 +53,7 @@
                 @foreach($artistas as $Artistas)
                 <a href="{{route('artista',$Artistas->nombre_artistico)}}">
                   <div class="col-md-4 p-4 mt-0">
-                    <img  src="{{asset('assets/img/artistas')}}/{{$Artistas->foto_perfil}}" alt="Foto del Artista" width="200px" class="img-fluid  rounded shadow-lg img-thumbnail" style="width: 70px;"><br>
+                    <img  src="{{asset('storage/profile_images/artistas/'.$Artistas->foto_perfil)}}" alt="Foto del Artista" width="200px" class="img-fluid  rounded shadow-lg img-thumbnail" style="width: 70px;"><br>
                     <span class="text-center text-white h4"><i class="fas fa-music"></i><div class="name">
                             @if(empty($Artistas->nombre_artistico))
                                 {{$Artistas->name}}

@@ -59,7 +59,7 @@
                               <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-name"></i></span>
                               </div>
-                              <input class="form-control" placeholder="Nombre" name="NAME" value="{{$user->name}}" aria-label="Nombre" type="text">
+                              <input class="form-control text-dark" placeholder="Nombre" name="NAME" value="{{$user->name}}" aria-label="Nombre" type="text">
                             </div>
                           </div>
                         </div>
@@ -81,7 +81,7 @@
                               <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                               </div>
-                              <input class="form-control" placeholder="Email" value="{{$user->email}}" aria-label="Email" type="email" readonly>
+                              <input class="form-control text-dark" placeholder="Email" value="{{$user->email}}" aria-label="Email" type="email" readonly>
                             </div>
                           </div>
                         </div>
@@ -91,7 +91,7 @@
                               <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                               </div>
-                              <input class="form-control" placeholder="Direccion" aria-label="Direccion" type="text">
+                              <input class="form-control text-dark" placeholder="Direccion" aria-label="Direccion" type="text">
                             </div>
                           </div>
                         </div>
@@ -103,7 +103,7 @@
                               <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                               </div>
-                              <input class="form-control" placeholder="C.C/Nit/Pasaporte/CC ext " aria-label="C.C/Nit/Pasaporte/CC ext" type="text">
+                              <input class="form-control text-dark" placeholder="C.C/Nit/Pasaporte/CC ext " aria-label="C.C/Nit/Pasaporte/CC ext" type="text">
                             </div>
                           </div>
                         </div>
@@ -113,7 +113,7 @@
                               <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="ni ni-collection"></i></span>
                               </div>
-                              <input type="text" class="form-control" name="celular" placeholder="Telefono" value="{{$user->celular}}" aria-label="Telefono">
+                              <input type="text" class="form-control text-dark" name="celular" placeholder="Telefono" value="{{$user->celular}}" aria-label="Telefono">
                             </div>
                           </div>
                         </div>
@@ -125,7 +125,7 @@
                               <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                               </div>
-                              <input class="form-control" placeholder="Contraseña" aria-label="Contraseña" type="password">
+                              <input class="form-control text-dark" placeholder="Contraseña" aria-label="Contraseña" type="password">
                             </div>
                           </div>
                         </div>
@@ -135,7 +135,7 @@
                               <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                               </div>
-                              <input class="form-control" placeholder="Pais/Departamento" aria-label="pais" type="password">
+                              <input class="form-control text-dark" placeholder="Pais/Departamento" aria-label="pais" type="text">
                             </div>
                           </div>
                         </div>

@@ -28,7 +28,7 @@
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav mr-5">
                 <li class="nav-item active">
-                    <a href="welcome" class="nav-link">Explorar</a>
+                    <a href="/welcome" class="nav-link">Explorar</a>
                 </li>
                 <li class="nav-item">
                     <a href="{{route('perfil')}}" class="nav-link">Perfil</a>

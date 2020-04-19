@@ -17,7 +17,7 @@ class administrador {
             $user = \Auth::user();
 
             if ($user->id_perfil != 2) {
-                return redirect("/ogin");
+                return redirect("/login");
             }
 
             return $next($request);

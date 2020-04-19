@@ -1,7 +1,7 @@
 @extends('template.default.layout.default')
 
-  <!-- Estilo borde de las imagenes -->
-  <!-- Estilo borde de las imagenes -->
+<!-- Estilo borde de las imagenes -->
+<!-- Estilo borde de las imagenes -->
 <style type="text/css">
   .img-thumbnail {
     background-color: #D13F3F !important;
@@ -9,23 +9,30 @@
     border: .0rem solid !important;
     padding: .20rem !important;
   }
-    .form-control {
+
+  .form-control {
 
     background-color: white !important;
-}
+  }
 
-.table-condensed>tbody>tr>td, .table-condensed>tbody>tr>th, .table-condensed>tfoot>tr>td, .table-condensed>tfoot>tr>th, .table-condensed>thead>tr>td, .table-condensed>thead>tr>th {
+  .table-condensed>tbody>tr>td,
+  .table-condensed>tbody>tr>th,
+  .table-condensed>tfoot>tr>td,
+  .table-condensed>tfoot>tr>th,
+  .table-condensed>thead>tr>td,
+  .table-condensed>thead>tr>th {
     padding: 7px !important;
-}
+  }
 </style>
-  <!-- Estilo borde de las imagenes -->
-  <!-- Estilo borde de las imagenes -->
+<!-- Estilo borde de las imagenes -->
+<!-- Estilo borde de las imagenes -->
 
 @section('content')
-  <body class="contact-page">
+
+<body class="contact-page">
   @include('template.default.navbar.persona.navbar')
   <!-- Navbar -->
- 
+
   <!-- End Navbar -->
   <div class="wrapper pb-0 mb-0">
     <div class="page-header header-filter contactus-3 bg-primary" style="height: 200px; min-height: 200px; margin-bottom: 0px; background-image: linear-gradient(to right, #343abe, #c10e56, #c92b2b);">
@@ -33,7 +40,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-              
+
           </div>
         </div>
       </div>
@@ -41,9 +48,9 @@
     <div class="main">
       <div class="container-fluid">
         <div class="row">
-        @include('template.default.sidebar.persona.artista-perfil')
-          <div class="col-lg-6 bg-light pt-4" >
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"  style="
+          @include('template.default.sidebar.persona.artista-perfil')
+          <div class="col-lg-6 bg-light pt-4">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="
               top: -130; 
               margin-bottom: -130;">
               <ol class="carousel-indicators">
@@ -78,71 +85,77 @@
                 <form class="mb-0 mt-0">
                   <fieldset>
                     <div class="container card shadow-lg">
-                    <div class="form-check form-check-radio">
-                         <div class="form-check form-check-radio">
+                      <div class="form-check form-check-radio">
+                        <div class="form-check form-check-radio">
                           <label class="form-check-label">
-                              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
-                               Cantar Estribillo (500.000,00)
-                              <span class="form-check-sign"></span>
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                            Cantar Estribillo (500.000,00)
+                            <span class="form-check-sign"></span>
                           </label>
+                        </div>
+                      </div><br>
+                      <div class="form-group">
+                        <label>Nombre de la Cancion</label>
+                        <input type="text" class="form-control text-dark" placeholder="Rojo Remix">
                       </div>
-                    </div><br>
-                    <div class="form-group">
-                      <label>Nombre de la Cancion</label>
-                      <input type="text" class="form-control text-dark" placeholder="Rojo Remix">
-                    </div>
                     </div>
                     <div class="container card shadow-lg">
-                    <div class="form-check form-check-radio">
+                      <div class="form-check form-check-radio">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" checked>
-                            Deseo que el artista asista a mi Evento (50.000.000,00)
-                            <span class="form-check-sign"></span>
-                        </label>
-                    </div><br>
-                    <div class="input-group">
-                        <input class="form-control form-control  text-dark datepicker" placeholder="Selecciona la Fecha" type="text">
-                    </div>
-                    <div class="form-group">
-                      <label>Ingrese la hora</label>
-                      <input type="text" class="form-control text-dark" placeholder="10:00 am">
-                    </div>
-                    <div class="form-check form-check-radio disabled">
-                      <label class="form-check-label">
-                          <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios1" value="option1" disabled>
-                            Deseo que el artista se dirija a cada
-                            invitado($50.000 x invitado)
+                          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" checked>
+                          Deseo que el artista asista a mi Evento (50.000.000,00)
                           <span class="form-check-sign"></span>
-                      </label>
-                  </div><br>
-                  </div>
+                        </label>
+                      </div><br>
+                      <div class="input-group">
+                        <input class="form-control form-control  text-dark datepicker" placeholder="Selecciona la Fecha" type="text">
+                      </div>
+                      <div class="form-group">
+                        <label>Ingrese la hora</label>
+                        <input type="text" class="form-control text-dark" placeholder="10:00 am">
+                      </div>
+                      <div class="form-check form-check-radio disabled">
+                        <label class="form-check-label">
+                          <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios1" value="option1" disabled>
+                          Deseo que el artista se dirija a cada
+                          invitado($50.000 x invitado)
+                          <span class="form-check-sign"></span>
+                        </label>
+                      </div><br>
+                    </div>
                     <br>
                   </fieldset>
                 </form>
               </div>
               <div class="col-lg-6">
                 <h4 class="text-center text-dark mt-3"> Solicita tu <strong>Saludo</strong></h4>
-                <form class="mb-0 card shadow-lg">
+                <form class="mb-0 card shadow-lg" action="{{ route('pedirDedicatoria') }}" method="POST">
+                  {{ csrf_field() }}
+                  <input type="hidden" name="ID_ARTISTA" value="{{$artista->id}}">
+                  <input name="DE_PARTE_DE" id="DE_PARTE_DE" type="hidden" placeholder="De parte de " class="form-control" value="{{ $user->name }}" required autofocus>
                   <div class="container">
-                <div class="form-group mt-2 mb-2">
+                    <div class="form-group mt-2 mb-2">
                       <label>Dirigido a:</label>
-                      <input type="text" class="form-control text-dark" placeholder="Nombre">
+                      <input type="text" class="form-control text-dark" placeholder="Nombre" name="DIRIGIDO_A">
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                       <label for="exampleFormControlTextarea1">Dedicatoria</label>
                       <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
-                    </div>
+                    </div> -->
                     <div class="form-group">
                       <label for="exampleFormControlTextarea1">Mensaje</label>
-                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="7"></textarea>
+                      <textarea class="form-control text-dark" id="exampleFormControlTextarea1" rows="7" name="MENSAJE"></textarea>
                     </div>
-                    </div>
-                  </form>
+                    @if(session('message_error'))
+                    <p class="text-danger">{{session('message_error')}}</p>
+                    @endif
+                  </div>
 
-                  <div  class="card p-2">
-                     <h6 class="text-white text-center ml-5 mr-5">Total &dollar;24.000.000,00</h6>
-                    <a href="pago/opcional" class="btn mx-auto btn-success">Siguiente</a>
-              </div>
+                  <div class="card p-2">
+                    <h6 class="text-white text-center ml-5 mr-5">Total &dollar;150.000,00</h6>
+                    <button type="submit" class="btn mx-auto btn-success">Siguiente</button>
+                  </div>
+                </form>
               </div>
 
             </div>

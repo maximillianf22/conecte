@@ -100,9 +100,6 @@ Route::get('artista/register/fin', function () {
 
 
 
-Route::get('/welcome', ['uses' => 'HomeController@welcome', 'as' => 'welcome']);
-
-
 
 /* Start autentificación */
 Auth::routes();
@@ -128,12 +125,6 @@ Route::post('/registroUsuariosPost', ['uses' => 'Auth\RegisterController@registr
 Route::get('/auth/confirm/email/{email}/confirm_token/{confirm_token}', ['uses' => 'Auth\RegisterController@confirmRegister', 'as' => 'confirmarCorreo']);
 /* End autentificación */
 
-Route::get('/persona/perfil', ['uses' => 'HomeController@perfil', 'as' => 'perfil']);
-Route::get('/artista/{name}', ['uses' => 'HomeController@artista', 'as' => 'artista']);
-
-Route::post('/actulizarCliente', ['uses' => 'HomeController@actulizarCliente', 'as' => 'actulizarCliente']);
-Route::post('/actulizarArtista', ['uses' => 'HomeController@actulizarArtista', 'as' => 'actulizarArtista']);
-
 Route::group(['prefix' => 'administrador', 'middleware' => 'administrador'], function () {
     Route::get('/', ['uses' => 'AdministradorController@index', 'as' => 'admin']);
     Route::resource('clientes', 'UsuariosController', ['as' => 'clientes']);
@@ -145,4 +136,15 @@ Route::group(['prefix' => 'administrador', 'middleware' => 'administrador'], fun
     Route::resource('dedicatorias', 'DedicatoriasController', ['as' => 'dedicatorias']);
     Route::resource('contrataciones', 'ContratacionesController', ['as' => 'contrataciones']);
     Route::resource('valoresConguraciones', 'ValoresConfiguracionController', ['as' => 'valoresConguraciones']);
+});
+
+Route::group(['prefix' => '/',  'middleware' => 'auth'], function () {
+
+    Route::get('/welcome', ['uses' => 'HomeController@welcome', 'as' => 'welcome']);
+    Route::get('/persona/perfil', ['uses' => 'HomeController@perfil', 'as' => 'perfil']);
+    Route::get('/artista/{name}', ['uses' => 'HomeController@artista', 'as' => 'artista']);
+    Route::post('/actulizarCliente', ['uses' => 'HomeController@actulizarCliente', 'as' => 'actulizarCliente']);
+    Route::post('/actulizarArtista', ['uses' => 'HomeController@actulizarArtista', 'as' => 'actulizarArtista']);
+    Route::post('/pedir-dedicatoria', ['uses' => 'HomeController@pedirDedicatoria', 'as' => 'pedirDedicatoria']);
+    Route::get('/mis-pendientes', ['uses' => 'HomeController@misPedientes', 'as' => 'misPendientes']);
 });

@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="card-body">
-      <h3 class="job-title">J Balvin</h3>
+      <h3 class="job-title">{{$artista->nombre_artistico}}</h3>
       <div class="table-responsive">
         <table class="table tablesorter " id="plain-table">
           <tbody>
