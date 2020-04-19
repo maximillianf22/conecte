@@ -133,3 +133,16 @@ Route::get('/artista/{name}', ['uses' => 'HomeController@artista', 'as' => 'arti
 
 Route::post('/actulizarCliente', ['uses' => 'HomeController@actulizarCliente', 'as' => 'actulizarCliente']);
 Route::post('/actulizarArtista', ['uses' => 'HomeController@actulizarArtista', 'as' => 'actulizarArtista']);
+
+Route::group(['prefix' => 'administrador', 'middleware' => 'administrador'], function () {
+    Route::get('/', ['uses' => 'AdministradorController@index', 'as' => 'admin']);
+    Route::resource('clientes', 'UsuariosController', ['as' => 'clientes']);
+    Route::resource('artistas', 'ArtistasController', ['as' => 'artistas']);
+    Route::resource('configuraciones', 'ConfiguracionesController', ['as' => 'configuraciones']);
+    Route::post('configuraciones/crear', ['uses' => 'ConfiguracionesController@store', 'as' => 'configuracionesStore']);
+    Route::resource('movimientos', 'MovimientosController', ['as' => 'movimientos']);
+    Route::resource('liquidaciones', 'LiquidacionesController', ['as' => 'liquidaciones']);
+    Route::resource('dedicatorias', 'DedicatoriasController', ['as' => 'dedicatorias']);
+    Route::resource('contrataciones', 'ContratacionesController', ['as' => 'contrataciones']);
+    Route::resource('valoresConguraciones', 'ValoresConfiguracionController', ['as' => 'valoresConguraciones']);
+});
