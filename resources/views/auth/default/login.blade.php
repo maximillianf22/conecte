@@ -71,44 +71,45 @@
             <div class="content-center text-left col-md-5 offset-md-3">
               <div class="card card-contact card-raised p-3" style="background-image: linear-gradient(to right top, #000000, #060003, #090009, #080110, #030316);">
           {{ csrf_field() }}
-          <form class="form" method="" action="">
             <div class="card-header text-center">
               <img src="{{ asset('assets/img/brand/logoc.png')}}" width="55%" class="d-none d-lg-block mx-auto">
               <h4 class="card-title text-white display-4"> Inicia sesion para disfrutar de <strong>Todo lo bueno</strong> que traemos para ti...</h4>
             </div>
-            <div class="card-body">
-              <div class="input-group input-lg">
-                <div class="input-group-prepend">
-                  <span class="input-group-text"><i class="tim-icons icon-single-02"></i></span>
-                </div>
-                <input id="email" type="email" class="form-control" name="email" placeholder="@lang('conecte.email')" value="{{ old('email') }}" required autofocus>
+            <div class="card-body pb-0">
+              <form role="form" method="POST" action="{{ url('/loginPost') }}">
+                    {{ csrf_field() }}
+                    <div class="form-group has-feedback">
+                        <input id="email" type="email" class="form-control" name="email" placeholder="Correo" value="{{ old('email') }}" required autofocus>
+                        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <input id="password" type="password" class="form-control" name="password" required>
+                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    </div>
+                    <div class="card-footer text-center">
+                        <div class="col-xs-12" style="padding-bottom: 15px;">
+                          <button type="submit" class="btn btn-primary btn-round btn-lg btn-block">Iniciar sesión</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer text-center mt-0">
+              <div class="pull-left ml-3 mt-2 mb-3">
+                <h6>
+                  <a class="link footer-link"  href="#" data-toggle="modal" data-target="#myModal1">Registrar</a>
+                </h6>
               </div>
-              <div class="input-group input-lg">
-                <div class="input-group-prepend">
-                  <span class="input-group-text"><i class="tim-icons icon-caps-small"></i></span>
-                </div>
-                <input id="password" type="password" class="form-control" name="password" required placeholder="Contraseña">
+              <div class="pull-right mr-3 mt-2 mb-3">
+                <h6>
+                  <a href="{{ url('/password/reset') }}"  class="link footer-link">¿olvido su clave?</a>
+                </h6>
               </div>
-            </div>
-            <div class="card-footer text-center">
-              <a  type="submit" class="btn btn-primary btn-round btn-lg btn-block">Iniciar sesión</a>
-            </div>
-            <div class="pull-left ml-3 mt-2 mb-3">
-              <h6>
-                <a class="link footer-link"  href="#" data-toggle="modal" data-target="#myModal1">Registrar</a>
-              </h6>
-            </div>
-            <div class="pull-right mr-3 mt-2 mb-3">
-              <h6>
-                <a href="{{ url('/password/reset') }}"  class="link footer-link">¿olvido su clave?</a>
-              </h6>
-            </div>
-          </form>
-        </div>           
+            </div>           
             </div>
         </div>
       </div>
     </div>
+  </div>
   </div>
 
    <div class="modal fade modal-mini modal-primary modal-mini" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="background-image: linear-gradient(to right top, #000000, #060003, #090009, #080110, #030316);">
