@@ -14,6 +14,11 @@ use Session;
 class LoginController extends Controller
 {
 
+  public function showLoginForm()
+{
+    return view('auth.default.login');
+}
+
     public function login(Request $request)
     {
         $parametro = $request->parametro;
@@ -26,6 +31,9 @@ class LoginController extends Controller
     }
 
     /*
+
+
+
     |--------------------------------------------------------------------------
     | Login Controller
     |--------------------------------------------------------------------------
