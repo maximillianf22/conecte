@@ -594,6 +594,46 @@ class HomeController extends Controller
 
         $precio = tbl_parametros::findOrFail(61);
 
+        if ($user->id_perfil == 0) {
+
+            $historialDeDedicatorias = tbl_solicitudes_de_dedicatorias::where('ID_CLIENTE', Auth::user()->id)
+                ->whereIn('ID_ESTADO', [14, 15, 16])
+                ->get();
+
+            $historialDeDedicatorias->each(function ($historialDeDedicatorias) {
+                $historialDeDedicatorias->artista;
+            });
+
+            $historialDeContratacion = tbl_solicitudes_de_contratacion::where('ID_CLIENTE', Auth::user()->id)
+                ->whereIn('ID_ESTADO', [48, 49])
+                ->get();
+
+            $historialDeContratacion->each(function ($historialDeContratacion) {
+                $historialDeContratacion->artista;
+                $historialDeContratacion->estado;
+                $historialDeContratacion->estado;
+            });
+        } elseif ($user->id_perfil == 1) {
+            $historialDeDedicatorias = tbl_solicitudes_de_dedicatorias::where('ID_ARTISTA', Auth::user()->id)
+                ->whereIn('ID_ESTADO', [14, 15, 16])
+                ->get();
+
+            $historialDeDedicatorias->each(function ($historialDeDedicatorias) {
+                $historialDeDedicatorias->artista;
+                $historialDeDedicatorias->cliente;
+            });
+
+            $historialDeContratacion = tbl_solicitudes_de_contratacion::where('ID_ARTISTA', Auth::user()->id)
+                ->whereIn('ID_ESTADO', [48, 49])
+                ->get();
+
+            $historialDeContratacion->each(function ($historialDeContratacion) {
+                $historialDeContratacion->artista;
+                $historialDeContratacion->cliente;
+                $historialDeContratacion->estado;
+            });
+        }
+
         if ($user->id_perfil === 0) {
 
             $movimientos = tbl_movimientos::where('ID_CLIENTE', Auth::user()->id)
@@ -647,8 +687,11 @@ class HomeController extends Controller
             "movimientos" => $movimientos,
             "totalDisponibles" => $totalDisponibles,
             "balance" => $balance,
-            "generos" => $generos,
+            "historialDeDedicatorias" => $historialDeDedicatorias,
+            "historialDeContratacion" => $historialDeContratacion,
             "precio" => $precio,
+            "miHistorial" => "miHistorial",
+            "generos" => $generos,
             "artistas" => $artistas,
             "miPerfil" => "miPerfil",
         ]);

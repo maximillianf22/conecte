@@ -219,8 +219,9 @@
                       <tr>
                         <th class="text-center">#</th>
                         <th>Artista</th>
-                        <th>Estado</th>
+                        <th>Mensaje</th>
                         <th>Fecha</th>
+                        <th>Tipo</th>
                         <th class="text-right">Valor</th>
                         <th class="text-right"></th>
                       </tr>
@@ -232,12 +233,27 @@
                         <td class="text-center"><img src="{{ asset('assets/img/artistas')}}/{{$item->artista->first()->foto_perfil}}" alt="{{$item->artista->first()->name}}" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 50px;"></td>
                         <td>{{$item->artista->first()->name}}</td>
                         <td>{{$item->MENSAJE}}</td>
-                        <td>{{$item->CREATED_AT}} - {{ number_format($item->COSTO_DEDICATORIA, 2) }}</td>
-                        <td class="text-right">&dollar; 99,225</td>
-                        <td class="text-right"><a href="/ver-respuesta/{{$item->ID}}" class="btn btn-success btn-sm ad-click-event btnVerResppuesta answer-solicitud">
-                                            Respuesta
-                                            <i class="fa fa-check-circle-o" aria-hidden="true"></i>
-                                        </a>/td>
+                        <td>{{$item->CREATED_AT}}</td>
+                        <td>Dedicatoria</td>
+                        <td class="text-right">&dollar; {{ number_format($item->COSTO_DEDICATORIA, 2) }}</td>
+                        <td class="text-right"><a href="/ver-respuesta/{{$item->ID}}" class="btn btn-success btn-sm ad-click-event btnVerResppuesta answer-solicitud">Respuesta<i class="fa fa-check-circle-o" aria-hidden="true"></i></a></td>
+                      </tr>
+                      @endforeach
+                      @else
+                      <div class="nofilterFoundPendientes">
+                          No has realizado dedicartorias aun
+                      </div>
+                      @endif
+                      @if(sizeof($historialDeContratacion)>=1)
+                      @foreach ($historialDeContratacion as $item)
+                      <tr>
+                        <td class="text-center"><img src="{{ asset('assets/img/artistas')}}/{{$item->artista->first()->foto_perfil}}" alt="{{$item->artista->first()->name}}" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 50px;"></td>
+                        <td>{{$item->artista->first()->name}}</td>
+                        <td>{{$item->MENSAJE}}</td>
+                        <td>{{$item->CREATED_AT}}</td>
+                        <td>Contratacion</td>
+                        <td class="text-right">&dollar; {{ number_format($item->COSTO_DEDICATORIA, 2) }}</td>
+                        <td class="text-right"><a href="/ver-respuesta/{{$item->ID}}" class="btn btn-success btn-sm ad-click-event btnVerResppuesta answer-solicitud">Respuesta<i class="fa fa-check-circle-o" aria-hidden="true"></i></a></td>
                       </tr>
                       @endforeach
                       @else
