@@ -59,7 +59,7 @@
                               <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-name"></i></span>
                               </div>
-                              <input class="form-control text-dark" placeholder="Nombre" name="NAME" value="{{$user->name}}" aria-label="Nombre" type="text">
+                              <input class="form-control" placeholder="Nombre" name="NAME" value="{{$user->name}}" aria-label="Nombre" type="text">
                             </div>
                           </div>
                         </div>
@@ -81,7 +81,7 @@
                               <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                               </div>
-                              <input class="form-control text-dark" placeholder="Email" value="{{$user->email}}" aria-label="Email" type="email" readonly>
+                              <input class="form-control" placeholder="Email" value="{{$user->email}}" aria-label="Email" type="email" readonly>
                             </div>
                           </div>
                         </div>
@@ -91,7 +91,7 @@
                               <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                               </div>
-                              <input class="form-control text-dark" placeholder="Direccion" aria-label="Direccion" type="text">
+                              <input class="form-control" placeholder="Direccion" aria-label="Direccion" type="text">
                             </div>
                           </div>
                         </div>
@@ -103,7 +103,7 @@
                               <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                               </div>
-                              <input class="form-control text-dark" placeholder="C.C/Nit/Pasaporte/CC ext " aria-label="C.C/Nit/Pasaporte/CC ext" type="text">
+                              <input class="form-control" placeholder="C.C/Nit/Pasaporte/CC ext " aria-label="C.C/Nit/Pasaporte/CC ext" type="text">
                             </div>
                           </div>
                         </div>
@@ -113,7 +113,7 @@
                               <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="ni ni-collection"></i></span>
                               </div>
-                              <input type="text" class="form-control text-dark" name="celular" placeholder="Telefono" value="{{$user->celular}}" aria-label="Telefono">
+                              <input type="text" class="form-control" name="celular" placeholder="Telefono" value="{{$user->celular}}" aria-label="Telefono">
                             </div>
                           </div>
                         </div>
@@ -125,7 +125,7 @@
                               <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                               </div>
-                              <input class="form-control text-dark" placeholder="Contraseña" aria-label="Contraseña" type="password">
+                              <input class="form-control" placeholder="Contraseña" aria-label="Contraseña" type="password">
                             </div>
                           </div>
                         </div>
@@ -135,7 +135,7 @@
                               <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                               </div>
-                              <input class="form-control text-dark" placeholder="Pais/Departamento" aria-label="pais" type="text">
+                              <input class="form-control" placeholder="Pais/Departamento" aria-label="pais" type="password">
                             </div>
                           </div>
                         </div>
@@ -222,51 +222,29 @@
                         <th>Estado</th>
                         <th>Fecha</th>
                         <th class="text-right">Valor</th>
+                        <th class="text-right"></th>
                       </tr>
                     </thead>
                     <tbody>
+                    @if(sizeof($historialDeDedicatorias)>=1)
+                    @foreach ($historialDeDedicatorias as $item)
                       <tr>
-                        <td class="text-center"><img src="{{ asset('assets/img/ozuna.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 50px;"></td>
-                        <td>Ozuna</td>
-                        <td>Completado</td>
-                        <td>25/10/2020</td>
+                        <td class="text-center"><img src="{{ asset('assets/img/artistas')}}/{{$item->artista->first()->foto_perfil}}" alt="{{$item->artista->first()->name}}" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 50px;"></td>
+                        <td>{{$item->artista->first()->name}}</td>
+                        <td>{{$item->MENSAJE}}</td>
+                        <td>{{$item->CREATED_AT}} - {{ number_format($item->COSTO_DEDICATORIA, 2) }}</td>
                         <td class="text-right">&dollar; 99,225</td>
+                        <td class="text-right"><a href="/ver-respuesta/{{$item->ID}}" class="btn btn-success btn-sm ad-click-event btnVerResppuesta answer-solicitud">
+                                            Respuesta
+                                            <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+                                        </a>/td>
                       </tr>
-                      <tr>
-                        <td class="text-center"><img src="{{ asset('assets/img/faces/jbalvin.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 50px;"></td>
-                        <td>Jbalvin</td>
-                        <td>Completado</td>
-                        <td>25/10/2020</td>
-                        <td class="text-right">&dollar; 89,241</td>
-                      </tr>
-                      <tr>
-                        <td class="text-center"><img src="{{ asset('assets/img/maluma.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 50px;"></td>
-                        <td>Maluma</td>
-                        <td>Completado</td>
-                        <td>25/10/2020</td>
-                        <td class="text-right">&dollar; 92,144</td>
-                      </tr>
-                      <tr>
-                        <td class="text-center"><img src="{{ asset('assets/img/ozuna.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 50px;"></td>
-                        <td>Ozuna</td>
-                        <td>Completado</td>
-                        <td>25/10/2020</td>
-                        <td class="text-right">&dollar; 99,225</td>
-                      </tr>
-                      <tr>
-                        <td class="text-center"><img src="{{ asset('assets/img/faces/jbalvin.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 50px;"></td>
-                        <td>Jbalvin</td>
-                        <td>Completado</td>
-                        <td>25/10/2020</td>
-                        <td class="text-right">&dollar; 89,241</td>
-                      </tr>
-                      <tr>
-                        <td class="text-center"><img src="{{ asset('assets/img/maluma.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 50px;"></td>
-                        <td>Maluma</td>
-                        <td>Completado</td>
-                        <td>25/10/2020</td>
-                        <td class="text-right">&dollar; 92,144</td>
-                      </tr>
+                      @endforeach
+                      @else
+                      <div class="nofilterFoundPendientes">
+                          No has realizado dedicartorias aun
+                      </div>
+                      @endif
                     </tbody>
                   </table>
                 </div>

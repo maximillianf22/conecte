@@ -70,8 +70,7 @@
                     <h2 class="text-muted">No se encontraron resultados para "{{ $query }}"</h2>
                 </div>
             @endif
-            </div>
-            
+            </div>         
           </div>
          @include('template.default.sidebar.persona.artista-relacionado')
         </div>

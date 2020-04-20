@@ -850,7 +850,7 @@ class HomeController extends Controller
         }
 
 
-        return view('default.miHistorial')->with([
+        return view('default.persona.perfil')->with([
             "historialDeDedicatorias" => $historialDeDedicatorias,
             "historialDeContratacion" => $historialDeContratacion,
             "user" => $user,
