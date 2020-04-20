@@ -30,9 +30,9 @@
                 <li class="nav-item active">
                     <a href="/welcome" class="nav-link">Explorar</a>
                 </li>
-                <!-- <li class="nav-item">
+                <li class="nav-item">
                     <a href="perfil" class="nav-link">Perfil</a>
-                </li> -->
+                </li>
             </ul>
 
             <form class="form-inline bg-white rounded m-0">
