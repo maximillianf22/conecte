@@ -236,7 +236,7 @@
                         <td>{{$item->CREATED_AT}}</td>
                         <td>Dedicatoria</td>
                         <td class="text-right">&dollar; {{ number_format($item->COSTO_DEDICATORIA, 2) }}</td>
-                        <td class="text-right"><a href="/ver-respuesta/{{$item->ID}}" class="btn btn-success btn-sm ad-click-event btnVerResppuesta answer-solicitud">Respuesta<i class="fa fa-check-circle-o" aria-hidden="true"></i></a></td>
+                        <td class="text-right"><a class="btn btn-success btn-sm ad-click-event btnVerResppuesta answer-solicitud" data-toggle="modal" data-target="#videoModal">Respuesta<i class="fa fa-check-circle-o" aria-hidden="true"></i></a></td>
                       </tr>
                       @endforeach
                       @else
@@ -253,7 +253,7 @@
                         <td>{{$item->CREATED_AT}}</td>
                         <td>Contratacion</td>
                         <td class="text-right">&dollar; {{ number_format($item->COSTO_DEDICATORIA, 2) }}</td>
-                        <td class="text-right"><a href="/ver-respuesta/{{$item->ID}}" class="btn btn-success btn-sm ad-click-event btnVerResppuesta answer-solicitud">Respuesta<i class="fa fa-check-circle-o" aria-hidden="true"></i></a></td>
+                        <td class="text-right"><a  class="btnVideo btn btn-success btn-sm ad-click-event btnVerResppuesta answer-solicitud">Respuesta<i class="fa fa-check-circle-o" aria-hidden="true"></i></a></td>
                       </tr>
                       @endforeach
                       @else
@@ -274,3 +274,42 @@
   </div>
 </body>
 @endsection
+
+<!-- Modal -->
+<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="videoModalLabel">Video</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  $('body').on('click', '.btnVideo', function () {
+    $.ajax({
+        type: "POST",
+        url: UrlHost_+"/persona/perfil",
+        data: "{ID_ARTISTA, ID_CLIENTE, URL_DE_RESPUESTA}",
+        dataType: "dataType",
+        success: function (response) {
+            var data = response
+            // data es la respuesta de la peticion
+        }
+    });
+  })
+
+
+</script>
