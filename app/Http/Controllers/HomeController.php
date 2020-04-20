@@ -681,14 +681,14 @@ class HomeController extends Controller
             $movimientos->estado;
         });
 
-        $dedicatoria = tbl_solicitudes_de_dedicatorias::findOrFail($id);
+        //$dedicatoria = tbl_solicitudes_de_dedicatorias::findOrFail($id);
 
         return view('default.persona.perfil')->with([
             "user" => $user,
             "movimientos" => $movimientos,
             "totalDisponibles" => $totalDisponibles,
             "balance" => $balance,
-            "dedicatoria" => $dedicatoria,
+            //"dedicatoria" => $dedicatoria,
             "historialDeDedicatorias" => $historialDeDedicatorias,
             "historialDeContratacion" => $historialDeContratacion,
             "precio" => $precio,
