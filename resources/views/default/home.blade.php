@@ -15,10 +15,10 @@
 
 @section('content')
   <body class="contact-page">
+    <!-- Navbar -->
   @include('template.default.navbar.persona.navbar')
-  <!-- Navbar -->
- 
   <!-- End Navbar -->
+  
   <div class="wrapper pb-0 mb-0">
     <div class="page-header header-filter contactus-3 bg-primary" style="height: 200px; min-height: 200px; margin-bottom: 0px; background-image: linear-gradient(to right, #343abe, #c10e56, #c92b2b);">
       <div class="page-header-image"></div>

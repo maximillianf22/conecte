@@ -38,9 +38,9 @@
     <div class="row mx-auto">
       <div class="col-md-12">
         <ul class="nav nav-pills nav-pills-info flex-column">
-          <li class="nav-item"><a class="nav-link active btn-block" href="#tab1" data-toggle="tab">Informacion</a></li>
-          <li class="nav-item"><a class="nav-link btn-block" href="#tab2" data-toggle="tab">Metodo de Pago</a></li>
-          <li class="nav-item"><a class="nav-link btn-block" href="#tab3" data-toggle="tab">Historial de Solicitudes</a></li>
+          <li class="nav-item"><a class="nav-link {{Request::is('*/informacion') ? 'active' : ''}} btn-block" href="informacion">Informacion</a></li>
+          <li class="nav-item"><a class="nav-link {{Request::is('*/pagos') ? 'active' : ''}} btn-block" href="pagos">Metodo de Pago</a></li>
+          <li class="nav-item"><a class="nav-link {{Request::is('*/historial') ? 'active' : ''}} btn-block" href="historial">Historial de Solicitudes</a></li>
         </ul>
       </div>
       <div class="mx-auto">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Historial_view;
 use App\tbl_billeteras;
 use App\tbl_configuraciones_artistas;
 use App\tbl_movimientos;
@@ -579,8 +580,12 @@ class HomeController extends Controller
         ]);
     }
 
-    public function perfil()
+    public function perfil($section)
     {
+        if ($section != 'informacion' && $section != 'pagos' && $section != 'historial') {
+            return response()->view('errors.503', [], 404);
+        }
+
         $user = User::findOrFail(Auth::user()->id);
         $user->tipoUsuario;
         $user->billetera;
@@ -592,7 +597,39 @@ class HomeController extends Controller
         $balance = 0;
         $generos = 0;
 
+        $data['user'] = $user;
+        $data['section'] = $section;
+        $data['artistas'] = artistas_celebridade::orderBy('name', 'ASC')
+            ->take(4)
+            ->get();
+
+        switch ($section) {
+            case 'informacion':
+                break;
+            case 'pagos':
+                $movimientos = tbl_movimientos::where('ID_CLIENTE', Auth::user()->id)
+                    ->orderBy('ID', 'DESC')
+                    ->paginate(15);
+                $movimientos->each(function ($movimientos) {
+                    $movimientos->tipoMovimiento;
+                    $movimientos->userArtista;
+                });
+                $data['movimientos'] = $movimientos;
+                break;
+            case 'historial':
+                $data['historial'] = Historial_view::where('ID_CLIENTE', Auth::user()->id)
+                ->paginate(15);
+                break;
+
+            default:
+                return response()->view('errors.503', [], 404);
+                break;
+        }
+
+        return view('default.persona.perfil.index', $data);
+
         $precio = tbl_parametros::findOrFail(61);
+
 
         if ($user->id_perfil == 0) {
 
@@ -662,8 +699,7 @@ class HomeController extends Controller
             $balance = $totalDisponibles - $balance;
             $generos = tbl_parametros::where('ID_VALOR', 1)->get();
         }
-        $artistas = artistas_celebridade::
-            orderBy('name', 'ASC')
+        $artistas = artistas_celebridade::orderBy('name', 'ASC')
             ->take(4)
             ->get();
 
@@ -683,7 +719,7 @@ class HomeController extends Controller
 
         //$dedicatoria = tbl_solicitudes_de_dedicatorias::findOrFail($id);
 
-        return view('default.persona.perfil')->with([
+        return view('default.persona.perfil.index')->with([
             "user" => $user,
             "movimientos" => $movimientos,
             "totalDisponibles" => $totalDisponibles,
@@ -696,6 +732,7 @@ class HomeController extends Controller
             "generos" => $generos,
             "artistas" => $artistas,
             "miPerfil" => "miPerfil",
+            "section" => $section
         ]);
     }
 
@@ -839,11 +876,16 @@ class HomeController extends Controller
 
         $dedicatoria = tbl_solicitudes_de_dedicatorias::findOrFail($id);
 
-        return view('default.verRespuesta')->with([
-            "dedicatoria" => $dedicatoria,
-            "precio" => $precio,
-            "user" => $user,
-        ]);
+        return response()->json(['data' => [
+            'dedicatoria' => $dedicatoria,
+            'precio' => $precio,
+            'user' => $user
+        ]]);
+        // return view('default.verRespuesta')->with([
+        //     "dedicatoria" => $dedicatoria,
+        //     "precio" => $precio,
+        //     "user" => $user,
+        // ]);
     }
 
     public function miHistorial()

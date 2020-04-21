@@ -141,11 +141,12 @@ Route::group(['prefix' => 'administrador', 'middleware' => 'administrador'], fun
 Route::group(['prefix' => '/',  'middleware' => 'auth'], function () {
 
     Route::get('/welcome', ['uses' => 'HomeController@welcome', 'as' => 'welcome']);
-    Route::get('/persona/perfil', ['uses' => 'HomeController@perfil', 'as' => 'perfil']);
+    Route::get('/persona/perfil/{section}', 'HomeController@perfil');
     Route::get('/artista/{name}', ['uses' => 'HomeController@artista', 'as' => 'artista']);
     Route::post('/actulizarCliente', ['uses' => 'HomeController@actulizarCliente', 'as' => 'actulizarCliente']);
     Route::post('/actulizarArtista', ['uses' => 'HomeController@actulizarArtista', 'as' => 'actulizarArtista']);
     Route::post('/pedir-dedicatoria', ['uses' => 'HomeController@pedirDedicatoria', 'as' => 'pedirDedicatoria']);
     Route::get('/mis-pendientes', ['uses' => 'HomeController@misPedientes', 'as' => 'misPendientes']);
      Route::get('/solicitudes', ['uses' => 'HomeController@miHistorial', 'as' => 'miHistorial']);
+     Route::get('/ver-respuesta/{id}', ['uses' => 'HomeController@verRespuesta', 'as' => 'verRespuesta']);
 });
