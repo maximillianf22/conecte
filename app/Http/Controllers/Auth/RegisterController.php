@@ -129,6 +129,12 @@ class RegisterController extends Controller {
 		// 	'email.required' => 'Verifique la información ingresada e intente nuevamente',
 		// ]);
 
+		$this->validate($request, [
+			'email' => 'required|email|unique:users'
+		],[
+			'email.unique' => 'Este correo ya existe'
+		]);
+
 		$msg = tbl_parametros::where('ID', '18')->get();
 
 		$user = new User();
@@ -159,6 +165,7 @@ class RegisterController extends Controller {
 			$mail->subject('Confirma tu cuenta');
 			$mail->to($data['email'], $data['name']);
 		});
+
 		Session::flash('message', 'Registro Exitoso, Gracias por ser parte de conecte.co, hemos enviado un correo de confirmacion');
 		return redirect::to('/persona/register/fin');
 	}

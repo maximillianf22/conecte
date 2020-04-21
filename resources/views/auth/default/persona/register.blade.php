@@ -201,6 +201,14 @@
                       </div>
                     </div>
                   </div>
+                  @if (count($errors) > 0)
+                  <div class="alert alert-danger" role="alert">
+                    @foreach ($errors->all() as $error)
+                    {{ $error }}
+                    @endforeach
+                  </div>
+
+                  @endif
                   <div class="row">
                     <div class="col-6 offset-2">
                       <button type="submit" href="register/fin" class="btn btn-success btn-lg pull-right">Siguiente</button>
