@@ -76,7 +76,7 @@
                 <h4 class="card-title text-white display-4"> Inicia sesion para disfrutar de <strong>Todo lo bueno</strong> que traemos para ti...</h4>
               </div>
               <div class="card-body pb-0">
-                <form role="form" method="POST" action="{{ url('/loginPost') }}">
+                <form role="form" method="POST" action="{{ url('/loginPost') }}" autocomplete="off">
                   {{ csrf_field() }}
                   <div class="form-group has-feedback">
                     <input id="email" type="email" class="form-control" name="email" placeholder="Correo" value="{{ old('email') }}" required autofocus>
