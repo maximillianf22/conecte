@@ -1,14 +1,14 @@
  <!-- Footer -->
   <footer class="footer" style="background-image: linear-gradient(to right top, #000000, #060003, #090009, #080110, #030316);">
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-md-6 border-right">
+  <div class="container mx-auto p-0 m-0 mt-5">
+    <div class="row mx-auto">
+      <div class="col-md-6 mx-auto border-right p-0 m-0">
         <div class="container">
            <div class="row">
-            <div class="col-md-4 content-center mt-4 text-center d-none d-lg-block">
+            <div class="col-md-4 p-0 m-0 content-center mt-3 text-center d-none d-lg-block">
                 <img src="{{ asset('assets/img/brand/logoa.png')}}" width="80%" class="mt-5">
             </div>
-            <div class="col-md-8">   
+            <div class="col-md-8">
                 <img src="{{ asset('assets/img/brand/logob.png')}}" width="40%" class="d-none d-lg-block mx-auto">
                 <img src="{{ asset('assets/img/brand/logoc.png')}}" width="40%" class="d-block d-lg-none mx-auto">
                 <br>

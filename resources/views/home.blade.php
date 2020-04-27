@@ -68,6 +68,12 @@
   <!-- End Navbar -->
   <!-- Home -->
   <!-- Header -->
+  <style>
+  body {
+    fill: currentColor;
+  }
+
+  </style>
     <div class="wrapper m-0 p-0" style="background-image: url('{{asset('assets/img/bg/header.jpg')}}'); background-attachment: fixed; background-size:     cover;  background-repeat:   no-repeat;  background-position: center center;">
     <div class="page-header">
       <div class="squares square1"></div>
@@ -84,7 +90,7 @@
               <a href="persona/register" class="btn btn-facebook btn-round pl-5 pr-5 active">
                 <h3 class="p-0 m-0 text-white"><i class="fas fa-user"></i> Registro como <strong>Persona</strong></h3></a><br>
               <a href="artista/register" class="btn btn-primary btn-border btn-round pl-5 pr-5 active">
-                <h3 class="p-0 m-0 text-white"><i class="fas fa-music"></i> Registro como <strong>Artista&nbsp;&nbsp;&nbsp;</strong></h3></a>
+                <h3 class="p-0 m-0 text-white" ><img class="imagen1" width="25" src="assets/img/artista.png"> Registro como <strong>Artista&nbsp;&nbsp;&nbsp;</strong></h3></a>
             </div>
         </div>
       </div>
@@ -105,22 +111,22 @@
               <div class="col-lg-4 card card-pricing card-plain card-primary" >
                 <div class="info">
                   <div class="icon icon-danger">
-                    <i class="fas fa-music text-primary"></i>
+                    <i class="fas "><img class="imagen1" width="35" src="assets/img/artista.svg"></i>
                   </div>
-                  <h4 class="info-title text-dark h3">Artistas</h4>
+                  <h4 class="info-title font-weight-bold text-dark h3">Artistas</h4>
                   <hr class="line-primary">
                   <p class="text-dark h4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
                 </div>
               </div>
-              <div class="col-lg-6  offset-md-1 rounded bnt btn-round btn-primary mb-4 mt-5" style="background-image: linear-gradient(to right top, #000000, #060003, #090009, #080110, #030316);">
-                <h1 class="text-left  display-4 offset-md-4 mt-4 mb-0"> <i class="fas fa-user text-primary"></i> Personas </h1><hr class="line-primary offset-md-4 mt-2 mb-0">
+              <div class="col-lg-6  offset-md-1 rounded  mb-4 mt-5" style="border-radius: 2rem!important; border: .3rem solid; ">
+                <h1 class="text-left text-dark display-4 offset-md-4 mt-4 mb-0"> <i class="fas fa-user text-primary"></i> Personas </h1><hr class="line-primary offset-md-4 mt-2 mb-0">
                 <div class="info info-horizontal m-0 p-0" style="padding-top: 4%!important;">
                 <div class="icon text-primary">
                   <i class="fas fa-building"></i>
                 </div>
                 <div class="description mt-0">
-                  <h3 class="info-title ">Empresas</h3>
-                  <p class="description text-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                  <h3 class="info-title text-dark">Empresas</h3>
+                  <p class="description text-dark">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
                 </div>
               </div>
               <div class="info info-horizontal p-0 m-0 mb-4">
@@ -128,8 +134,8 @@
                   <i class="fas fa-users"></i>
                 </div>
                 <div class="description">
-                  <h3 class="info-title ">Individuos</h3>
-                  <p class="description text-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                  <h3 class="info-title text-dark">Individuos</h3>
+                  <p class="description text-dark">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
                 </div>
               </div>
               </div>
@@ -146,10 +152,18 @@
         <div class="container-fluid p-0">
           <div class="row mx-auto m-0 p-0">
             <div class="col-md-6 p-5"  style="background-image: url('{{asset('assets/img/bg/gradient.jpg')}}'); background-size:     cover;  background-repeat:   no-repeat;  background-position: center center;">
-              <h3 class="card-title display-2 text-white"> ¿Que es Conecte? </h3>
-          <h3 class="text-default p-0 text-white">• • •</h3>
-          <h4 class="description text-white">
-            Es una plataforma digital que te permitirá estar más cercade tus artistas y/o celebridades favoritas, desde agrupaciones, cantantes hasta personajes influyentes; de esta manera podrás enviar emociones a través de ellos
+              <h3 class="card-title display-2 text-center text-white"> ¿Que es Conecte? </h3>
+          <h3 class="text-default p-0 text-center text-white">• • •</h3>
+          <h4 class="description text-center text-white">
+            Es una plataforma digital que te permitirá estar más cerca de
+            tus artistas y/o celebridades favoritas, desde agrupaciones,
+            cantantes hasta personajes influyente; de esta manera podrás
+            enviar emociones a través de ellos.<br><br>
+            Y si eres artista y celebridad, en esta plataforma podrás estar
+            más cerca de tus fans o seguidores, enviándole dedicatorias,
+            mensajes, invitaciones, saludos entre otros, además tendrás
+            ingresos económicos ¿te imaginas?... TODO, en una sola
+            plataforma.
           </h4>
         </div>
             <div class="col-md-6 p-0 d-flex flex-row-reverse" >
@@ -181,8 +195,8 @@
 
  <div class="container-fluid p-0 m-0">
       <div class="testimonials-1">
-        <div class="container card border p-5" style="background-image: linear-gradient(to right top, #000000, #060003, #090009, #080110, #030316);">
-            <div class="container">
+        <div class="container border p-5" style="border-radius: 30px;border: .6rem solid #09000b!important;">
+            <div class="container-fluid">
               <div class="row mx-auto m-0 p-0">
                 <div class="col-md-7 p-0 d-flex flex-row-reverse" >
                   <img class="d-block img-fluid rounded-0" src="assets/img/bg/inicio5.jpg">
@@ -214,7 +228,6 @@
 
   <div class="section section-signup" style="background-image: url('{{asset('assets/img/bg/blue.png')}}'); background-size:     cover;  background-repeat:   no-repeat;  background-position: center center;">
     <div class="container">
-      <div class="squares square-1"></div>
       <div class="squares square-2"></div>
       <div class="row row-grid justify-content-between align-items-center">
           <div class="container">
