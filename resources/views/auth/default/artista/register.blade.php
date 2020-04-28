@@ -76,6 +76,7 @@
         <div class="row">
           <div class="content-center text-left col-md-6 mt-3 offset-md-3">
             <div class="card card-contact card-raised" style="background-image: linear-gradient(to right top, #000000, #060003, #090009, #080110, #030316);">
+
               <form role="form" id="contact-form" method="post" action="{{ url('/registroArtistaPost') }}" autocomplete="off">
                 {{ csrf_field() }}
                 <div class="card-header text-center">
@@ -200,6 +201,11 @@
                       </div>
                     </div>
                   </div>
+                  @if ($errors->any())
+                  @foreach ($errors->all() as $error)
+                  <p class="m-0 text-danger">{{ $error }}</p>
+                  @endforeach
+                  @endif
                   <div class="row">
                     <div class="col-6 offset-2">
                       <button type="submit" class="btn btn-success btn-lg pull-right">Siguiente</button>

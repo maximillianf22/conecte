@@ -58,6 +58,25 @@ class RegisterController extends Controller {
 		// 	'nombre_artistico.unique' => 'Este Nombre artistico ya existe en nuestro sistema',
 		// ]);
 
+		$this->validate($request, [
+			'name' => 'required|max:255',
+			//'terminos_y_condiciones' => 'required',
+			'email' => 'required|email|max:255|unique:users',
+			'celular' => 'numeric',
+			//'nombre_artistico' => 'required|unique:users'
+		], [
+			'name.max' => 'El nombre es demasiado largo',
+			'email.unique' => 'Este correo electronico ya existe en nuestro sistema',
+			'passwordConfirmation.same' => 'La contraseña no coinciden',
+			'name.required' => 'Verifique la información ingresada e intente nuevamente',
+			'valuePerfil.required' => 'Verifique la información ingresada e intente nuevamente',
+			'terminos_y_condiciones.required' => 'Es necesario aceptar los terminos y condiciones',
+			'passwordConfirmation.required' => 'Verifique la información ingresada e intente nuevamente',
+			'email.required' => 'Verifique la información ingresada e intente nuevamente',
+			'nombre_artistico.required' => 'Verifique la información ingresada e intente nuevamente',
+			'nombre_artistico.unique' => 'Este Nombre artistico ya existe en nuestro sistema',
+		]);
+
 		$msg = tbl_parametros::where('ID', '18')->get();
 
 		$user = new User();
