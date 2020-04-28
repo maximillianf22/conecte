@@ -80,7 +80,7 @@
                 </div>
               </div>
           </div>
-         @include('template.default.sidebar.persona.artista-independiente')
+         @include('template.default.sidebar.artista.solicitudes')
         </div>
       </div>
     </div>

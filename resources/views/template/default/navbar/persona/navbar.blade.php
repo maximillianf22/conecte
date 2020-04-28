@@ -26,11 +26,11 @@
           </div>
         </div>
         <div class="collapse navbar-collapse">
-          <ul class="navbar-nav mr-5">
-            <li class="nav-item active">
+          <ul class="navbar-nav mr-2">
+            <li class="nav-item active p-0 m-0">
               <a href="/welcome" class="nav-link">Explorar</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item m-0 p-0">
               <a href="/persona/perfil/informacion" class="nav-link">Perfil</a>
             </li>
           </ul>
@@ -182,12 +182,40 @@
               <!-- View all -->
             </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link btn btn-neutral btn-round btn-simple  text-nowrap">
+          <li class="nav-item dropdown">
+            <a class="nav-link nav-link btn btn-neutral btn-round btn-simple  text-nowrap" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fas fa-user"></i> {{$user->name}}
             </a>
+            <div class="dropdown-menu dropdown-menu-md  dropdown-menu-right  py-0 overflow-hidden">
+              <!-- Dropdown header -->
+              <div class="px-3 py-3">
+                <h6 class="text-sm text-muted m-0 text-center">Opciones</h6>
+              </div>
+              <!-- List group -->
+              <div class="list-group list-group-flush">
+                <a href="{{ url('/logout') }}" class="list-group-item list-group-item-action btnDetail">
+                  <div class="row align-items-center">
+                    <div class="col-auto p-0 m-0 ml-4">
+                      <!-- Avatar -->
+                      <i class="fas fa-sign-out-alt text-muted"></i>
+                    </div>
+                    <div class="col p-0 m-0">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                          <h6 class="mb-0 text-dark text-sm">Cerrar Sesión</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </a>
+              </div>
+              <!-- View all -->
+            </div>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+
+

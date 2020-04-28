@@ -86,7 +86,7 @@
         <div class="row">
             <div class="content-center text-left col-md-5 mt-5 offset-md-2">
               <h1 class="h1-seo p-0 m-0 text-white display-2"><strong>Tu artista favorito <br>a solo un click</strong></h1>
-              <h3 class="m-0 mb-4 p-0  text-white"><small></small><strong>Conecta</strong> con tu persona favorita</h3>
+              <h3 class="m-0 mb-4 p-0  text-white"><small></small><strong>Conecta</strong> tu persona favorita con tu artista favorito</h3>
               <a href="persona/register" class="btn btn-facebook btn-round pl-5 pr-5 active">
                 <h3 class="p-0 m-0 text-white"><i class="fas fa-user"></i> Registro como <strong>Persona</strong></h3></a><br>
               <a href="artista/register" class="btn btn-primary btn-border btn-round pl-5 pr-5 active">
@@ -115,7 +115,7 @@
                   </div>
                   <h4 class="info-title font-weight-bold text-dark h3">Artistas</h4>
                   <hr class="line-primary">
-                  <p class="text-dark h4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                  <p class="text-dark h3"><strong>Ten</strong> Contacto con tus seguidores.</p>
                 </div>
               </div>
               <div class="col-lg-6  offset-md-1 rounded  mb-4 mt-5" style="border-radius: 2rem!important; border: .3rem solid; ">
@@ -126,7 +126,7 @@
                 </div>
                 <div class="description mt-0">
                   <h3 class="info-title text-dark">Empresas</h3>
-                  <p class="description text-dark">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                  <p class="description text-dark h3"><strong>Difunde</strong> a travez de un artista tus campañas publicitarias.</p>
                 </div>
               </div>
               <div class="info info-horizontal p-0 m-0 mb-4">
@@ -135,7 +135,7 @@
                 </div>
                 <div class="description">
                   <h3 class="info-title text-dark">Individuos</h3>
-                  <p class="description text-dark">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                  <p class="description text-dark h3"><strong>Regalauna emoción a un ser querido a travez de un artista</strong>.</p>
                 </div>
               </div>
               </div>
@@ -183,9 +183,9 @@
             <div class="col-md-5 p-5"  style="background-image: url('{{asset('assets/img/bg/rose.jpg')}}'); background-size:     cover;  background-repeat:   no-repeat;  background-position: center center;">
               <h3 class="text-white lead text-white p-0 m-0">Artista</h3><hr class="line-info p-0 m-0">
               <h3 class="card-title display-4 text-white"> Gernera riquezas y cumple tus sueños sociales</h3>
-              <h4 class="description text-white">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-              </h4>
+              <h5 class="description text-white">
+                Esta plataforma te permitira tener contacto con tu grupo deseguidores fidelizandolo y cumpliendo sueños y emociones para ellos tu eres su idolo y necesitan verte y escucharte, por primera vez podras facturar de manera diferente captando riquezas para utilizarlas en tus fines comerciales, a travez de tus fundaciones.
+              </h5>
             </div>
           </div>
         </div>
@@ -204,9 +204,9 @@
                 <div class="col-md-5 p-5"  style="background-image: url('{{asset('assets/img/bg/blue.png')}}'); background-size:     cover;  background-repeat:   no-repeat;  background-position: center center;">
                   <h3 class="text-white lead text-white p-0 m-0">Empresa</h3><hr class="line-danger p-0 m-0">
                   <h3 class="card-title display-4 text-white"> Cambia la forma de invitar a tus Eventos</h3>
-                  <h4 class="description text-white">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-                  </h4>
+                  <h5 class="description text-white">
+                   A travez de nuestra plataforma podras pensar lo impensable, con artistas o influenciadores que realizan campañas publicitarias, a travez de audio y video invitando a cada uno de sus referidos en el lanzamiento o posicionamiento de tu empresa.
+                  </h5>
                 </div>
               </div>
               <div class="row mx-auto m-0 p-0">
@@ -217,7 +217,7 @@
                   <h3 class="text-white lead text-white p-0 m-0">Individuo</h3><hr class="line-danger p-0 m-0">
                   <h3 class="card-title display-4 text-white">Sorprende a las personas que te importan</h3>
                   <h4 class="description text-white">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                    Selecciona el artista o influenciador del agrado de tu ser querido y podrás sorprenderlo con un audio video, en donde este expresará sus emociones.
                   </h4>
                 </div>
               </div>
@@ -244,7 +244,7 @@
                 </div>
                 <div class="description">
                   <h4 class="info-title display-4"><strong>Selecciona</strong><br> tu artista</h4>
-                  <p class="description text-white lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                  <p class="description text-white lead">Escoge el artista de tu preferencia.</p>
                 </div>
               </div>
             </div>
@@ -255,7 +255,7 @@
                 </div>
                 <div class="description">
                   <h4 class="info-title display-4"><strong>Escribe</strong><br> tu dedicatoria</h4>
-                  <p class="description text-white lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                  <p class="description text-white lead">Has una breve descripcion de lo que deseas que tu artista exprese en el video mensaje.</p>
                 </div>
               </div>
             </div>
@@ -266,8 +266,8 @@
                   <img src="">
                 </div>
                 <div class="description">
-                  <h4 class="info-title display-4"><strong>Envia</strong><br> tu artista</h4>
-                  <p class="description text-white lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry..</p>
+                  <h4 class="info-title display-4"><strong>Envia</strong><br> tu saludo</h4>
+                  <p class="description text-white lead">Una vez que llegue tu mensaje compártelo con esa persona especial y con tus amigos.</p>
                 </div>
               </div>
             </div>
