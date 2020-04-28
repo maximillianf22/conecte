@@ -182,7 +182,7 @@
               <!-- View all -->
             </div>
           </li>
-                   <li class="nav-item dropdown">
+          <li class="nav-item dropdown">
             <a class="nav-link nav-link btn btn-neutral btn-round btn-simple  text-nowrap" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fas fa-user"></i> {{$user->name}}
             </a>
