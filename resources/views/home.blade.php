@@ -115,7 +115,7 @@
                   </div>
                   <h4 class="info-title font-weight-bold text-dark h3">Artistas</h4>
                   <hr class="line-primary">
-                  <p class="text-dark h4"><strong>Ten</strong>Contacto con tus seguidores.</p>
+                  <p class="text-dark h3"><strong>Ten</strong> Contacto con tus seguidores.</p>
                 </div>
               </div>
               <div class="col-lg-6  offset-md-1 rounded  mb-4 mt-5" style="border-radius: 2rem!important; border: .3rem solid; ">
@@ -126,7 +126,7 @@
                 </div>
                 <div class="description mt-0">
                   <h3 class="info-title text-dark">Empresas</h3>
-                  <p class="description text-dark"><strong>Difunde</strong> a travez de un artista tus campañas publicitarias.</p>
+                  <p class="description text-dark h3"><strong>Difunde</strong> a travez de un artista tus campañas publicitarias.</p>
                 </div>
               </div>
               <div class="info info-horizontal p-0 m-0 mb-4">
@@ -135,7 +135,7 @@
                 </div>
                 <div class="description">
                   <h3 class="info-title text-dark">Individuos</h3>
-                  <p class="description text-dark"><strong>Regalauna emoción a un ser querido a travez de un artista</strong>.</p>
+                  <p class="description text-dark h3"><strong>Regalauna emoción a un ser querido a travez de un artista</strong>.</p>
                 </div>
               </div>
               </div>

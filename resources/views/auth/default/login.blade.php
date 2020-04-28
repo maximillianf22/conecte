@@ -73,7 +73,7 @@
             <div class="card card-contact card-raised p-3" style="background-image: linear-gradient(to right top, #000000, #060003, #090009, #080110, #030316);">
               <div class="card-header text-center">
                 <img src="{{ asset('assets/img/brand/logoc.png')}}" width="55%" class="d-none d-lg-block mx-auto">
-                <h4 class="card-title text-white display-4"> Inicia sesion para disfrutar de <strong>Todo lo bueno</strong> que traemos para ti...</h4>
+                <h4 class="card-title text-white display-4"> <strong>Inicie sesión</strong> para disfrutar de de lo mejor de <strong> Conecte </strong> ...</h4>
               </div>
               <div class="card-body pb-0">
                 <form role="form" method="POST" action="{{ url('/loginPost') }}" autocomplete="off">
