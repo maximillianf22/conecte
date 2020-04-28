@@ -182,10 +182,16 @@
               <!-- View all -->
             </div>
           </li>
-          <li class="nav-item">
+           <li class="nav-item dropdown">
             <a class="nav-link btn btn-neutral btn-round btn-simple  text-nowrap">
               <i class="fas fa-user"></i> {{$user->name}}
             </a>
+            <div class="dropdown-menu dropdown-menu-xl  dropdown-menu-right  py-0 overflow-hidden">
+              <!-- Dropdown header -->
+              <div class="px-3 py-3">
+                  <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Cerrar Sesion</a></li>
+              </div>
+            </div>
           </li>
         </ul>
       </div>
