@@ -126,7 +126,7 @@
                 </div>
                 <div class="description mt-0">
                   <h3 class="info-title text-dark">Empresas</h3>
-                  <p class="description text-dark"><strong>Difunde</strong> a travez de un artistatus campañaspublicitarias.</p>
+                  <p class="description text-dark"><strong>Difunde</strong> a travez de un artista tus campañas publicitarias.</p>
                 </div>
               </div>
               <div class="info info-horizontal p-0 m-0 mb-4">
@@ -184,7 +184,7 @@
               <h3 class="text-white lead text-white p-0 m-0">Artista</h3><hr class="line-info p-0 m-0">
               <h3 class="card-title display-4 text-white"> Gernera riquezas y cumple tus sueños sociales</h3>
               <h5 class="description text-white">
-                Esta plataforma te permitira tener contacto con tu grupo deseguidores fidelizandolo y cumpliendo sueños y emociones para ellos tu eressu idolo y necesitan escuchartey verte, por primera vez podras facturar de manera diferente captando riquezas para utilizarlas en tus fines comerciales, a travez de tus fundaciones.
+                Esta plataforma te permitira tener contacto con tu grupo deseguidores fidelizandolo y cumpliendo sueños y emociones para ellos tu eres su idolo y necesitan verte y escucharte, por primera vez podras facturar de manera diferente captando riquezas para utilizarlas en tus fines comerciales, a travez de tus fundaciones.
               </h5>
             </div>
           </div>
@@ -217,7 +217,7 @@
                   <h3 class="text-white lead text-white p-0 m-0">Individuo</h3><hr class="line-danger p-0 m-0">
                   <h3 class="card-title display-4 text-white">Sorprende a las personas que te importan</h3>
                   <h4 class="description text-white">
-                    Selecciona el artista o influenciador del agrado detu ser querido y podrás sorprenderlo con un audio video, en donde este expresará sus emociones
+                    Selecciona el artista o influenciador del agrado de tu ser querido y podrás sorprenderlo con un audio video, en donde este expresará sus emociones.
                   </h4>
                 </div>
               </div>
@@ -267,7 +267,7 @@
                 </div>
                 <div class="description">
                   <h4 class="info-title display-4"><strong>Envia</strong><br> tu saludo</h4>
-                  <p class="description text-white lead">Una vez que llegue tu mensaje compártelo con esapersona especial y con tus amigos.</p>
+                  <p class="description text-white lead">Una vez que llegue tu mensaje compártelo con esa persona especial y con tus amigos.</p>
                 </div>
               </div>
             </div>
