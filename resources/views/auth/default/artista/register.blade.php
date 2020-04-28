@@ -90,7 +90,7 @@
                           <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-name"></i></span>
                           </div>
-                          <input class="form-control" name="name" placeholder="Nombres y apellidos" aria-label="Nombre" type="text">
+                          <input class="form-control" name="name" placeholder="Nombres y apellidos" aria-label="Nombre" type="text" required>
                         </div>
                       </div>
                     </div>
@@ -112,7 +112,7 @@
                           <div class="input-group-prepend">
                             <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                           </div>
-                          <input class="form-control" name="email" placeholder="Email" aria-label="Email" type="email">
+                          <input class="form-control" name="email" placeholder="Email" aria-label="Email" type="email" required>
                         </div>
                       </div>
                     </div>
@@ -144,7 +144,7 @@
                           <div class="input-group-prepend">
                             <span class="input-group-text"><i class="ni ni-collection"></i></span>
                           </div>
-                          <input type="text" class="form-control" name="celular" placeholder="Telefono" aria-label="Telefono">
+                          <input type="text" class="form-control" name="celular" placeholder="Telefono" aria-label="Telefono" required>
                         </div>
                       </div>
                     </div>
@@ -156,7 +156,7 @@
                           <div class="input-group-prepend">
                             <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                           </div>
-                          <input class="form-control" placeholder="Contraseña" name="password" aria-label="Contraseña" type="password">
+                          <input class="form-control" placeholder="Contraseña" name="password" aria-label="Contraseña" type="password" required>
                         </div>
                       </div>
                     </div>
