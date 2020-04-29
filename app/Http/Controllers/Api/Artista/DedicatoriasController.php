@@ -85,6 +85,7 @@ class DedicatoriasController extends Controller
                         $dedicatoria->URL_DE_RESPUESTA = $urlNew;
                         $dedicatoria->ID_ESTADO = 15;
                         if ($dedicatoria->save()) {
+                            return 'test';
                             $dataCliente = User::where('id',$dedicatoria->ID_CLIENTE)->first();
                             //Creamos la notificacion Push App Cliente
                             $externalUserIds = $dataCliente->NOTIFICATION_TOKEN;
@@ -117,7 +118,6 @@ class DedicatoriasController extends Controller
                             curl_exec($ch);
                             curl_close($ch);
                             ob_end_clean();
-                            return 'test';
 
                             $message = 'Bien hecho, dedicatoria respondida exitosamente';
                             $response = array('state' => 'success', 'message' => $message, 'code' => 200);
