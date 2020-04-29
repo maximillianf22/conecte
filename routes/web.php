@@ -147,6 +147,6 @@ Route::group(['prefix' => '/',  'middleware' => 'auth'], function () {
     Route::post('/actulizarArtista', ['uses' => 'HomeController@actulizarArtista', 'as' => 'actulizarArtista']);
     Route::post('/pedir-dedicatoria', ['uses' => 'HomeController@pedirDedicatoria', 'as' => 'pedirDedicatoria']);
     Route::get('/mis-pendientes', ['uses' => 'HomeController@misPedientes', 'as' => 'misPendientes']);
-     Route::get('/solicitudes', ['uses' => 'HomeController@miHistorial', 'as' => 'miHistorial']);
-     Route::get('/ver-respuesta/{id}', ['uses' => 'HomeController@verRespuesta', 'as' => 'verRespuesta']);
+    Route::get('/solicitudes', ['uses' => 'HomeController@miHistorial', 'as' => 'miHistorial']);
+    Route::get('/ver-respuesta/{id}', ['uses' => 'HomeController@verRespuesta', 'as' => 'verRespuesta']);
 });
