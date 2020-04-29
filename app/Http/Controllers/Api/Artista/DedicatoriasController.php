@@ -64,8 +64,8 @@ class DedicatoriasController extends Controller
                 $dedicatoria = tbl_solicitudes_de_dedicatorias::where('ID', $idDedicatoria)->where('ID_ARTISTA', $idArtista)->first();
                 if (!empty($dedicatoria)) {
                 
-                    return 'test';
                     $storagePath = Storage::disk('s3')->put('conecte/'.$nombreCarpeta.'/'.$nombreVideo, \File::get($video), 'public');
+                    return 'test';
                     //$storagePathNew = Storage::disk('s3')->put('conecte/'.$nombreCarpeta.'/'.$nombreVideo.'01', 'public');
 
                     if ($storagePath) {
