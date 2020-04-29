@@ -47,10 +47,10 @@ class DedicatoriasController extends Controller
         $idArtista = $request->idArtista;
         $idDedicatoria = $request->idDedicatoria;
         if (!empty($video) && !empty($idDedicatoria) && !empty($idArtista)) {
-            return 'test';
             $nombreVideo = $video->getClientOriginalName();
             $dataArtista = User::where('id', $idArtista)->first();
             if (!empty($dataArtista)) {
+                return 'test';
                 /*--- realizo el proceo de la conversion del nuevo video a exportar ----*/
                 /* John jairo August 05 - 2019 : 10:57 AM */
                
