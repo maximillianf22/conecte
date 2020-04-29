@@ -47,6 +47,7 @@ class DedicatoriasController extends Controller
         $idArtista = $request->idArtista;
         $idDedicatoria = $request->idDedicatoria;
         if (!empty($video) && !empty($idDedicatoria) && !empty($idArtista)) {
+            return 'test';
             $nombreVideo = $video->getClientOriginalName();
             $dataArtista = User::where('id', $idArtista)->first();
             if (!empty($dataArtista)) {
@@ -66,7 +67,6 @@ class DedicatoriasController extends Controller
                 
                     $storagePath = Storage::disk('s3')->put('conecte/'.$nombreCarpeta.'/'.$nombreVideo, \File::get($video), 'public');
                     //$storagePathNew = Storage::disk('s3')->put('conecte/'.$nombreCarpeta.'/'.$nombreVideo.'01', 'public');
-                    return $dedicatoria;
 
                     if ($storagePath) {
                         $url = 'https://s3-us-west-1.amazonaws.com/cf-develop-files/conecte/'.$nombreCarpeta.'/'.$nombreVideo;
