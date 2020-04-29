@@ -65,7 +65,6 @@ class DedicatoriasController extends Controller
                 if (!empty($dedicatoria)) {
                 
                     $storagePath = Storage::disk('s3')->put('conecte/'.$nombreCarpeta.'/'.$nombreVideo, \File::get($video), 'public');
-                    return 'test';
                     //$storagePathNew = Storage::disk('s3')->put('conecte/'.$nombreCarpeta.'/'.$nombreVideo.'01', 'public');
 
                     if ($storagePath) {
