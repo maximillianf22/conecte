@@ -63,7 +63,6 @@ class DedicatoriasController extends Controller
                 $nombreCarpeta =  str_replace(' ','_',$nombreArtista.''.$idArtista);
                 $dedicatoria = tbl_solicitudes_de_dedicatorias::where('ID', $idDedicatoria)->where('ID_ARTISTA', $idArtista)->first();
                 if (!empty($dedicatoria)) {
-                    return 'test';
                 
                     $storagePath = Storage::disk('s3')->put('conecte/'.$nombreCarpeta.'/'.$nombreVideo, \File::get($video), 'public');
                     //$storagePathNew = Storage::disk('s3')->put('conecte/'.$nombreCarpeta.'/'.$nombreVideo.'01', 'public');
@@ -118,6 +117,7 @@ class DedicatoriasController extends Controller
                             curl_exec($ch);
                             curl_close($ch);
                             ob_end_clean();
+                            return 'test';
 
                             $message = 'Bien hecho, dedicatoria respondida exitosamente';
                             $response = array('state' => 'success', 'message' => $message, 'code' => 200);
