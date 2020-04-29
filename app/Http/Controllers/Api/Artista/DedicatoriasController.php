@@ -43,7 +43,7 @@ class DedicatoriasController extends Controller
 
     public function responder(Request $request)
     {
-        
+        return 'hola';
         $video = $request->file('video'); 
         $idArtista = $request->idArtista;
         $idDedicatoria = $request->idDedicatoria;
