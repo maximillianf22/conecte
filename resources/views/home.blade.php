@@ -7,7 +7,7 @@
   <nav class="navbar navbar-expand-lg fixed-top" style="background-image: linear-gradient(to right top, #000000, #060003, #090009, #080110, #030316);">
     <div class="container">
       <div class="navbar-translate">
-        <a class="navbar-brand" href="#" rel="tooltip" title="Designed and Coded by Developapp" data-placement="bottom" target="_blank">
+        <a class="navbar-brand" href="#" rel="tooltip" title="Designed and Coded by Developapp" data-placement="bottom">
           <img src="{{ asset('assets/img/brand/logoc.png')}}" width="55%">
         </a>
         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -90,7 +90,7 @@
               <a href="persona/register" class="btn btn-facebook btn-round pl-5 pr-5 active">
                 <h3 class="p-0 m-0 text-white"><i class="fas fa-user"></i> Registro como <strong>Persona</strong></h3></a><br>
               <a href="artista/register" class="btn btn-primary btn-border btn-round pl-5 pr-5 active">
-                <h3 class="p-0 m-0 text-white" ><img class="imagen1" width="25" src="assets/img/artista.png"> Registro como <strong>Artista&nbsp;&nbsp;&nbsp;</strong></h3></a>
+                <h3 class="p-0 m-0 text-white" ><img class="imagen mt-0" width="25" style="height: 25px !important; " src="assets/img/artista.png"> Registro como <strong>Artista&nbsp;&nbsp;&nbsp;</strong></h3></a>
             </div>
         </div>
       </div>
@@ -184,7 +184,7 @@
               <h3 class="text-white lead text-white p-0 m-0">Artista</h3><hr class="line-info p-0 m-0">
               <h3 class="card-title display-4 text-white"> Gernera riquezas y cumple tus sueños sociales</h3>
               <h5 class="description text-white">
-                Esta plataforma te permitira tener contacto con tu grupo deseguidores fidelizandolo y cumpliendo sueños y emociones para ellos tu eres su idolo y necesitan verte y escucharte, por primera vez podras facturar de manera diferente captando riquezas para utilizarlas en tus fines comerciales, a travez de tus fundaciones.
+                Esta plataforma te permitirá tener contacto con tu grupo deseguidores fidelizandolo y cumpliendo sueños y emociones para ellos tu eres su idolo y necesitan verte y escucharte, por primera vez podras facturar de manera diferente captando riquezas para utilizarlas en tus fines comerciales, a travez de tus fundaciones.
               </h5>
             </div>
           </div>
@@ -244,7 +244,7 @@
                 </div>
                 <div class="description">
                   <h4 class="info-title display-4"><strong>Selecciona</strong><br> tu artista</h4>
-                  <p class="description text-white lead">Escoge el artista de tu preferencia.</p>
+                  <p class="description text-white lead text-left">Escoge el artista de tu preferencia.</p>
                 </div>
               </div>
             </div>
@@ -255,7 +255,7 @@
                 </div>
                 <div class="description">
                   <h4 class="info-title display-4"><strong>Escribe</strong><br> tu dedicatoria</h4>
-                  <p class="description text-white lead">Has una breve descripcion de lo que deseas que tu artista exprese en el video mensaje.</p>
+                  <p class="description text-white lead text-left">Has una breve descripción de lo que deseas que tu artista exprese en el video mensaje.</p>
                 </div>
               </div>
             </div>
@@ -267,7 +267,7 @@
                 </div>
                 <div class="description">
                   <h4 class="info-title display-4"><strong>Envia</strong><br> tu saludo</h4>
-                  <p class="description text-white lead">Una vez que llegue tu mensaje compártelo con esa persona especial y con tus amigos.</p>
+                  <p class="description text-white lead text-left">Una vez que llegue tu mensaje compártelo con esa persona especial y con tus amigos.</p>
                 </div>
               </div>
             </div>
