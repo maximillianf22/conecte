@@ -50,20 +50,20 @@ class DedicatoriasController extends Controller
             $nombreVideo = $video->getClientOriginalName();
             $dataArtista = User::where('id', $idArtista)->first();
             if (!empty($dataArtista)) {
-                return 'test';
                 /*--- realizo el proceo de la conversion del nuevo video a exportar ----*/
                 /* John jairo August 05 - 2019 : 10:57 AM */
-               
-               //  return $video;
-
+                
+                //  return $video;
+                
                 //$execQuery = 'ffmpeg -i '+$video+' -i assets/img/LogoConecte.png -filter_complex "overlay=10:10" assets/videos_web/salida03.mp4';
                 //$outVideo = shell_exec ("$execQuery 2>&1");
-
+                
                 /*-------*/
                 $nombreArtista = $dataArtista->nombre_artistico;
                 $nombreCarpeta =  str_replace(' ','_',$nombreArtista.''.$idArtista);
                 $dedicatoria = tbl_solicitudes_de_dedicatorias::where('ID', $idDedicatoria)->where('ID_ARTISTA', $idArtista)->first();
                 if (!empty($dedicatoria)) {
+                    return 'test';
                 
                     $storagePath = Storage::disk('s3')->put('conecte/'.$nombreCarpeta.'/'.$nombreVideo, \File::get($video), 'public');
                     //$storagePathNew = Storage::disk('s3')->put('conecte/'.$nombreCarpeta.'/'.$nombreVideo.'01', 'public');
