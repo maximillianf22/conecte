@@ -43,7 +43,6 @@ class DedicatoriasController extends Controller
 
     public function responder(Request $request)
     {
-        return 'hola';
         $video = $request->file('video'); 
         $idArtista = $request->idArtista;
         $idDedicatoria = $request->idDedicatoria;
@@ -86,7 +85,7 @@ class DedicatoriasController extends Controller
                         $dedicatoria->URL_DE_RESPUESTA = $urlNew;
                         $dedicatoria->ID_ESTADO = 15;
                         if ($dedicatoria->save()) {
-
+                            echo 'test';
                             $dataCliente = User::where('id',$dedicatoria->ID_CLIENTE)->first();
                             //Creamos la notificacion Push App Cliente
                             $externalUserIds = $dataCliente->NOTIFICATION_TOKEN;
