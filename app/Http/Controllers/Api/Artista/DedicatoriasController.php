@@ -68,6 +68,7 @@ class DedicatoriasController extends Controller
                     //$storagePathNew = Storage::disk('s3')->put('conecte/'.$nombreCarpeta.'/'.$nombreVideo.'01', 'public');
 
                     if ($storagePath) {
+                        return 'test';
                         $url = 'https://s3-us-west-1.amazonaws.com/cf-develop-files/conecte/'.$nombreCarpeta.'/'.$nombreVideo;
                         $execQuery = 'ffmpeg -i '.$url.' -i assets/img/LogoConecte.png -filter_complex "overlay=10:40" assets/videos_web/conecte_'.$nombreVideo;
                         $outVideo = shell_exec ("$execQuery 2>&1");
@@ -85,7 +86,6 @@ class DedicatoriasController extends Controller
                         $dedicatoria->URL_DE_RESPUESTA = $urlNew;
                         $dedicatoria->ID_ESTADO = 15;
                         if ($dedicatoria->save()) {
-                            return 'test';
                             $dataCliente = User::where('id',$dedicatoria->ID_CLIENTE)->first();
                             //Creamos la notificacion Push App Cliente
                             $externalUserIds = $dataCliente->NOTIFICATION_TOKEN;
