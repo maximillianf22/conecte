@@ -70,7 +70,7 @@
         </div>
         <h4 class="text-white text-center">
           <img src="{{ asset('assets/img/balving.png')}}" class="shadow-lg"><br>
-          www.jbalvin.co
+          >>www.conecte.co<<
         </h4>
       </div>
       <div class="mx-auto mt-2">
