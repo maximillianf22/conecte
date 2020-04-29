@@ -69,9 +69,9 @@ class DedicatoriasController extends Controller
 
                     if ($storagePath) {
                         $url = 'https://s3-us-west-1.amazonaws.com/cf-develop-files/conecte/'.$nombreCarpeta.'/'.$nombreVideo;
-                        $execQuery = 'ffmpeg -i '.$url.' -i assets/img/brand/Logoc.png -filter_complex "overlay=10:40" assets/videos_web/conecte_'.$nombreVideo;
+                        $execQuery = 'ffmpeg -i '.$url.' -i assets/img/brand/logoc.png -filter_complex "overlay=10:40" assets/videos_web/conecte_'.$nombreVideo;
                         $outVideo = shell_exec ("$execQuery 2>&1");
-                        return $outVideo;
+                        //return $outVideo;
                         $storagePathNew = Storage::disk('s3')->put('conecte/'.$nombreCarpeta.'/conecte_'.$nombreVideo,\File::get('assets/videos_web/conecte_'.$nombreVideo), 'public');
                         $urlNew = 'https://s3-us-west-1.amazonaws.com/cf-develop-files/conecte/'.$nombreCarpeta.'/conecte_'.$nombreVideo;
                         
