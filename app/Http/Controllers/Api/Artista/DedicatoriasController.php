@@ -64,11 +64,11 @@ class DedicatoriasController extends Controller
                 $dedicatoria = tbl_solicitudes_de_dedicatorias::where('ID', $idDedicatoria)->where('ID_ARTISTA', $idArtista)->first();
                 if (!empty($dedicatoria)) {
                 
+                    return 'test';
                     $storagePath = Storage::disk('s3')->put('conecte/'.$nombreCarpeta.'/'.$nombreVideo, \File::get($video), 'public');
                     //$storagePathNew = Storage::disk('s3')->put('conecte/'.$nombreCarpeta.'/'.$nombreVideo.'01', 'public');
 
                     if ($storagePath) {
-                        return 'test';
                         $url = 'https://s3-us-west-1.amazonaws.com/cf-develop-files/conecte/'.$nombreCarpeta.'/'.$nombreVideo;
                         $execQuery = 'ffmpeg -i '.$url.' -i assets/img/LogoConecte.png -filter_complex "overlay=10:40" assets/videos_web/conecte_'.$nombreVideo;
                         $outVideo = shell_exec ("$execQuery 2>&1");
