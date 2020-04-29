@@ -108,7 +108,11 @@ class LoginController extends Controller
                             break;
     
                         default:
-                                return redirect::to('/welcome');
+                        if(Auth::user()->id_perfil == 0){
+                            return redirect::to('/welcome');
+                        }else{
+                            return redirect::to('/artista/perfil');
+                        }
                         break;
                     }
                 }

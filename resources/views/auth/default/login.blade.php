@@ -102,11 +102,11 @@
                     <a class="link footer-link" href="#" data-toggle="modal" data-target="#myModal1">Registrar</a>
                   </h6>
                 </div>
-                <div class="pull-right mr-3 mt-2 mb-3">
+                <!-- <div class="pull-right mr-3 mt-2 mb-3">
                   <h6>
                     <a href="{{ url('/password/reset') }}" class="link footer-link">¿olvido su clave?</a>
                   </h6>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>

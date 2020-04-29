@@ -27,11 +27,11 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav mr-5">
-                <li class="nav-item active">
+                <!--<li class="nav-item active">
                     <a href="/welcome" class="nav-link">Explorar</a>
-                </li>
+                </li>-->
                 <li class="nav-item">
-                    <a href="perfil" class="nav-link">Perfil</a>
+                    <a href="/artista/perfil" class="nav-link">Perfil</a>
                 </li>
             </ul>
 
