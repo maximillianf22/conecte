@@ -82,12 +82,11 @@ class RegisterController extends Controller {
 		$user = new User();
 		$user->name = $request->name;
 		$user->email = $request->email;
-		//$user->nombre_artistico = $request->nombre_artistico;
+		$user->nombre_artistico = 'Artista';//$request->nombre_artistico;
 		$user->password = bcrypt($request->password);
-		/*
-		$user->id_sexo = $request->valueGenero;
-		*/
+		$user->id_sexo = 64;//$request->valueGenero;
 		$user->celular = intval(preg_replace('/[^0-9]+/','', $request->telefono_artista), 10);
+		$user->id_genero = 6;
 		/*
 		$user->fecha_nac = $request->fechanac;
 		*/
