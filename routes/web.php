@@ -100,7 +100,7 @@ Route::get('artista/register/fin', function () {
 
 
 
-
+Route::get('/app', 'HomeController@notResponsive');
 /* Start autentificación */
 Auth::routes();
 Route::get('/login/?', ['uses' => 'Auth\LoginController@login', 'as' => 'loginView']);

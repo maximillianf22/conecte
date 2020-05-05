@@ -50,6 +50,10 @@ class HomeController extends Controller
         ]);
     }
 
+    public function notResponsive(){
+        return view('notResponsive');
+    }
+
     public function music()
     {
         //-- Musica 
