@@ -46,15 +46,4 @@
 <!-- Argon JS -->
 <script src="{{ asset('assets/js/argon.js?v=1.2.0') }}"></script>
 <script src="{{ asset('assets/js/blk-design-system.min.js?v=1.0.0') }}" type="text/javascript"></script>
-<script>
-  if (window.matchMedia("(max-width: 767px)").matches) {
-
-    // The viewport is less than 768 pixels wide 
-    console.log("This is a mobile device.");
-  } else {
-
-    // The viewport is at least 768 pixels wide 
-    console.log("This is a tablet or desktop.");
-  }
-</script>
 </body>
