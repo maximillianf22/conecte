@@ -114,7 +114,7 @@
                   <div class="icon icon-danger">
                     <i class="fas "><img class="imagen1" width="35" src="assets/img/artista.svg"></i>
                   </div>
-                  <h4 class="info-title font-weight-bold text-dark h3">Artistas</h4>
+                  <h2 class="info-title font-weight-bold text-dark h1">Artistas</h2>
                   <hr class="line-primary">
                   <p class="text-dark h3"><strong>Ten</strong> Contacto con tus seguidores.</p>
                 </div>
@@ -290,16 +290,5 @@
     </div>
     @include('template.default.footer.webfoot')
 </body>
-<script>
-  if (window.matchMedia("(max-width: 767px)").matches) {
 
-    // The viewport is less than 768 pixels wide 
-    console.log("This is a mobile device.");
-    window.location.replace('/app')
-  } else {
-
-    // The viewport is at least 768 pixels wide 
-    console.log("This is a tablet or desktop.");
-  }
-</script>
 @endsection

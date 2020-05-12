@@ -49,15 +49,14 @@
                   <div class="card">
                     <div class="row">
             <div class="title container mb-0">
-              <h3 class="text-uppercase text-white">Busqueda Relacionada</h3>
+              <h3 class="text-uppercase text-white text-center">Busqueda Relacionada</h3>
             </div>
               @if(count($artistas)>=1)
                 @foreach($artistas as $Artistas)
                 <div class="col-md-3 col-6 h1 text-white text-center">
                   <a href="{{route('artista',$Artistas->nombre_artistico)}}">
                         <img  src="{{asset('storage/profile_images/artistas/'.$Artistas->foto_perfil)}}" alt="Foto del Artista" width="200px" class="img-fluid  rounded shadow-lg img-thumbnail" style="width: 70px;"><br>
-                      <div class="name h4 text-white">
-                        <i class="fas fa-music"></i>
+                      <div class="name h4 text-white text-center">
                           @if(empty($Artistas->nombre_artistico))
                               {{$Artistas->name}}
                           @else
