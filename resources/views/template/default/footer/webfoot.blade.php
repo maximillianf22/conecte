@@ -9,8 +9,8 @@
                 <img src="{{ asset('assets/img/brand/logoa.png')}}" width="80%" class="mt-5">
             </div>
             <div class="col-md-8">
-                <img src="{{ asset('assets/img/brand/logob.png')}}" width="40%" class="d-none d-lg-block mx-auto">
-                <img src="{{ asset('assets/img/brand/logoc.png')}}" width="40%" class="d-block d-lg-none mx-auto">
+                <img src="{{ asset('assets/img/brand/logob.png')}}" width="40%" class="d-none d-lg-block">
+                <img src="{{ asset('assets/img/brand/logoc.png')}}" width="40%" class="d-block d-lg-none">
                 <br>
                 <p class="text-white lead text-left">Es una plataforma digital que te permite estar mas cerca de tus artistas y/o celebridades favoritas, desde agrupaciones, cantantes hasta influencers; de esta manera podrás enviar emociones a través de ellos <br>
                 <br>
@@ -28,18 +28,15 @@
             <i class="fab fa-facebook-square"></i>
           </a>
           <a target="_blank" href="#" class="btn btn-icon btn-neutral  btn-round btn-lg btn-simple m-4" data-toggle="tooltip" data-original-title="Follow us">
-            <i class="fab fa-youtube"></i>
-          </a>
-          <a target="_blank" href="#" class="btn btn-icon btn-neutral  btn-round btn-lg btn-simple m-4" data-toggle="tooltip" data-original-title="Follow us">
             <i class="fab fa-twitter"></i>
           </a>
           </div>
           <div class="container mt-4">
               <div class="row text-center">
-                  <div class="col-md-3 text-muted lead">Privacidad</div>
-                  <div class="col-md-3 text-muted lead">Terminos y Condiciones</div>
-                  <div class="col-md-3 text-muted lead">Publicidad</div>
-                  <div class="col-md-3 text-muted lead">Ayuda</div>
+                  <div class="col-3 text-muted lead">Privacidad</div>
+                  <div class="col-3 text-muted lead">Terminos y Condiciones</div>
+                  <div class="col-3 text-muted lead">Publicidad</div>
+                  <div class="col-3 text-muted lead">Ayuda</div>
               </div>
           </div>
         </div>

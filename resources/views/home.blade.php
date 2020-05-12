@@ -85,12 +85,12 @@
         <div class="row">
           <div class="content-center text-left col-md-5 mt-5 offset-md-2">
             <h1 class="h1-seo p-0 m-0 text-white display-2"><strong>Tu artista favorito <br>a solo un click</strong></h1>
-            <h3 class="m-0 mb-4 p-0  text-white"><small></small><strong>Conecta</strong> tu persona favorita con tu artista favorito</h3>
+            <h4 class="m-0 mb-4 p-0  text-white"><small></small><strong>Conecta</strong> tu persona favorita con tu artista favorito</h4>
             <a href="persona/register" class="btn btn-facebook btn-round pl-5 pr-5 active">
-              <h3 class="p-0 m-0 text-white"><i class="fas fa-user"></i> Registro como <strong>Persona</strong></h3>
+              <h4 class="p-0 m-0 text-white"><i class="fas fa-user"></i> Registro como <strong>Persona</strong></h4>
             </a><br>
             <a href="artista/register" class="btn btn-primary btn-border btn-round pl-5 pr-5 active">
-              <h3 class="p-0 m-0 text-white"><img class="imagen mt-0" width="25" style="height: 25px !important; " src="assets/img/artista.png"> Registro como <strong>Artista&nbsp;&nbsp;&nbsp;</strong></h3>
+              <h4 class="p-0 m-0 text-white"><img class="imagen mt-0" width="25" style="height: 25px !important; " src="assets/img/artista.png"> Registro como <strong>Artista&nbsp;&nbsp;&nbsp;</strong></h4>
             </a>
           </div>
         </div>
@@ -153,8 +153,8 @@
     <div class="container-fluid m-0 p-0">
       <div class="container-fluid p-0">
         <div class="row mx-auto m-0 p-0">
-          <div class="col-md-6 p-5" style="background-image: url('{{asset('assets/img/bg/gradient.jpg')}}'); background-size:     cover;  background-repeat:   no-repeat;  background-position: center center;">
-            <h3 class="card-title display-2 text-center text-white"> ¿Que es Conecte? </h3>
+          <div class="col-md-6 p-2" style="background-image: url('{{asset('assets/img/bg/gradient.jpg')}}'); background-size:     cover;  background-repeat:   no-repeat;  background-position: center center;">
+            <h3 class="card-title display-2 text-center text-white  mt-4"> ¿Que es Conecte? </h3>
             <h3 class="text-default p-0 text-center text-white">• • •</h3>
             <h4 class="description text-center text-white">
               Es una plataforma digital que te permitirá estar más cerca de
@@ -182,8 +182,8 @@
             <div class="col-md-7 p-0 d-flex flex-row-reverse">
               <img class="d-block img-fluid rounded-0" src="assets/img/bg/inicio3.jpg">
             </div>
-            <div class="col-md-5 p-5" style="background-image: url('{{asset('assets/img/bg/rose.jpg')}}'); background-size:     cover;  background-repeat:   no-repeat;  background-position: center center;">
-              <h3 class="text-white lead text-white p-0 m-0">Artista</h3>
+            <div class="col-md-5 p-3 mt-4" style="background-image: url('{{asset('assets/img/bg/rose.jpg')}}'); background-size:     cover;  background-repeat:   no-repeat;  background-position: center center;">
+              <h4 class="text-white lead text-white p-0 m-0">Artista</h4>
               <hr class="line-info p-0 m-0">
               <h3 class="card-title display-4 text-white"> Gernera riquezas y cumple tus sueños sociales</h3>
               <h5 class="description text-white">
@@ -198,14 +198,14 @@
 
     <div class="container-fluid p-0 m-0">
       <div class="testimonials-1">
-        <div class="container border p-5" style="border-radius: 30px;border: .6rem solid #09000b!important;">
+        <div class="container border p-3" style="border-radius: 30px;border: .6rem solid #09000b!important;">
           <div class="container-fluid">
             <div class="row mx-auto m-0 p-0">
               <div class="col-md-7 p-0 d-flex flex-row-reverse">
                 <img class="d-block img-fluid rounded-0" src="assets/img/bg/inicio5.jpg">
               </div>
-              <div class="col-md-5 p-5" style="background-image: url('{{asset('assets/img/bg/blue.png')}}'); background-size:     cover;  background-repeat:   no-repeat;  background-position: center center;">
-                <h3 class="text-white lead text-white p-0 m-0">Empresa</h3>
+              <div class="col-md-5 p-3" style="background-image: url('{{asset('assets/img/bg/blue.png')}}'); background-size:     cover;  background-repeat:   no-repeat;  background-position: center center;">
+                <h3 class="text-white lead text-white p-0 m-0 mt-4">Empresa</h3>
                 <hr class="line-danger p-0 m-0">
                 <h3 class="card-title display-4 text-white"> Cambia la forma de invitar a tus Eventos</h3>
                 <h5 class="description text-white">
@@ -213,11 +213,11 @@
                 </h5>
               </div>
             </div>
-            <div class="row mx-auto m-0 p-0">
+            <div class="row mx-auto m-0 p- mt-4">
               <div class="col-md-7 p-0 d-flex flex-row-reverse">
                 <img class="d-block img-fluid rounded-0" src="assets/img/bg/inicio4.jpg">
               </div>
-              <div class="col-md-5 p-5" style="background-image: url('{{asset('assets/img/bg/blue.png')}}'); background-size:     cover;  background-repeat:   no-repeat;  background-position: center center;">
+              <div class="col-md-5 p-3" style="background-image: url('{{asset('assets/img/bg/blue.png')}}'); background-size:     cover;  background-repeat:   no-repeat;  background-position: center center;">
                 <h3 class="text-white lead text-white p-0 m-0">Individuo</h3>
                 <hr class="line-danger p-0 m-0">
                 <h3 class="card-title display-4 text-white">Sorprende a las personas que te importan</h3>
@@ -237,12 +237,12 @@
         <div class="row row-grid justify-content-between align-items-center">
           <div class="container">
             <h1 class="text-center text-white display-2">¿Como Funciona?</h1>
-            <div class="container p-5">
+            <div class="container p-2">
               <img class="d-block img-fluid rounded-0 mx-auto" width="90%" src="assets/img/bg/inicio6.png">
             </div>
             <div class="container">
               <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 col-12">
                   <div class="info info-horizontal m-0 p-0">
                     <div class="icon text-info">
                       <img class="d-block" width="100%" src="assets/img/bg/one.png">
@@ -253,7 +253,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-12">
                   <div class="info info-horizontal m-0 p-0">
                     <div class="icon text-info">
                       <img class="d-block" width="100%" src="assets/img/bg/two.png">
@@ -264,7 +264,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-12">
                   <div class="info info-horizontal m-0 p-0">
                     <div class="icon text-info">
                       <img class="d-block" width="100%" src="assets/img/bg/three.png">
