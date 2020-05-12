@@ -3,41 +3,41 @@
  	<div class="title container mb-0">
  		<h5 class="text-uppercase">Artistas Relacionados</h5>
  	</div>
-              <div class="col-md-3 p-2">
+              <div class="col-md-3 col-3 p-2">
                 <img src="{{ asset('assets/img/maluma.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
                 <span class="text-center">Maluma</span>
               </div>
-              <div class="col-md-3 p-2">
+              <div class="col-md-3 col-3 p-2">
                 <img src="{{ asset('assets/img/ozuna.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
                 <span class="text-center">Ozuna</span>
               </div>
-              <div class="col-md-3 p-2">
+              <div class="col-md-3 col-3 p-2">
                 <img src="{{ asset('assets/img/faces/jbalvin.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
                 <span class="text-center">Jbalvin</span>
               </div>
-              <div class="col-md-3 p-2">
+              <div class="col-md-3 col-3 p-2">
                 <img src="{{ asset('assets/img/silvestre.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
                 <span class="text-center">Silvestre</span>
               </div>
             </div>
             <div class="row mx-auto">
-              <div class="col-md-3 p-2">
+              <div class="col-md-3 col-3 p-2">
                 <img src="{{ asset('assets/img/karolg.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
                 <span class="text-center">Karol G</span>
               </div>
-              <div class="col-md-3 p-2">
+              <div class="col-md-3 col-3 p-2">
                 <img src="{{ asset('assets/img/anuel.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
                 <span class="text-center">Anuel</span>
               </div>
-              <div class="col-md-3 p-2">
+              <div class="col-md-3 col-3 p-2">
                 <img src="{{ asset('assets/img/sech.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
                 <span class="text-center">Sech</span>
               </div>
-              <div class="col-md-3 p-2">
+              <div class="col-md-3 col-3 p-2">
                 <img src="{{ asset('assets/img/beckyg.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
                 <span class="text-center">Becky G</span>
               </div>
-              <div class="ml-2 mx-auto mt-4">
+              <div class="mx-auto mt-4">
                 <span class="badge badge-pill badge-primary">#Regaeton</span>
                 <span class="badge badge-pill badge-info">#Regaeton</span>
                 <span class="badge badge-pill badge-success">#Regaeton</span>
@@ -47,36 +47,42 @@
               </div>
             </div>
             <div class="mx-auto mt-4 content-center">
-            	<img src="{{ asset('assets/img/cocacola.png')}}" class="shadow-lg text-center ml-2">
+              <div class="row">
+                <div class="col-1"></div>
+            	   <div class="col-10">
+                   <img src="{{ asset('assets/img/cocacola.png')}}" class="shadow-lg mx-auto">
+                 </div>
+                <div class="col-1"></div>
+              </div>
             	<br>
-            	<ul class="navbar-nav">
+            	<ul class="navbar-nav d-none d-sm-none d-md-block d-lg-block">
             	 <div class="row mx-auto p-0 m-0">
-            <li class="col-3  p-2">
-              <a class="nav-link" rel="tooltip" title="Siguenos en Twitter" data-placement="bottom" href="#" target="_blank">
-                <i class="fab fa-twitter"></i>
-                <p class="d-lg-none d-xl-none">Twitter</p>
-              </a>
-            </li>
-            <li class="col-3  p-2">
-              <a class="nav-link" rel="tooltip" title="Me Gusta en Facebook" data-placement="bottom" href="#" target="_blank">
-                <i class="fab fa-facebook-square"></i>
-                <p class="d-lg-none d-xl-none">Facebook</p>
-              </a>
-            </li>
-            <li class="col-3 p-2">
-              <a class="nav-link" rel="tooltip" title="Siguenos en Instagram" data-placement="bottom" href="#" target="_blank">
-                <i class="fab fa-instagram"></i>
-                <p class="d-lg-none d-xl-none">Instagram</p>
-              </a>
-            </li>
-            <li class="col-3  p-2">
-              <a class="nav-link" rel="tooltip" title="Siguenos en Youtube" data-placement="bottom" href="#" target="_blank">
-                <i class="fab fa-youtube"></i>
-                <p class="d-lg-none d-xl-none">Youtube</p>
-              </a>
-            </li>
-           </div>
-          </ul>
+                <li class="col-3  p-2">
+                  <a class="nav-link" rel="tooltip" title="Siguenos en Twitter" data-placement="bottom" href="#" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                    <p class="d-lg-none d-xl-none">Twitter</p>
+                  </a>
+                </li>
+                <li class="col-3  p-2">
+                  <a class="nav-link" rel="tooltip" title="Me Gusta en Facebook" data-placement="bottom" href="#" target="_blank">
+                    <i class="fab fa-facebook-square"></i>
+                    <p class="d-lg-none d-xl-none">Facebook</p>
+                  </a>
+                </li>
+                <li class="col-3 p-2">
+                  <a class="nav-link" rel="tooltip" title="Siguenos en Instagram" data-placement="bottom" href="#" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                    <p class="d-lg-none d-xl-none">Instagram</p>
+                  </a>
+                </li>
+                <li class="col-3  p-2">
+                  <a class="nav-link" rel="tooltip" title="Siguenos en Youtube" data-placement="bottom" href="#" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                    <p class="d-lg-none d-xl-none">Youtube</p>
+                  </a>
+                </li>
+               </div>
+              </ul>
             </div>
             <div class="container">
               <div class="row content-center mt-4">
@@ -84,9 +90,9 @@
               </div>
             </div>
             <div class="row mb-4 mt-3 p-2">
-              <div class="col-md-3 lead">Privacidad</div>
-              <div class="col-md-3 lead">Condicion</div>
-              <div class="col-md-3 lead">Publicidad</div>
-              <div class="col-md-3 lead">Ayuda</div>
+              <div class="col-3 lead">Privacidad</div>
+              <div class="col-3 lead">Condicion</div>
+              <div class="col-3 lead">Publicidad</div>
+              <div class="col-3 lead">Ayuda</div>
             </div>
 </div>

@@ -33,38 +33,44 @@
     <div class="main">
       <div class="container-fluid">
         <div class="row">
-        @include('template.default.sidebar.persona.filtro-busqueda')
+        @include('template.default.sidebar.persona.perfil')
           <div class="col-lg-6 bg-light pt-4 p-5">
             <div class="container">
               <form action="{{ route('welcome')}}" method="get" class="form-inline rounded m-0 ">
                 <div class="form-group no-border">
-                  <input type="text" class="form-control bg-white text-dark"  name="query" value="{{$query}}" placeholder="Ej, maluma, etc." style="margin: 10px;">
+                  <input type="text" class="form-control bg-white text-dark"  name="query" value="{{$query}}" placeholder="Busca tu artista fa...">
                 </div>&nbsp;&nbsp;
-                <button type="submit" class="btn btn-neutral btn-icon float-right btn-round ml-3">
+                <button type="submit" class="btn btn-neutral btn-icon float-right btn-round ml-3 d-none d-sm-none d-md-block d-lg-block">
                     <i class="fas fa-search"></i>
                 </button>
             </form> 
             </div>
-            <div class="row mx-auto mt-5 bg-default shadow-lg border-rounded">
+            <div class="container">
+                  <div class="card">
+                    <div class="row">
             <div class="title container mb-0">
               <h3 class="text-uppercase text-white">Busqueda Relacionada</h3>
             </div>
-            @if(count($artistas)>=1)
+              @if(count($artistas)>=1)
                 @foreach($artistas as $Artistas)
-                <a href="{{route('artista',$Artistas->nombre_artistico)}}">
-                  <div class="col-md-4 p-4 mt-0">
-                    <img  src="{{asset('storage/profile_images/artistas/'.$Artistas->foto_perfil)}}" alt="Foto del Artista" width="200px" class="img-fluid  rounded shadow-lg img-thumbnail" style="width: 70px;"><br>
-                    <span class="text-center text-white h4"><i class="fas fa-music"></i><div class="name">
-                            @if(empty($Artistas->nombre_artistico))
-                                {{$Artistas->name}}
-                            @else
-                                {{$Artistas->nombre_artistico}}
-                            @endif
-                        </div></span>
+                <div class="col-md-3 col-6 h1 text-white text-center">
+                  <a href="{{route('artista',$Artistas->nombre_artistico)}}">
+                        <img  src="{{asset('storage/profile_images/artistas/'.$Artistas->foto_perfil)}}" alt="Foto del Artista" width="200px" class="img-fluid  rounded shadow-lg img-thumbnail" style="width: 70px;"><br>
+                      <div class="name h4 text-white">
+                        <i class="fas fa-music"></i>
+                          @if(empty($Artistas->nombre_artistico))
+                              {{$Artistas->name}}
+                          @else
+                              {{$Artistas->nombre_artistico}}
+                          @endif
+                      </div>
+                    </a>
                   </div>
-                </a>
                 @endforeach
-            @endif
+              @endif
+                </div>
+              </div>
+            </div>
             @if (count($artistas) == 0)
                 <div class="container">
                     <h2 class="text-muted">No se encontraron resultados para "{{ $query }}"</h2>

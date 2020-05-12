@@ -3,13 +3,13 @@
     <div class="title container mb-0">
       <h5 class="text-uppercase">Artistas Independientes</h5>
     </div>
-    @foreach($artistas as $artista)
+    <!-- @foreach($artistas as $artista)
     <div class="col-md-3 p-2">
       <img src="{{asset('storage/profile_images/artistas/'.$artista->foto_perfil)}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;">
       <span class="text-center">{{$artista->nombre_artistico}}</span>
     </div>
-    @endforeach
-    <!-- <div class="col-md-3 p-2">
+    @endforeach -->
+    <div class="col-md-3 p-2">
                   <img src="{{ asset('assets/img/maluma.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
                   <span class="text-center">Maluma</span>
                 </div>
@@ -42,7 +42,7 @@
                 <div class="col-md-3 p-2">
                   <img src="{{ asset('assets/img/beckyg.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
                   <span class="text-center">Becky G</span>
-                </div> -->
+                </div>
   </div>
   <div class="container mt-5 content-center">
     <img src="{{ asset('assets/img/cocacola.png')}}" class="shadow-lg text-center ml-2">

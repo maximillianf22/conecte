@@ -15,6 +15,11 @@
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
   <!-- CSS Files -->
   <link href="{{ asset('assets/css/blk-design-system-pro.min.css?v=1.0.0')}}" rel="stylesheet" />
+  <style>
+    .form-group.no-border .form-control, .input-group.no-border .form-control {
+      padding: 11px 89px;
+    }
+  </style>
   <!-- CSS Just for demo purpose, don't include it in your project -->
 </head>
 

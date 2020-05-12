@@ -95,7 +95,7 @@
             </div>
           </div>
         </div>
-        <div class="row">
+      <!--<div class="row">
           <div class="col-4">
             <div class="fileinput fileinput-new text-center" data-provides="fileinput">
               <div class="fileinput-new thumbnail">
@@ -129,8 +129,7 @@
               </div>
             </div>
           </div>
-          <button class="nav-link btn-block  btn-success"> Guardar Cambios</button>
-        </div>
+        </div>-->
       </div>
     </form>
   </div>

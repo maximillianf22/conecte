@@ -1,10 +1,10 @@
 <div class="col-lg-6 bg-light pt-4">
     <div class="container">
-        <h3 class="text-white"> Tarjeta de Debito y Credito</h3>
-        <h4 class="text-white lead mt-0"> Puedes ver y editar tarjetasde credito aqui </h4>
+        <h3 class="text-white">Pagos</h3>
+        <!--<h4 class="text-white lead mt-0"> Puedes ver y editar tarjetasde credito aqui </h4>-->
         <hr>
         <div class="container mx-auto">
-            <div class="row mx-auto">
+            <!--<div class="row mx-auto">
                 <div class="col-6 mx-auto">
                     <img src="{{ asset('assets/img/card.png') }}" class="" alt="...">
                     <br>
@@ -26,10 +26,10 @@
                         <h1 class="mt-3">+</h1>
                     </button> Añadir Cuenta Bancaria
                 </div>
-            </div>
+            </div>-->
             <div class="row">
                 <div class="col">
-                    <div class="card">
+                    <div class="card p-3">
                         <table class="table">
                             <thead>
                                 <tr>
@@ -44,14 +44,14 @@
                             <tbody>
                                 @foreach($movimientos as $movimiento)
                                 <tr>
-                                    <td class="text-center">{{$loop->iteration}}</td>
-                                    <td>{{$movimiento->tipoMovimiento->first()->NOMBRE}}</td>
-                                    <td>{{$movimiento->userArtista->first()->name}}</td>
-                                    <td>${{number_format($movimiento->COSTO_TOTAL)}}</td>
-                                    <td class="text-right">{{$movimiento->CREATED_AT}}</td>
-                                    <td class="td-actions text-right">
+                                    <td class="text-center"><h6>{{$loop->iteration}}</h6></td>
+                                    <td><h6>{{$movimiento->tipoMovimiento->first()->NOMBRE}}</h6></td>
+                                    <td><h6>{{$movimiento->userArtista->first()->name}}</h6></td>
+                                    <td><h6>${{number_format($movimiento->COSTO_TOTAL)}}</h6></td>
+                                    <td class="text-right"><h6>{{$movimiento->CREATED_AT}}</h6></td>
+                                    <td class="td-actions text-right"><h6>
                                         {{$movimiento->estado->first()->NOMBRE}}
-                                    </td>
+                                    </h6></td>
                                 </tr>
                                 @endforeach
                             </tbody>

@@ -111,7 +111,8 @@ class LoginController extends Controller
                         if(Auth::user()->id_perfil == 0){
                             return redirect::to('/welcome');
                         }else{
-                            return redirect::to('/artista/perfil');
+                            Auth::logout();
+                            return Redirect::to('/app');
                         }
                         break;
                     }

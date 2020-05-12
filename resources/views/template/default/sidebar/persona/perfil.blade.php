@@ -3,9 +3,9 @@
     margin-bottom: -160;">
   <div class="card card-profile" data-background="full" style="height: 435px;">
     <a href="javascript:;">
-      <img class="img img-raised rounded" src="{{ asset('storage/profile_images/usuarios/'.$user->foto_perfil) }}" style="height: 435px; width: ">
+      <img class="img img-raised rounded" src="{{asset('assets/img/bg/perfil-persona.jpg')}}" style="height: auto; width: 100%">
     </a>
-    <div class="card-image">
+    <!--<div class="card-image">
       <div class="dropdown">
         <button type="button" class="btn btn-link dropdown-toggle btn-icon" data-toggle="dropdown" aria-expanded="false">
           <i class="fas fa-camera"></i>
@@ -14,7 +14,7 @@
           <a class="dropdown-item" href="javascript:;">Cambiar foto</a>
         </div>
       </div>
-    </div>
+    </div>-->
     <div class="card-body">
       <hr class="line-primary">
       <h3 class="job-title">{{$user->name}}</h3>
@@ -34,7 +34,22 @@
       </div>
     </div>
   </div>
-  <div class="row mx-auto mt-2">
+  @if(Route::current()->getName() == 'welcome')
+   <div class="row mx-auto mt-5 d-none d-sm-none d-md-block d-lg-block">
+    <div class="row mx-auto">
+      <div class="col-md-12">
+        <h4 class="text-white text-center mt-5">
+          <img src="{{ asset('assets/img/balving.png')}}" class="shadow-lg"><br>
+          www.conecte.co
+        </h4>
+      </div>
+      <div class="mx-auto mt-2">
+        <img src="{{ asset('assets/img/elite.jpg')}}" class="shadow-lg">
+      </div>
+    </div>
+  </div>
+  @else
+  <div class="row mx-auto mt-2 d-none d-sm-none d-md-block d-lg-block">
     <div class="row mx-auto">
       <div class="col-md-12">
         <ul class="nav nav-pills nav-pills-info flex-column">
@@ -48,4 +63,5 @@
       </div>
     </div>
   </div>
+@endif
 </div>

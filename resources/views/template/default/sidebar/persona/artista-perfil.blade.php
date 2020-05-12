@@ -1,41 +1,25 @@
 <div class="col-lg-3 pt-4" style="
     top: -160; 
     margin-bottom: -160;">
-  <div class="card card-profile" data-background="full" style="height: 435px;">
-    <a href="javascript:;">
-      <img class="img img-raised rounded" src="{{asset('storage/profile_images/artistas/'.$artista->foto_perfil)}}" style="height: 435px">
-    </a>
-    <div class="card-image">
-      <div class="dropdown">
-        <button type="button" class="btn btn-link dropdown-toggle btn-icon" data-toggle="dropdown" aria-expanded="false">
-          <i class="fas fa-camera"></i>
-        </button>
-        <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end">
-          <a class="dropdown-item" href="javascript:;">Cambiar foto</a>
-        </div>
-      </div>
+  <div class="card card-profile card-background">
+      <div class="full-background" style="background-image: url('{{asset('storage/profile_images/artistas/'.$artista->foto_perfil)}}')">
     </div>
-    <div class="card-body">
-      <h3 class="job-title">{{$artista->nombre_artistico}}</h3>
+      <div class="card-body mt-5">
+      <h3 class="job-title text-center text-white" style="margin-top: 200px">{{$artista->nombre_artistico}}</h3>
       <div class="table-responsive">
         <table class="table tablesorter " id="plain-table">
           <tbody>
-            <div class="container">
-              <span class="badge badge-pill badge-primary">#Regaeton</span>
-              <span class="badge badge-pill badge-info">#Hip Hop</span>
-              <span class="badge badge-pill badge-success">#POP</span>
+            <div class="container bg-light p-2 rounded" style="opacity: 0.8">
+              <span class="badge badge-pill badge-primary">#Artista</span>
+              <span class="badge badge-pill badge-info">#Farandula</span>
+              <span class="badge badge-pill badge-success">#Influencer</span>
             </div>
-            <tr class="text-dark">
-              <p class="text-dark"> <strong class="h6">Sobre Mi</strong> <br> Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
-              <h6 class="text-danger"> <strong>190</strong> Saludos | <strong> 6</strong> Invitaciones</h6>
-            </tr>
           </tbody>
         </table>
       </div>
     </div>
   </div>
-  <div class="row mx-auto mt-2">
+  <div class="row mx-auto mt-2 d-none d-sm-none d-md-block d-lg-block">
     <div class="row mx-auto">
       <div class="col-md-12">
         <div class="container mt-2 mb-2 content-center">
