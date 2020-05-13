@@ -14,6 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
   <!-- CSS Files -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/4.0.0/css/jasny-bootstrap.min.css">
   <link href="{{ asset('assets/css/blk-design-system-pro.min.css?v=1.0.0')}}" rel="stylesheet" />
   <style>
     .form-group.no-border .form-control, .input-group.no-border .form-control {
@@ -42,10 +43,8 @@
 <script src="{{ asset('assets/vendor/js-cookie/js.cookie.js') }}"></script>
 <script src="{{ asset('assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js') }}"></script>
 <!-- Optional JS -->
-<script src="{{ asset('assets/vendor/chart.js/dist/Chart.min.js') }}"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/4.0.0/js/jasny-bootstrap.min.js"></script>
 <script src="{{ asset('assets/js/plugins/bootstrap-switch.js') }}"></script>
-<script src="{{ asset('assets/js/components/charts/chart-bars.js') }}"></script>
-<script src="{{ asset('assets/vendor/chart.js/dist/Chart.extension.js') }}"></script>
 <script src="{{ asset('assets/js/plugins/nouislider.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('assets/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
 <!-- Argon JS -->

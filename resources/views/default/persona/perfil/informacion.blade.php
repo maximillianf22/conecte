@@ -134,3 +134,16 @@
     </form>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+<div class="avatar">
+                          <img class="media-object img-raised" src="http://franciscomartintorres.files.wordpress.com/2012/03/p1000094.jpg" alt="..." style="height: 100% !important;">
+                        </div>

@@ -152,7 +152,7 @@
                   </div>
 
                   <div class="card p-2" style="background-image: linear-gradient(to right top, #000000, #060003, #090009, #080110, #030316);">
-                    <h4 class="text-white text-center ml-5 mr-5"><strong>Total</strong> &dollar;15.000,00</h4>
+                    <h4 class="text-white text-center ml-5 mr-5"><strong>Total</strong> &dollar;150.000,00</h4>
                     <button type="submit" class="btn mx-auto btn-success btn-block">Siguiente</button>
                   </div>
                 </form>

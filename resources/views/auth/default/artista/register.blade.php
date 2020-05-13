@@ -1,6 +1,5 @@
 @extends('template.default.layout.default')
 @section('content')
-
 <body class="index-page" style="background-color: #e0e1e3">
   <nav class="navbar navbar-expand-lg fixed-top" style="background-image: linear-gradient(to right top, #000000, #060003, #090009, #080110, #030316);">
     <div class="container">
@@ -117,18 +116,6 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-6 pl-2">
-                      <div class="form-group">
-                        <select class="form-control" data-trigger name="choices-single-default" id="choices-single-default">
-                          <option disabled selected>¿Como escuche a Conecte?</option>
-                          <option value="2" class="text-dark">Redes Sociales</option>
-                          <option value="3" class="text-dark">Tv o Radio</option>
-                          <option value="3" class="text-dark">Amigo o Artista</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
                     <div class="col-6">
                       <div class="form-group">
                         <div class="input-group mb-4">
@@ -139,6 +126,8 @@
                         </div>
                       </div>
                     </div>
+                  </div>
+                  <div class="row">
                     <div class="col-6 pl-2">
                       <div class="form-group">
                         <div class="input-group">
@@ -149,8 +138,6 @@
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="row">
                     <div class="col-6">
                       <div class="form-group">
                         <div class="input-group mb-4">
@@ -161,23 +148,26 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-6 pl-2">
-                      <div class="form-group">
-                        <select class="form-control" data-trigger name="choices-single-default" id="choices-single-default">
-                          <option disabled selected>¿Especifica el Medio?</option>
-                          <option value="2" class="text-dark">Facebook</option>
-                          <option value="3" class="text-dark">Twitter</option>
-                          <option value="3" class="text-dark">Instagram</option>
-                          <option value="3" class="text-dark">Youtube</option>
-                        </select>
-                      </div>
-                    </div>
                   </div>
-
                   <div class="row">
-                    <div class="col-6">
+                     <div class="col-6 text-center">
                       <div class="form-group">
-                        <div class="input-group input-group-lg" data-toggle="tooltip" data-placement="left" title="
+                        <div class="fileinput text-center fileinput-new" data-provides="fileinput">
+                            <div class="fileinput-new thumbnail img-circle img-raised">
+                              <img src="{{ asset('assets/img/placeholder.jpg') }}" alt="...">
+                            </div>
+                            <div class="fileinput-preview fileinput-exists thumbnail img-circle img-raised" style=""></div>
+                            <div>
+                              <span class="btn btn-raised btn-round btn-default btn-file">
+                                <span class="fileinput-new">Add Photo</span>
+                                <span class="fileinput-exists">Change</span>
+                                <input type="hidden" value="" name="FOTO_PERFIL"><input type="file" name="FOTO_PERFIL">
+                              </span>
+                              <br>
+                              <a href="javascript:;" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="tim-icons icon-simple-remove"></i> Remove</a>
+                            </div>
+                          </div>
+                        <!--<div class="input-group input-group-lg" data-toggle="tooltip" data-placement="left" title="
                         En conecte
                         ganamos TODOS 
                         Ingresa el codigo de la persona
@@ -189,15 +179,27 @@
                             <span class="input-group-text"><i class="fas fa-barcode"></i></span>
                           </div>
                           <input type="text" class="form-control" placeholder="CODIGO">
-                        </div>
+                        </div>-->
                       </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-6 pl-2">
+                      <div class="form-group">
+                        <select class="form-control" data-trigger name="choices-single-default" id="choices-single-default">
+                          <option disabled selected>¿Especifica el Medio?</option>
+                          <option value="2" class="text-dark">Facebook</option>
+                          <option value="3" class="text-dark">Twitter</option>
+                          <option value="3" class="text-dark">Instagram</option>
+                          <option value="3" class="text-dark">Youtube</option>
+                        </select>
+                      </div><br>
                       <div class="custom-control custom-checkbox mt-2">
                         <input class="custom-control-input" id="customCheck" type="checkbox">
                         <label class="custom-control-label" for="customCheck">
                           <span><small>he leido y <strong>Acepto los terminos y condiciones</strong></small></span>
                         </label>
+                      </div>
+                      <div >
+                        <button type="submit" class="btn btn-success btn-lg pull-center">Siguiente</button>
                       </div>
                     </div>
                   </div>
@@ -206,11 +208,6 @@
                   <p class="m-0 text-danger">{{ $error }}</p>
                   @endforeach
                   @endif
-                  <div class="row">
-                    <div class="col-6 offset-2">
-                      <button type="submit" class="btn btn-success btn-lg pull-right">Siguiente</button>
-                    </div>
-                  </div>
                 </div>
               </form>
             </div>
