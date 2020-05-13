@@ -37,19 +37,20 @@
                 <img src="{{ asset('assets/img/beckyg.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
                 <span class="text-center">Becky G</span>
               </div>
-              <div class="mx-auto mt-4">
-                <span class="badge badge-pill badge-primary">#Regaeton</span>
-                <span class="badge badge-pill badge-info">#Regaeton</span>
-                <span class="badge badge-pill badge-success">#Regaeton</span>
-                <span class="badge badge-pill badge-danger">#Regaeton</span>
-                <span class="badge badge-pill badge-warning">#Regaeton</span>
-                <span class="badge badge-pill badge-default">#Regaeton</span>
-              </div>
             </div>
             <div class="mx-auto mt-4 content-center">
               <div class="row">
                 <div class="col-1"></div>
             	   <div class="col-10">
+                   <div class="row mt-4">
+                      <span class="badge badge-pill col-4 badge-primary">#Regaeton</span>
+                      <span class="badge badge-pill col-4 badge-info ">#Regaeton</span>
+                      <span class="badge badge-pill col-4 badge-success ">#Regaeton</span>
+                      <span class="badge badge-pill col-4 badge-danger">#Regaeton</span>
+                      <span class="badge badge-pill col-4 badge-warning ">#Regaeton</span>
+                      <span class="badge badge-pill col-4 badge-default ">#Regaeton</span>
+                    </div>
+                    <br>
                    <img src="{{ asset('assets/img/cocacola.png')}}" class="shadow-lg mx-auto">
                  </div>
                 <div class="col-1"></div>

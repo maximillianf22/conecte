@@ -170,7 +170,7 @@ class LoginController extends Controller
 
 
 
-    public function RecoveryAccount() { return view('auth.userRecovery');}
+    public function RecoveryAccount() { return view('auth.default.userRecovery');}
     public function PostRecoveryAccount(Request $request){
       $this->validate($request, [ 'email' => 'required' ]);
       $validate_ = User::where('email', $request->email)->first();

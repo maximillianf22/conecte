@@ -2,6 +2,7 @@
 
 @section('content')
 
+</style>
 <body class="index-page" style="background-color: #e0e1e3">
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg fixed-top" style="background-image: linear-gradient(to right top, #000000, #060003, #090009, #080110, #030316);">
@@ -68,11 +69,6 @@
   <!-- End Navbar -->
   <!-- Home -->
   <!-- Header -->
-  <style>
-    body {
-      fill: currentColor;
-    }
-  </style>
   <div class="wrapper m-0 p-0" style="background-image: url('{{asset('assets/img/bg/header.jpg')}}'); background-attachment: fixed; background-size:     cover;  background-repeat:   no-repeat;  background-position: center center;">
     <div class="page-header">
       <div class="squares square1"></div>
@@ -84,12 +80,21 @@
       <div class="container">
         <div class="row">
           <div class="content-center text-left col-md-5 mt-5 offset-md-2">
-            <h1 class="h1-seo p-0 m-0 text-white display-2"><strong>Tu artista favorito <br>a solo un click</strong></h1>
+        <img src="{{ asset('assets/img/bg/head.png')}}" class="d-block d-md-none d-lg-none text-center p-0 m-0">
+
+            <h1 class="h1-seo p-0 m-0 text-white display-3"><strong>Tu artista favorito <br>a solo un click</strong></h1>
             <h4 class="m-0 mb-4 p-0  text-white"><small></small><strong>Conecta</strong> tu persona favorita con tu artista favorito</h4>
-            <a href="persona/register" class="btn btn-facebook btn-round pl-5 pr-5 active">
+            <style>
+              a.btn.btn-ra:hover{
+
+                background-image: linear-gradient(to bottom left,#b15e68,#e28a8d,#af5c66) !important;
+              }
+            </style>
+            <a href="persona/register" class="btn btn-round btn-facebook pl-5 pr-5 active">
               <h4 class="p-0 m-0 text-white"><i class="fas fa-user"></i> Registro como <strong>Persona</strong></h4>
-            </a><br>
-            <a href="artista/register" class="btn btn-primary btn-border btn-round pl-5 pr-5 active">
+            </a>
+            <br>
+            <a href="artista/register" class="btn btn-primary btn-ra btn-round pl-5 pr-5 active">
               <h4 class="p-0 m-0 text-white"><img class="imagen mt-0" width="25" style="height: 25px !important; " src="assets/img/artista.png"> Registro como <strong>Artista&nbsp;&nbsp;&nbsp;</strong></h4>
             </a>
           </div>
@@ -105,7 +110,7 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="p-4 col-lg-12">
-            <h1 class="text-center text-dark display-2"> Encuentra <br>
+            <h1 class="text-center text-dark mb-0 display-2"> Encuentra <br>
               los <strong>beneficios</strong> que tenemos <br>
               para ti.</h1>
             <div class="row row-grid justify-content-center  mt-5">
@@ -114,9 +119,9 @@
                   <div class="icon icon-danger">
                     <i class="fas "><img class="imagen1" width="35" src="assets/img/artista.svg"></i>
                   </div>
-                  <h2 class="info-title font-weight-bold text-dark h1">Artistas</h2>
+                  <h2 class="info-title font-weight-bold text-dark display-3">Artistas</h2>
                   <hr class="line-primary">
-                  <p class="text-dark h3"><strong>Ten</strong> Contacto con tus seguidores.</p>
+                  <h3 class="text-dark"><strong>Ten</strong> Contacto con tus seguidores.</h3>
                 </div>
               </div>
               <div class="col-lg-6  offset-md-1 rounded  mb-4 mt-5" style="border-radius: 2rem!important; border: .3rem solid; ">
@@ -182,8 +187,8 @@
             <div class="col-md-7 p-0 d-flex flex-row-reverse">
               <img class="d-block img-fluid rounded-0" src="assets/img/bg/inicio3.jpg">
             </div>
-            <div class="col-md-5 p-3 mt-4" style="background-image: url('{{asset('assets/img/bg/rose.jpg')}}'); background-size:     cover;  background-repeat:   no-repeat;  background-position: center center;">
-              <h4 class="text-white lead text-white p-0 m-0">Artista</h4>
+            <div class="col-md-5 p-3" style="background-image: url('{{asset('assets/img/bg/rose.jpg')}}'); background-size:     cover;  background-repeat:   no-repeat;  background-position: center center;">
+              <h4 class="text-white lead text-white p-0 m-0 mt-5">Artista</h4>
               <hr class="line-info p-0 m-0">
               <h3 class="card-title display-4 text-white"> Gernera riquezas y cumple tus sueños sociales</h3>
               <h5 class="description text-white">
@@ -199,7 +204,7 @@
     <div class="container-fluid p-0 m-0">
       <div class="testimonials-1">
         <div class="container border p-3" style="border-radius: 30px;border: .6rem solid #09000b!important;">
-          <div class="container-fluid">
+          <div class="container-fluid" style="padding-left: 10px;">
             <div class="row mx-auto m-0 p-0">
               <div class="col-md-7 p-0 d-flex flex-row-reverse">
                 <img class="d-block img-fluid rounded-0" src="assets/img/bg/inicio5.jpg">
@@ -213,12 +218,12 @@
                 </h5>
               </div>
             </div>
-            <div class="row mx-auto m-0 p- mt-4">
+            <div class="row mx-auto m-0 p-0">
               <div class="col-md-7 p-0 d-flex flex-row-reverse">
                 <img class="d-block img-fluid rounded-0" src="assets/img/bg/inicio4.jpg">
               </div>
               <div class="col-md-5 p-3" style="background-image: url('{{asset('assets/img/bg/blue.png')}}'); background-size:     cover;  background-repeat:   no-repeat;  background-position: center center;">
-                <h3 class="text-white lead text-white p-0 m-0">Individuo</h3>
+                <h3 class="text-white lead text-white p-0 m-0 mt-4">Individuo</h3>
                 <hr class="line-danger p-0 m-0">
                 <h3 class="card-title display-4 text-white">Sorprende a las personas que te importan</h3>
                 <h4 class="description text-white">
