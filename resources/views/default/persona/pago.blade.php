@@ -160,7 +160,7 @@
 
             </div>
           </div>
-          @include('template.default.sidebar.persona.artista-relacionado')
+          @include('template.default.sidebar.persona.artista-independiente')
         </div>
       </div>
     </div>
