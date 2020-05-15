@@ -38,14 +38,16 @@
                   <span class="text-center">Becky G</span>
                 </div>
   </div>
-  <div class="container mt-5 content-center">
-    <div class="row">
+  <div class="container">
+  <div class="row">
       <div class="col-1 col-md-2"></div>
       <div class="col-10 col-md-8">
         <img src="{{ asset('assets/img/cocacola.png')}}" class="shadow-lg text-center ml-2">
       </div>
       <div class="col-1 col-md-2"></div>
     </div>
+    </div>
+  <div class="container mt-5 content-center">
     <br>
     <ul class="navbar-nav">
       <div class="row mx-auto">
