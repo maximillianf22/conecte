@@ -2,7 +2,7 @@
   <div class="row mx-auto mt-2">
     <div class="title container mb-0">
       <h5 class="text-uppercase">Artistas Independientes</h5>
-    </div>ar
+    </div>
     <div class="col-md-3 p-2">
                   <img src="{{ asset('assets/img/maluma.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
                   <span class="text-center">Maluma</span>
