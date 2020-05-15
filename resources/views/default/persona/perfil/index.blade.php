@@ -44,7 +44,7 @@
 @endsection
 
 @section('sidebarR')
-@include('template.default.sidebar.persona.artista-indeoendiente')
+@include('template.default.sidebar.persona.artista-independiente')
 @endsection
 
 @section('modals')
