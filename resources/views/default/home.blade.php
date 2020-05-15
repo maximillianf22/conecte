@@ -78,7 +78,7 @@
                 </div>
             @endif
             </div>         
-         @include('template.default.sidebar.persona.artista-independiente')
+         @include('template.default.sidebar.persona.artista-relacionado')
         </div>
       </div>
     </div>

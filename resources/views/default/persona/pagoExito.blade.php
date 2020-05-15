@@ -266,7 +266,7 @@
 
               <h1 class="text-center mt-5"><img src="{{ asset('assets/img/pago-exito.jpg') }}" width="70%" class="mt-5 shadow-lg"></h1>
           </div>
-          @include('template.default.sidebar.persona.artista-independiente')
+          @include('template.default.sidebar.persona.artista-relacionado')
         </div>
       </div>
     </div>
