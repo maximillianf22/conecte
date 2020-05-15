@@ -53,6 +53,7 @@
             </div>
               @if(count($artistas)>=1)
                 @foreach($artistas as $Artistas)
+                <a href="{{route('artista',$Artistas->nombre_artistico)}}">
                 <div class="col-md-3 col-6 text-white text-center">
                     <div class="avatar " style="height: 60px; width: 60px; border: .2rem solid !important; border-color: #d89d7a !important;">
                       <img class="media-object img-raised" src="{{asset('storage/profile_images/artistas/'.$Artistas->foto_perfil)}}" alt="..." style="height: 100% !important;">
@@ -65,6 +66,7 @@
                         @endif
                     </p>
                 </div>
+                </a>
                 @endforeach
               @endif
                 </div>
