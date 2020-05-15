@@ -3,37 +3,37 @@
     <div class="title container mb-0">
       <h5 class="text-uppercase">Artistas Independientes</h5>
     </div>
-    <div class="col-md-3 p-2">
+    <div class="col-3 p-2">
                   <img src="{{ asset('assets/img/maluma.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
                   <span class="text-center">Maluma</span>
                 </div>
-                <div class="col-md-3 p-2">
+                <div class="col-3 p-2">
                   <img src="{{ asset('assets/img/ozuna.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
                   <span class="text-center">Ozuna</span>
                 </div>
-                <div class="col-md-3 p-2">
+                <div class="col-3 p-2">
                   <img src="{{ asset('assets/img/faces/jbalvin.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
                   <span class="text-center">Jbalvin</span>
                 </div>
-                <div class="col-md-3 p-2">
+                <div class="col-3 p-2">
                   <img src="{{ asset('assets/img/silvestre.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
                   <span class="text-center">Silvestre</span>
                 </div>
               </div>
               <div class="row mx-auto">
-                <div class="col-md-3 p-2">
+                <div class="col-3 p-2">
                   <img src="{{ asset('assets/img/karolg.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
                   <span class="text-center">Karol G</span>
                 </div>
-                <div class="col-md-3 p-2">
+                <div class="col-3 p-2">
                   <img src="{{ asset('assets/img/anuel.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
                   <span class="text-center">Anuel</span>
                 </div>
-                <div class="col-md-3 p-2">
+                <div class="col-3 p-2">
                   <img src="{{ asset('assets/img/sech.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
                   <span class="text-center">Sech</span>
                 </div>
-                <div class="col-md-3 p-2">
+                <div class="col-3 p-2">
                   <img src="{{ asset('assets/img/beckyg.jpg')}}" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg img-thumbnail" style="width: 100px;"> 
                   <span class="text-center">Becky G</span>
                 </div>
@@ -42,27 +42,27 @@
     <img src="{{ asset('assets/img/cocacola.png')}}" class="shadow-lg text-center ml-2">
     <br>
     <ul class="navbar-nav">
-      <div class="row mx-auto p-0 m-0">
+      <div class="row mx-auto">
         <li class="col-3  p-2">
-          <a class="nav-link" rel="tooltip" title="Siguenos en Twitter" data-placement="bottom" href="#" target="_blank">
+          <a class="nav-link text-center" rel="tooltip" title="Siguenos en Twitter" data-placement="bottom" href="#" target="_blank">
             <i class="fab fa-twitter"></i>
             <p class="d-lg-none d-xl-none">Twitter</p>
           </a>
         </li>
         <li class="col-3  p-2">
-          <a class="nav-link" rel="tooltip" title="Me Gusta en Facebook" data-placement="bottom" href="#" target="_blank">
+          <a class="nav-link text-center" rel="tooltip" title="Me Gusta en Facebook" data-placement="bottom" href="#" target="_blank">
             <i class="fab fa-facebook-square"></i>
             <p class="d-lg-none d-xl-none">Facebook</p>
           </a>
         </li>
         <li class="col-3 p-2">
-          <a class="nav-link" rel="tooltip" title="Siguenos en Instagram" data-placement="bottom" href="#" target="_blank">
+          <a class="nav-link text-center" rel="tooltip" title="Siguenos en Instagram" data-placement="bottom" href="#" target="_blank">
             <i class="fab fa-instagram"></i>
             <p class="d-lg-none d-xl-none">Instagram</p>
           </a>
         </li>
         <li class="col-3  p-2">
-          <a class="nav-link" rel="tooltip" title="Siguenos en Youtube" data-placement="bottom" href="#" target="_blank">
+          <a class="nav-link text-center" rel="tooltip" title="Siguenos en Youtube" data-placement="bottom" href="#" target="_blank">
             <i class="fab fa-youtube"></i>
             <p class="d-lg-none d-xl-none">Youtube</p>
           </a>
