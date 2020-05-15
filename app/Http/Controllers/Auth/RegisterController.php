@@ -156,14 +156,24 @@ class RegisterController extends Controller {
 		// 	'email.required' => 'Verifique la información ingresada e intente nuevamente',
 		// ]);
 
+		if($foto_perfil){
+    		$image_path = time().$foto_perfil->getClientOriginalName();
+    		\Storage::disk('images')->put($image_path, \File::get($foto_perfil));
+
+    		$user->foto_perfil = $image_path;
+    	}
+
 		$this->validate($request, [
-			'email' => 'required|email|unique:users'
+			'email' => 'required|email|unique:users',
+          	'foto_perfil' => 'image|mimes:jpg,jpeg,png'
 		],[
 			'email.unique' => 'Este correo ya existe'
 		]);
 
 		$msg = tbl_parametros::where('ID', '18')->get();
+		$foto_perfil = $request->file('foto_perfil');
 
+    	
 		$user = new User();
 		$user->name = $request->name;
 		$user->email = $request->email;
@@ -173,14 +183,6 @@ class RegisterController extends Controller {
 		$user->fecha_nac = '2020-04-18';
 		$user->id_perfil = 0;
 		$user->id_estado = 10;
-		$foto_perfil = $request->file('foto_perfil');
-
-    	if($foto_perfil){
-    		$image_path = time().$foto_perfil->getClientOriginalName();
-    		\Storage::disk('images')->put($image_path, \File::get($foto_perfil));
-
-    		$user->foto_perfil = $image_path;
-    	}
 		$user->remember_token = str_random(100);
 		$user->confirm_token = str_random(100);
 		$user->save();

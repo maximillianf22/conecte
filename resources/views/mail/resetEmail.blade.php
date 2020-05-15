@@ -1,22 +1,81 @@
-@extends ('templates.default.layouts.autentificacion')
-@section ('title','Inicio de sesión')
-@section('head')
-@endsection
+@extends('template.default.layout.default')
+@section('content')
 
-@section('body')
-    <body class="hold-transition login-page fdo-auth">
-        <div class="login-box ">
-            <div class="login-logo">              
-                <a href="/">
-                    <img src="{{ asset('/assets/img/LogoConecteWeb.png') }}" alt="Conecte.com">
-                </a>
+<body class="index-page" style="background-color: #e0e1e3">
+  <nav class="navbar navbar-expand-lg navbar-transparent fixed-top">
+    <div class="container">
+      <div class="navbar-translate">
+        <a class="navbar-brand" href="inicio" rel="tooltip" title="Designed and Coded by Developapp" data-placement="bottom">
+          <img src="{{ asset('assets/img/brand/logoc.png')}}" width="55%">
+        </a>
+        <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-bar bar1"></span>
+          <span class="navbar-toggler-bar bar2"></span>
+          <span class="navbar-toggler-bar bar3"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse justify-content-end" id="navigation">
+        <div class="navbar-collapse-header">
+          <div class="row">
+            <div class="col-6 collapse-brand">
+              <a>
+                <img src="{{ asset('assets/img/brand/logoa.png')}}" width="60%">
+              </a>
             </div>
-
-            <div class="login-box-body">
-                <div class="fdo-bck-app brd-radius-tops">
-                    <p class="login-box-msg">Restaurar Contraseña</p>
-                </div>
-                
+            <div class="col-6 collapse-close text-right">
+              <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="tim-icons icon-simple-remove"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <ul class="navbar-nav">
+          <li class="nav-item p-0">
+            <a class="nav-link" rel="tooltip" title="Siguenos en Twitter" data-placement="bottom" href="#" target="_blank">
+              <i class="fab fa-twitter"></i>
+              <p class="d-lg-none d-xl-none">Twitter</p>
+            </a>
+          </li>
+          <li class="nav-item p-0">
+            <a class="nav-link" rel="tooltip" title="Me Gusta en Facebook" data-placement="bottom" href="#" target="_blank">
+              <i class="fab fa-facebook-square"></i>
+              <p class="d-lg-none d-xl-none">Facebook</p>
+            </a>
+          </li>
+          <li class="nav-item p-0">
+            <a class="nav-link" rel="tooltip" title="Siguenos en Instagram" data-placement="bottom" href="#" target="_blank">
+              <i class="fab fa-instagram"></i>
+              <p class="d-lg-none d-xl-none">Instagram</p>
+            </a>
+          </li>
+          <li class="nav-item p-0">
+            <a class="nav-link" rel="tooltip" title="Siguenos en Youtube" data-placement="bottom" href="#" target="_blank">
+              <i class="fab fa-youtube"></i>
+              <p class="d-lg-none d-xl-none">Youtube</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Header -->
+  <div class="wrapper section-signup m-0 p-0" style="background-image: url('{{asset('assets/img/bg/login.jpg')}}'); background-attachment: fixed; background-size:     cover;  background-repeat:   no-repeat;  background-position: center center;">
+    <div class="page-header container">
+      <div class="squares square1"></div>
+      <div class="squares square2"></div>
+      <div class="squares square3"></div>
+      <div class="squares square4"></div>
+      <div class="squares square5"></div>
+      <div class="squares square7"></div>
+      <div class="container">
+        <div class="row">
+          <div class="content-center text-left col-md-5 offset-md-3">
+            <div class="card card-contact card-raised p-3" style="background-image: linear-gradient(to right top, #000000, #060003, #090009, #080110, #030316);">
+              <div class="card-header text-center">
+                <img src="{{ asset('assets/img/brand/logoc.png')}}" width="55%" class="d-none d-lg-block mx-auto">
+                <h4 class="card-title text-white display-4"> <strong>Inicie sesión</strong> para disfrutar de de lo mejor de <strong> Conecte </strong> ...</h4>
+              </div>
+              <div class="card-body pb-0">
                 <form method="POST" action="{{ route('resetpasswordaccount') }}">
                 <div class="body-form-login brd-radius-bottoms">
                     {{ csrf_field() }}
@@ -49,22 +108,26 @@
                         </div>
                     </div>
                 </form>
-                <div class="action-forms text-center">
-                    <a href="{{ route('recoveryaccount') }}">¿Se te ha olvidado la contraseña?</a><br>
-                    <a href="{{ route('register.usuarios') }}" class="text-center"><b>Aun no soy usuario de conecte,  deseo registrarme</b></a>
-                    <br />
-                    <a href="{{ route('register.artista') }}" class="text-center"><b>Registrarme como Artista</b></a>
-                    
                 </div>
+              <div class="card-footer text-center mt-0">
+                <div class="pull-left ml-3 mt-2 mb-3">
+                  <h6>
+                    <a class="link footer-link" href="#" data-toggle="modal" data-target="#myModal1">Registrar</a>
+                  </h6>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </body>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Header -->
+</body>
+@include('template.default.footer.webfoot')
 @endsection
 
 @section('js')
-    @if (count($errors) > 0)
-        @foreach ($errors->all() as $error)
-            <script>toastr.info("{{$error}}")</script>
-        @endforeach
-    @endif
+
 @endsection

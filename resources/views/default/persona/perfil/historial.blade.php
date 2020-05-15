@@ -1,12 +1,15 @@
 <div class="col-lg-6 bg-light pt-4">
     <div class="container">
-        <h2 class="text-dark mt-2">Historial de solicitudes </h2>
-        <table class="table">
-            <thead>
+        <h3 class="text-white">Historial de Solicitudes</h3>
+        <div class="container mx-auto">
+            <div class="row">
+                <div class="col">
+                    <div class="card p-3">
+                        <table class="table">
+                            <thead>
                 <tr>
                     <th class="text-center"></th>
                     <th>Artista</th>
-                    <th>Mensaje</th>
                     <th>Valor</th>
                     <th>Estado</th>
                     <th class="text-right">Fecha</th>
@@ -20,9 +23,8 @@
                 <tr>
                     <td class="text-center"></td>
                     <td>{{$item->name}}</td>
-                    <td>{{$item->MENSAJE}}</td>
                     <td class="text-right"> ${{ number_format($item->COSTO_DEDICATORIA, 2) }}</td>
-                    <td>Estado</td>
+                    <td>{{$item->estado}}</td>
                     <td>{{$item->CREATED_AT}}</td>
                     @if($item->URL_DE_RESPUESTA !== null)
                     <td class="text-right">
@@ -40,6 +42,11 @@
                 @endif
             </tbody>
         </table>
+        
         {!! $historial->appends(Request::all())->render() !!}
     </div>
+</div>
+</div>
+</div>
+</div>
 </div>

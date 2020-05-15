@@ -186,7 +186,7 @@ class HomeController extends Controller
             //Artistas para ti
             $artistas = artistas_celebridade::where('nombre_artistico', 'LIKE', '%' . $query . '%')
                 ->orderBy('name', 'ASC')
-                ->take(4)
+                ->take(8)
                 ->get();
 
             //Generos
@@ -604,7 +604,7 @@ class HomeController extends Controller
         $data['user'] = $user;
         $data['section'] = $section;
         $data['artistas'] = artistas_celebridade::orderBy('name', 'ASC')
-            ->take(4)
+            ->take(8)
             ->get();
 
         switch ($section) {
@@ -613,7 +613,7 @@ class HomeController extends Controller
             case 'pagos':
                 $movimientos = tbl_movimientos::where('ID_CLIENTE', Auth::user()->id)
                     ->orderBy('ID', 'DESC')
-                    ->paginate(15);
+                    ->paginate(7);
                 $movimientos->each(function ($movimientos) {
                     $movimientos->tipoMovimiento;
                     $movimientos->userArtista;
@@ -622,7 +622,7 @@ class HomeController extends Controller
                 break;
             case 'historial':
                 $data['historial'] = Historial_view::where('ID_CLIENTE', Auth::user()->id)
-                ->paginate(15);
+                ->paginate(5);
                 break;
 
             default:

@@ -2,7 +2,6 @@
     <div class="container">
         <h3 class="text-white">Pagos</h3>
         <!--<h4 class="text-white lead mt-0"> Puedes ver y editar tarjetasde credito aqui </h4>-->
-        <hr>
         <div class="container mx-auto">
             <!--<div class="row mx-auto">
                 <div class="col-6 mx-auto">
@@ -56,6 +55,7 @@
                                 @endforeach
                             </tbody>
                         </table>
+                        {!! $movimientos->appends(Request::all())->render() !!}
                     </div>
                 </div>
             </div>

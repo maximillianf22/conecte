@@ -38,7 +38,7 @@
             <div class="container">
               <form action="{{ route('welcome')}}" method="get" class="form-inline rounded m-0 ">
                 <div class="form-group no-border">
-                  <input type="text" class="form-control bg-white text-dark"  name="query" value="{{$query}}" placeholder="Busca tu artista fa...">
+                  <input type="text" class="form-control bg-white text-dark"  name="query" value="{{$query}}" placeholder="Busca tu artista favorito">
                 </div>&nbsp;&nbsp;
                 <button type="submit" class="btn btn-neutral btn-icon float-right btn-round ml-3 d-none d-sm-none d-md-block d-lg-block">
                     <i class="fas fa-search"></i>
@@ -47,24 +47,24 @@
             </div>
             <div class="container">
                   <div class="card">
-                    <div class="row">
+                    <div class="row mb-4">
             <div class="title container mb-0">
               <h3 class="text-uppercase text-white text-center">Busqueda Relacionada</h3>
             </div>
               @if(count($artistas)>=1)
                 @foreach($artistas as $Artistas)
-                <div class="col-md-3 col-6 h1 text-white text-center">
-                  <a href="{{route('artista',$Artistas->nombre_artistico)}}">
-                        <img  src="{{asset('storage/profile_images/artistas/'.$Artistas->foto_perfil)}}" alt="Foto del Artista" width="200px" class="img-fluid  rounded shadow-lg img-thumbnail" style="width: 70px;"><br>
-                      <div class="name h4 text-white text-center">
-                          @if(empty($Artistas->nombre_artistico))
+                <div class="col-md-3 col-6 text-white text-center">
+                    <div class="avatar " style="height: 60px; width: 60px; border: .2rem solid !important; border-color: #d89d7a !important;">
+                      <img class="media-object img-raised" src="{{asset('storage/profile_images/artistas/'.$Artistas->foto_perfil)}}" alt="..." style="height: 100% !important;">
+                    </div>
+                    <p class="text-center text-white">
+                       @if(empty($Artistas->nombre_artistico))
                               {{$Artistas->name}}
                           @else
                               {{$Artistas->nombre_artistico}}
-                          @endif
-                      </div>
-                    </a>
-                  </div>
+                        @endif
+                    </p>
+                </div>
                 @endforeach
               @endif
                 </div>
@@ -76,7 +76,6 @@
                 </div>
             @endif
             </div>         
-          </div>
          @include('template.default.sidebar.persona.artista-relacionado')
         </div>
       </div>
