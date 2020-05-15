@@ -38,9 +38,25 @@
                   <span class="text-center">Becky G</span>
                 </div>
   </div>
+
+  <div class="row">
+                <div class="col-1"></div>
+                 <div class="col-10">
+                   <div class="row mt-4">
+                      <span class="badge badge-pill col-4 badge-primary">#Regaeton</span>
+                      <span class="badge badge-pill col-4 badge-info ">#Regaeton</span>
+                      <span class="badge badge-pill col-4 badge-success ">#Regaeton</span>
+                      <span class="badge badge-pill col-4 badge-danger">#Regaeton</span>
+                      <span class="badge badge-pill col-4 badge-warning ">#Regaeton</span>
+                      <span class="badge badge-pill col-4 badge-default ">#Regaeton</span>
+                    </div>
+                    <br>
+                   <img src="{{ asset('assets/img/cocacola.png')}}" class="shadow-lg mx-auto">
+                 </div>
+                <div class="col-1"></div>
+              </div>
+              
   <div class="container mt-5 content-center">
-    <img src="{{ asset('assets/img/cocacola.png')}}" class="shadow-lg text-center ml-2">
-    <br>
     <ul class="navbar-nav">
       <div class="row mx-auto">
         <li class="col-3  p-2">
