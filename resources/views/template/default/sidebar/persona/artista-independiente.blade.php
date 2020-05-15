@@ -87,7 +87,7 @@
     </ul>
   </div>
   <div class="container">
-    <div class="row content-center mt-5">
+    <div class="row content-center">
       <img src="{{ asset('assets/img/brand/logoc.png')}}" width="70%" class=" mx-auto">
     </div>
   </div>
