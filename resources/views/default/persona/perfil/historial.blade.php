@@ -24,7 +24,7 @@
                     <td class="text-center"></td>
                     <td>{{$item->name}}</td>
                     <td class="text-right"> ${{ number_format($item->COSTO_DEDICATORIA, 2) }}</td>
-                    <td>{{$item->estado}}</td>
+                    <td>Estado</td>
                     <td>{{$item->CREATED_AT}}</td>
                     @if($item->URL_DE_RESPUESTA !== null)
                     <td class="text-right">
@@ -42,7 +42,6 @@
                 @endif
             </tbody>
         </table>
-        
         {!! $historial->appends(Request::all())->render() !!}
     </div>
 </div>
