@@ -42,7 +42,7 @@
   <div class="row">
       <div class="col-1 col-md-2"></div>
       <div class="col-10 col-md-8">
-        <img src="{{ asset('assets/img/cocacola.png')}}" class="shadow-lg text-center ml-2">
+        <img src="{{ asset('assets/img/cocacola.png')}}" class="shadow text-center">
       </div>
       <div class="col-1 col-md-2"></div>
     </div>
