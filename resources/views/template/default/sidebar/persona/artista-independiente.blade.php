@@ -55,8 +55,8 @@
                  </div>
                 <div class="col-1"></div>
               </div>
-              
-  <div class="container mt-5 content-center">
+
+  <div class="container content-center">
     <ul class="navbar-nav">
       <div class="row mx-auto">
         <li class="col-3  p-2">
