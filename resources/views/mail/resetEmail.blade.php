@@ -81,24 +81,21 @@
                     {{ csrf_field() }}
                     <div class="form-group has-feedback">
                     <input  type="hidden"  name="id" placeholder="" value="{{ $identificacion_}}">
-                            <input  type="hidden"  name="token_" placeholder="" value="{{ $token_}}">
-                            
+                        <input  type="hidden"  name="token_" placeholder="" value="{{ $token_}}">
                     <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }} field_password" name="password" placeholder="Nueva Contraseña" value="" required autofocus>
-                                @if ($errors->has('email')) 
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                        
+                        @if ($errors->has('email')) 
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('email') }}</strong>
+                            </span>
+                        @endif
                     </div>
                     <div class="form-group has-feedback">
                     <input id="repeatpassword" type="password" class="form-control{{ $errors->has('repeatpassword') ? ' is-invalid' : '' }} field_repeatpassword" name="repeatpassword" placeholder="Repetir Contraseña" value="" required autofocus>
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                        
+                        @if ($errors->has('email'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('email') }}</strong>
+                            </span>
+                        @endif
                     </div>
                     </div>
                     <br />
@@ -109,13 +106,6 @@
                     </div>
                 </form>
                 </div>
-              <div class="card-footer text-center mt-0">
-                <div class="pull-left ml-3 mt-2 mb-3">
-                  <h6>
-                    <a class="link footer-link" href="#" data-toggle="modal" data-target="#myModal1">Registrar</a>
-                  </h6>
-                </div>
-              </div>
             </div>
           </div>
         </div>

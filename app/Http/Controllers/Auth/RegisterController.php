@@ -58,16 +58,7 @@ class RegisterController extends Controller {
 		// 	'nombre_artistico.unique' => 'Este Nombre artistico ya existe en nuestro sistema',
 		// ]);
 		// Subida de la miniatura
-    	$foto_perfil = $request->file('foto_perfil');
-
-    	if($foto_perfil){
-    		$image_path = time().$foto_perfil->getClientOriginalName();
-    		\Storage::disk('images')->put($image_path, \File::get($foto_perfil));
-
-    		$user->foto_perfil = $image_path;
-    	}
-
-		$this->validate($request, [
+    	$this->validate($request, [
 			'name' => 'required|max:255',
 			//'terminos_y_condiciones' => 'required',
 			'email' => 'required|email|max:255|unique:users',
@@ -156,13 +147,6 @@ class RegisterController extends Controller {
 		// 	'email.required' => 'Verifique la información ingresada e intente nuevamente',
 		// ]);
 
-		if($foto_perfil){
-    		$image_path = time().$foto_perfil->getClientOriginalName();
-    		\Storage::disk('images')->put($image_path, \File::get($foto_perfil));
-
-    		$user->foto_perfil = $image_path;
-    	}
-
 		$this->validate($request, [
 			'email' => 'required|email|unique:users',
           	'foto_perfil' => 'image|mimes:jpg,jpeg,png'
@@ -171,7 +155,6 @@ class RegisterController extends Controller {
 		]);
 
 		$msg = tbl_parametros::where('ID', '18')->get();
-		$foto_perfil = $request->file('foto_perfil');
 
     	
 		$user = new User();
@@ -182,6 +165,7 @@ class RegisterController extends Controller {
 		$user->celular = intval(preg_replace('/[^0-9]+/','', $request->celular_usuario), 10);
 		$user->fecha_nac = '2020-04-18';
 		$user->id_perfil = 0;
+		$user->foto_perfil = 'user.png';
 		$user->id_estado = 10;
 		$user->remember_token = str_random(100);
 		$user->confirm_token = str_random(100);
