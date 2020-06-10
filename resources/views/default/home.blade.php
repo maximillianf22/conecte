@@ -49,7 +49,7 @@
                   <div class="card">
                     <div class="row mb-4">
             <div class="title container mb-0">
-              <h3 class="text-uppercase text-white text-center">Busqueda Relacionada</h3>
+              <h3 class="text-uppercase text-white text-center">Artistas del Momento</h3>
             </div>
               @if(count($artistas)>=1)
                 @foreach($artistas as $Artistas)

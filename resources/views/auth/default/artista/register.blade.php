@@ -161,7 +161,7 @@
                               <span class="btn btn-raised btn-round btn-default btn-file">
                                 <span class="fileinput-new">Add Photo</span>
                                 <span class="fileinput-exists">Change</span>
-                                <input type="hidden" value="" name="FOTO_PERFIL"><input type="file" name="FOTO_PERFIL">
+                                <input type="hidden" value="" name="foto_perfil"><input type="file" name="foto_perfil">
                               </span>
                               <br>
                               <a href="javascript:;" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="tim-icons icon-simple-remove"></i> Remove</a>

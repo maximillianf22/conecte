@@ -12,6 +12,8 @@ use App\tbl_configuraciones_artistas;
 use Mail;
 use Redirect;
 use Session;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Storage;
 
 class RegisterController extends Controller {
 
@@ -93,9 +95,26 @@ class RegisterController extends Controller {
 		//$user->nombre_manager = $request->name_manager;
 		//$user->email_manager = $request->email_manager;
 		//$user->celular_manager = intval(preg_replace('/[^0-9]+/','', $request->celular_manager), 10);
-
+		$user->foto_perfil = $request->foto_perfil;
 		$user->id_perfil = 1;
 		$user->id_estado = 10;
+		// Subida de la miniatura
+    	if ($request->hasFile('foto_perfil')) {
+                $file = Input::file('foto_perfil');
+                $imagen = getimagesize($file);
+                $ancho = $imagen[0];
+                $alto = $imagen[1];
+                if ($ancho == 350 || $alto == 350) {
+                    $name = $id . '.' . $file->getClientOriginalExtension();
+                    $file->move(public_path() . '/assets/img/artistas/', $name);
+                    $user->foto_perfil = $name;
+                }else{
+                    Session::flash('message_error', 'La imagen debe ser de 350x350');
+                    return Redirect::back();
+                }
+                
+            }
+
 		$user->remember_token = str_random(100);
 		$user->confirm_token = str_random(100);
 
@@ -149,7 +168,6 @@ class RegisterController extends Controller {
 
 		$this->validate($request, [
 			'email' => 'required|email|unique:users',
-          	'foto_perfil' => 'image|mimes:jpg,jpeg,png'
 		],[
 			'email.unique' => 'Este correo ya existe'
 		]);
