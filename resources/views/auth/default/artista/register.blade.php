@@ -122,7 +122,7 @@
                           <div class="input-group-prepend">
                             <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                           </div>
-                          <input class="form-control" placeholder="C.C/Nit/Pasaporte/CC ext " aria-label="C.C/Nit/Pasaporte/CC ext" type="text">
+                          <input name="nombre_artistico" class="form-control" placeholder="Nombre Artistico" aria-label="Nombre Artistico" type="text">
                         </div>
                       </div>
                     </div>
@@ -150,36 +150,14 @@
                     </div>
                   </div>
                   <div class="row">
-                     <div class="col-6 text-center">
+                     <div class="col-6 pl-2">
                       <div class="form-group">
-                        <div class="fileinput text-center fileinput-new" data-provides="fileinput">
-                            <div class="fileinput-new thumbnail img-circle img-raised">
-                              <img src="{{ asset('assets/img/placeholder.jpg') }}" alt="...">
-                            </div>
-                            <div class="fileinput-preview fileinput-exists thumbnail img-circle img-raised" style=""></div>
-                            <div>
-                              <span class="btn btn-raised btn-round btn-default btn-file">
-                                <span class="fileinput-new">Add Photo</span>
-                                <span class="fileinput-exists">Change</span>
-                                <input type="hidden" value="" name="foto_perfil"><input type="file" name="foto_perfil">
-                              </span>
-                              <br>
-                              <a href="javascript:;" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="tim-icons icon-simple-remove"></i> Remove</a>
-                            </div>
-                          </div>
-                        <!--<div class="input-group input-group-lg" data-toggle="tooltip" data-placement="left" title="
-                        En conecte
-                        ganamos TODOS 
-                        Ingresa el codigo de la persona
-                        que te refirió, si no lo tienes ponte
-                        en contacto con el/ella para
-                        que reciba su comisión, tu
-                        tambien puedes ganar!">
+                        <div class="input-group">
                           <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-barcode"></i></span>
+                            <span class="input-group-text"><i class="ni ni-collection"></i></span>
                           </div>
-                          <input type="text" class="form-control" placeholder="CODIGO">
-                        </div>-->
+                          <input type="text" class="form-control" name="celular" placeholder="Telefono" aria-label="Telefono" required>
+                        </div>
                       </div>
                     </div>
                     <div class="col-6 pl-2">

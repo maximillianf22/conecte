@@ -84,7 +84,7 @@ class RegisterController extends Controller {
 		$user = new User();
 		$user->name = $request->name;
 		$user->email = $request->email;
-		$user->nombre_artistico = 'Artista';//$request->nombre_artistico;
+		$user->nombre_artistico = $request->nombre_artistico;//$request->nombre_artistico;
 		$user->password = bcrypt($request->password);
 		$user->id_sexo = 64;//$request->valueGenero;
 		$user->celular = intval(preg_replace('/[^0-9]+/','', $request->telefono_artista), 10);
@@ -92,28 +92,15 @@ class RegisterController extends Controller {
 		/*
 		$user->fecha_nac = $request->fechanac;
 		*/
-		//$user->nombre_manager = $request->name_manager;
-		//$user->email_manager = $request->email_manager;
-		//$user->celular_manager = intval(preg_replace('/[^0-9]+/','', $request->celular_manager), 10);
+		$user->nombre_manager = $request->name_manager;
+		$user->email_manager = $request->email_manager;
+		$user->celular_manager = intval(preg_replace('/[^0-9]+/','', $request->celular_manager), 10);
+		$user->foto_perfil = 'user.png';
 		$user->foto_perfil = $request->foto_perfil;
 		$user->id_perfil = 1;
 		$user->id_estado = 10;
 		// Subida de la miniatura
-    	if ($request->hasFile('foto_perfil')) {
-                $file = Input::file('foto_perfil');
-                $imagen = getimagesize($file);
-                $ancho = $imagen[0];
-                $alto = $imagen[1];
-                if ($ancho == 350 || $alto == 350) {
-                    $name = $id . '.' . $file->getClientOriginalExtension();
-                    $file->move(public_path() . '/assets/img/artistas/', $name);
-                    $user->foto_perfil = $name;
-                }else{
-                    Session::flash('message_error', 'La imagen debe ser de 350x350');
-                    return Redirect::back();
-                }
-                
-            }
+    	
 
 		$user->remember_token = str_random(100);
 		$user->confirm_token = str_random(100);

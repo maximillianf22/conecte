@@ -1,9 +1,9 @@
 <a href="/welcome" class="logo">
     <span class="logo-mini">
-        <img src="{{ asset('assets/img/LogoAny.png') }}" alt="Conecte" height="35">
+        <img src="{{ asset('assets/img/logo.png') }}" alt="Conecte" height="35">
     </span>
     <span class="logo-lg">
-        <img src="{{ asset('assets/img/logo.svg') }}" alt="Conecte" height="35">
+        <img src="{{ asset('assets/img/logo.png') }}" alt="Conecte" height="35">
     </span>
 </a>
 
@@ -19,12 +19,12 @@
             @if(Auth::user())
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="{{ asset('upload/perfil/'. Auth::user()->foto_perfil) }}" class="user-image" alt="User Image">
+                        <img src="{{ asset('assets/img/placeholder.jpg') }}" class="user-image" alt="User Image">
                         <span class="hidden-xs">{{Auth::user()->name}}</span>
                     </a>
                     <ul class="dropdown-menu">
                         <li class="user-header">
-                            <img src="{{ asset('upload/perfil/'. Auth::user()->foto_perfil) }}" class="img-circle" alt="User Image">
+                            <img src="{{ asset('assets/img/placeholder.jpg') }}" class="img-circle" alt="User Image">
                             <p>
                                 {{Auth::user()->name}}
                                 <small>{{$user->tipoUsuario->NOMBRE}}</small>

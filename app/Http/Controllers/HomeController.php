@@ -186,7 +186,7 @@ class HomeController extends Controller
             //Artistas para ti
             $artistas = artistas_celebridade::where('nombre_artistico', 'LIKE', '%' . $query . '%')
                 ->orderBy('name', 'ASC')
-                ->take(8)
+                ->take(16)
                 ->get();
 
             //Generos
@@ -240,8 +240,21 @@ class HomeController extends Controller
         ]);
     }
 
-    public function artista($name)
+    public function artista($name,Request $request)
     {
+
+         if ($request) {
+            $query = trim($request->get('query'));
+
+            //$genero = trim($request->get('genero'));
+
+            //Artistas para ti
+            $artistas = artistas_celebridade::where('nombre_artistico', 'LIKE', '%' . $query . '%')
+                ->orderBy('name', 'ASC')
+                ->take(16)
+                ->get();
+
+        }
         //Informaciòn del artista
         $Profile = artistas_celebridade::where('nombre_artistico', $name)->first();
         $artista = User::where('id', $Profile->id)->first();
@@ -260,6 +273,7 @@ class HomeController extends Controller
         return view('default.persona.pago')->with([
             "perfil" => $Profile,
             "artista" => $artista,
+            "artistas" => $artistas,
             "user" => $user,
             "redesSociales" => $redesSociales,
             "precio" => $precio,

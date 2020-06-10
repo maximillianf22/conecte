@@ -4,12 +4,14 @@
    		<h5 class="text-uppercase">Artistas Relacionados</h5>
    	</div>
         @foreach($artistas as $artista)
+          @if($loop->iteration < 8)
             <div class="col-md-3 col-3 p-2 mx-auto">
                 <div class="avatar " style="height: 60px; width: 60px; border: .2rem solid !important; border-color: #d89d7a !important;">
-                  <img class="media-object img-raised" src="{{asset('storage/profile_images/artistas/'.$artista->foto_perfil)}}" alt="..." style="height: 100% !important;">
+                  <img class="media-object img-raised" src="{{asset('/assets/img/artistas/'.$artista->foto_perfil)}}" alt="..." style="height: 100% !important;">
                 </div>
                   <p class="text-center">{{$artista->nombre_artistico}}</p>
             </div>
+            @endif
         @endforeach
             </div>
             <div class="mx-auto content-center">
@@ -18,11 +20,11 @@
             	   <div class="col-10">
                    <div class="row mt-4">
                       <span class="badge badge-pill col-4 badge-primary">#Regaeton</span>
-                      <span class="badge badge-pill col-4 badge-info ">#Regaeton</span>
-                      <span class="badge badge-pill col-4 badge-success ">#Regaeton</span>
-                      <span class="badge badge-pill col-4 badge-danger">#Regaeton</span>
-                      <span class="badge badge-pill col-4 badge-warning ">#Regaeton</span>
-                      <span class="badge badge-pill col-4 badge-default ">#Regaeton</span>
+                      <span class="badge badge-pill col-4 badge-info ">#Artista</span>
+                      <span class="badge badge-pill col-4 badge-success ">#Influencer</span>
+                      <span class="badge badge-pill col-4 badge-danger">#Pop</span>
+                      <span class="badge badge-pill col-4 badge-warning ">#Vallenato</span>
+                      <span class="badge badge-pill col-4 badge-default ">#Conecte</span>
                     </div>
                     <br>
                    <img src="{{ asset('assets/img/cocacola.png')}}" class="shadow-lg mx-auto">

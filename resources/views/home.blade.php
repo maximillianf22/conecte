@@ -70,7 +70,7 @@
   <!-- Home -->
   <!-- Header -->
   <div class="wrapper m-0 p-0" style="background-image: url('{{asset('assets/img/bg/header.jpg')}}'); background-attachment: fixed; background-size:     cover;  background-repeat:   no-repeat;  background-position: center center;">
-    <div class="page-header">
+    <div class="page-header" style="height: 100vh !important;">
       <div class="squares square1"></div>
       <div class="squares square2"></div>
       <div class="squares square3"></div>
@@ -80,7 +80,7 @@
       <div class="container">
         <div class="row">
           <div class="content-center text-left col-md-5 mt-5 offset-md-2">
-        <img src="{{ asset('assets/img/bg/head.png')}}" class="d-block d-md-none d-lg-none text-center p-0 m-0">
+        <img src="{{ asset('assets/img/bg/head.png')}}" class="d-block d-md-none d-lg-none mx-auto p-0 m-0" style="height: 270px !important; margin-top: -65px !important;">
 
             <h1 class="h1-seo p-0 m-0 text-white display-3"><strong>Tu artista favorito <br>a solo un click</strong></h1>
             <h4 class="m-0 mb-4 p-0  text-white"><small></small><strong>Conecta</strong> tu persona favorita con tu artista favorito</h4>

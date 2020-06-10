@@ -99,7 +99,6 @@
               <div class="card-footer text-center mt-0">
                 <div class="pull-left ml-3 mt-2 mb-3">
                   <h6>
-                    <a class="link footer-link" href="#" data-toggle="modal" data-target="#myModal1">Registrar</a>
                   </h6>
                 </div>
                 <div class="pull-right mr-3 mt-2 mb-3">

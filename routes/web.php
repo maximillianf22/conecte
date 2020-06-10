@@ -119,12 +119,6 @@ Route::get('/registro-usuarios', ['uses' => 'Auth\RegisterController@registros_u
 Route::get('/registro-artistas', ['uses' => 'Auth\RegisterController@registros_artistas', 'as' => 'register.artista']);
 
 Route::post('/registroArtistaPost', ['uses' => 'Auth\RegisterController@registroArtistaPost', 'as' => 'registroArtistaPost']);
-
-
-Route::post('/registro', ['uses' => 'Auth\RegisterController@registro', 'as' => 'registro']);
-
-
-
 Route::post('/registroUsuariosPost', ['uses' => 'Auth\RegisterController@registroUsuariosPost', 'as' => 'registroUsuariosPost']);
 
 //Route::get('/administrador/login', ['uses' => 'Auth\LoginController@login', 'as' => 'loginView']);

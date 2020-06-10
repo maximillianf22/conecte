@@ -44,11 +44,11 @@
                  <div class="col-10">
                    <div class="row mt-4">
                       <span class="badge badge-pill col-4 badge-primary">#Regaeton</span>
-                      <span class="badge badge-pill col-4 badge-info ">#Regaeton</span>
-                      <span class="badge badge-pill col-4 badge-success ">#Regaeton</span>
-                      <span class="badge badge-pill col-4 badge-danger">#Regaeton</span>
-                      <span class="badge badge-pill col-4 badge-warning ">#Regaeton</span>
-                      <span class="badge badge-pill col-4 badge-default ">#Regaeton</span>
+                      <span class="badge badge-pill col-4 badge-info ">#Influencer</span>
+                      <span class="badge badge-pill col-4 badge-success ">#Farandula</span>
+                      <span class="badge badge-pill col-4 badge-danger">#Conete</span>
+                      <span class="badge badge-pill col-4 badge-warning ">#Pop</span>
+                      <span class="badge badge-pill col-4 badge-default ">#Vallenato</span>
                     </div>
                     <br>
                    <img src="{{ asset('assets/img/cocacola.png')}}" class="shadow-lg mx-auto">
