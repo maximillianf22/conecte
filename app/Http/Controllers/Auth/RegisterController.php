@@ -134,21 +134,22 @@ class RegisterController extends Controller {
 
 	protected function registroUsuariosPost(Request $request) {
 
-		// $this->validate($request, [
-		// 	'name' => 'required|max:255',
-		// 	'terminos_y_condiciones' => 'required',
-		// 	'email' => 'required|email|max:255|unique:users',
-		// 	'password' => 'required|min:6|confirmed',
-		// ], [
-		// 	'name.max' => 'El nombre es demasiado largo',
-		// 	'email.unique' => 'Este correo electronico ya existe en nuestro sistema',
-		// 	//'passwordConfirmation.same' => 'La contraseña no coinciden',
-		// 	'name.required' => 'Verifique la información ingresada e intente nuevamente',
-		// 	'valuePerfil.required' => 'Verifique la información ingresada e intente nuevamente',
-		// 	'terminos_y_condiciones.required' => 'Es necesario aceptar los terminos y condiciones',
-		// 	//'passwordConfirmation.required' => 'Verifique la información ingresada e intente nuevamente',
-		// 	'email.required' => 'Verifique la información ingresada e intente nuevamente',
-		// ]);
+		$this->validate($request, [
+			'name' => 'required|max:255',
+			'terminos_y_condiciones' => 'required',
+			'email' => 'required|email|max:255|unique:users',
+			'password' => 'required|min:6',
+		], [
+			'name.max' => 'El nombre es demasiado largo',
+			'email.unique' => 'Este correo electronico ya existe en nuestro sistema',
+			//'passwordConfirmation.same' => 'La contraseña no coinciden',
+			'name.required' => 'Verifique la información ingresada e intente nuevamente',
+			//'valuePerfil.required' => 'Verifique la información ingresada e intente nuevamente',
+			'terminos_y_condiciones.required' => 'Es necesario aceptar los terminos y condiciones',
+			//'passwordConfirmation.required' => 'Verifique la información ingresada e intente nuevamente',
+			'email.required' => 'Verifique la información ingresada e intente nuevamente',
+			'password.min' => 'la contraseña debe ser mayor de 6 caracteres',
+		]);
 
 		$this->validate($request, [
 			'email' => 'required|email|unique:users',
@@ -168,6 +169,8 @@ class RegisterController extends Controller {
 		$user->fecha_nac = '2020-04-18';
 		$user->id_perfil = 0;
 		$user->foto_perfil = 'user.png';
+		$user->cedula = $request->cedula;
+		$user->medio = $request->medio;
 		$user->id_estado = 10;
 		$user->remember_token = str_random(100);
 		$user->confirm_token = str_random(100);

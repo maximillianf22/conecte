@@ -85,7 +85,7 @@
                 </div>
                 <div class="card-body">
                   <div class="row">
-                    <div class="col">
+                    <div class="col-6">
                       <div class="form-group">
                         <div class="input-group mb-4">
                           <div class="input-group-prepend">
@@ -95,36 +95,14 @@
                         </div>
                       </div>
                     </div>
-                    <!--<div class="col-6 pl-2">
-                        <div class="form-group">
-                          <div class="input-group">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-collection"></i></span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido">
-                          </div>
-                        </div>
-                      </div>-->
-                  </div>
-                  <div class="row">
                     <div class="col-6">
                       <div class="form-group">
                         <div class="input-group mb-4">
                           <div class="input-group-prepend">
                             <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                           </div>
-                          <input class="form-control" name="email" placeholder="Email" aria-label="Email" type="email" required>
+                          <input class="form-control" name="cedula" id="cedula" placeholder="C.C/Nit/Pasaporte/CC ext " aria-label="C.C/Nit/Pasaporte/CC ext" type="text">
                         </div>
-                      </div>
-                    </div>
-                    <div class="col-6 pl-2">
-                      <div class="form-group">
-                        <select class="form-control" data-trigger name="choices-single-default" id="choices-single-default">
-                          <option disabled selected>¿Como escuche a Conecte?</option>
-                          <option value="2" class="text-dark">Redes Sociales</option>
-                          <option value="3" class="text-dark">Tv o Radio</option>
-                          <option value="3" class="text-dark">Amigo o Artista</option>
-                        </select>
                       </div>
                     </div>
                   </div>
@@ -135,7 +113,7 @@
                           <div class="input-group-prepend">
                             <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                           </div>
-                          <input class="form-control" placeholder="C.C/Nit/Pasaporte/CC ext " aria-label="C.C/Nit/Pasaporte/CC ext" type="text">
+                          <input class="form-control" name="email" placeholder="Email" aria-label="Email" type="email" required>
                         </div>
                       </div>
                     </div>
@@ -163,42 +141,24 @@
                     </div>
                     <div class="col-6 pl-2">
                       <div class="form-group">
-                        <select class="form-control" data-trigger name="choices-single-default" id="choices-single-default">
-                          <option disabled selected>¿Especifica el Medio?</option>
-                          <option value="2" class="text-dark">Facebook</option>
-                          <option value="3" class="text-dark">Twitter</option>
-                          <option value="3" class="text-dark">Instagram</option>
-                          <option value="3" class="text-dark">Youtube</option>
+                        <select class="form-control" data-trigger name="medio" id="medio">
+                          <option disabled selected>¿Como escuche a Conecte?</option>
+                          <option value="Redes Sociales" class="text-dark">Redes Sociales</option>
+                          <option value="Tv o Radio" class="text-dark">Tv o Radio</option>
+                          <option value="Amigo o Artista" class="text-dark">Amigo o Artista</option>
                         </select>
                       </div>
                     </div>
                   </div>
-
                   <div class="row">
-                    <div class="col-6">
-                      <div class="form-group">
-                        <div class="input-group input-group-lg">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-barcode"></i></span>
-                          </div>
-                          <input type="text" class="form-control" placeholder="CODIGO" data-toggle="tooltip" data-placement="left" title="
-                                En conecte
-                                ganamos TODOS 
-                                Ingresa el codigo de la persona
-                                que te refirió, si no lo tienes ponte
-                                en contacto con el/ella para
-                                que reciba su comisión, tu
-                                tambien puedes ganar!">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-6">
+                    <div class="col-8 offset-2">
                       <div class="custom-control custom-checkbox mt-2">
                         <input class="custom-control-input" id="customCheck" name="terminos_y_condiciones" type="checkbox">
                         <label class="custom-control-label" for="customCheck">
                           <span><small>he leido y <strong>Acepto los terminos y condiciones</strong></small></span>
                         </label>
                       </div>
+                      <button type="submit" href="register/fin" class="btn btn-success btn-lg pull-right btn-block">Siguiente</button>
                     </div>
                   </div>
                   @if (count($errors) > 0)
@@ -207,13 +167,7 @@
                     {{ $error }}
                     @endforeach
                   </div>
-
                   @endif
-                  <div class="row">
-                    <div class="col-6 offset-2">
-                      <button type="submit" href="register/fin" class="btn btn-success btn-lg pull-right">Siguiente</button>
-                    </div>
-                  </div>
                 </div>
               </form>
               <!-- </a> -->
