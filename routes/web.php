@@ -35,9 +35,9 @@ Route::get('persona/home', function () {
     return view('default/persona/home');
 });
 
-// Route::get('persona/perfil', function () {
-//     return view('default/persona/perfil');
-// });
+Route::get('mail', function () {
+    return view('mail/recovery');
+});
 
 // Route::get('persona/pago', function () {
 //     return view('default/persona/pago');

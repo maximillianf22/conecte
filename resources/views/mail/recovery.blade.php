@@ -16,14 +16,14 @@
                 <table class="outer right-box ui-sortable" align="center" style="border-spacing: 0; font-family: sans-serif; color: #333333; Margin: 0 auto; width: 100%; max-width: 600px;">
                     <tbody>
 <tr><td class="content-col" style="padding: 0;"></td></tr>
-                <tr class="block ui-sortable-handle current" style="display: block; background-color:#221314; padding: 0px; margin: 0px;">
+                <tr class="block ui-sortable-handle current" style="display: block; background-image: linear-gradient(to right top, #000000, #060003, #090009, #080110, #030316); padding: 0px; margin: 0px;">
             <td class="one-column" style="padding: 0; color: rgb(51, 51, 51);">
                 <table width="100%" style="border-spacing: 0; font-family: sans-serif; color: #333333;">
                     <tbody>
 <tr>
-                        <td class="inner contents content-col current" style="padding: 10px; width: 100%; text-align: left; color: background:#FF578A">
+                        <td class="inner contents content-col current" style="padding: 10px; width: 100%; text-align: left; background-image: linear-gradient(to right top, #000000, #060003, #090009, #080110, #030316);">
                          <p style="Margin: 0; font-size: 14px; Margin-bottom: 10px;"><br>
-                            <img src="http://conecte.co/assets/img/LogoConecteWeb.png" />
+                            <img src="http://conecte.co/assets/img/brand/logoc.png" />
                          </p>
                         </td>
                     </tr>
@@ -41,7 +41,7 @@
 <p style="Margin: 0; font-size: 14px; Margin-bottom: 10px; text-align: justify;"><span style="font-size: 12pt;"><br>Hemos recibido una solicitud para restablecer la&nbsp;<span class="il">contraseña</span>, para continuar con el proceso haz clic en el enlace:<br>
      <br>
         <div style="margin:0 auto;text-align:center">
-          <a style="color:#FFF !important" href="{{route('confirmationEmail', [$data['id'], $data['confirm_token']] )}}"><div style="width:200px;color:#FFF;background:#FF578A;padding:10px 20px;text-align:center;margin:0 auto">Restablecer Contraseña</div></a>
+          <a style="color:#FFF !important" href="{{route('confirmationEmail', [$data['id'], $data['confirm_token']] )}}"><div style="width:200px;color:#FFF;background-image: linear-gradient(to right top, #000000, #060003, #090009, #080110, #030316);padding:10px 20px;text-align:center;margin:0 auto; border-radius: 3rem;">Restablecer Contraseña</div></a>
         </div>
           <br />
           <p>Si tienes algun problema para visualizar el correo copie y pegue la siguiente url</p>

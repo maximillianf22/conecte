@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-    <div style="background: linear-gradient(45deg, rgba(255,168,134,1) 0%, rgba(255,150,134,1) 22%, rgba(255,95,132,1) 90%, rgba(255,87,132,1) 100%);">
-        <img style="display: block; margin-left: auto; margin-right: auto;" src="http://conecte.co/assets/img/LogoConecteWeb.png" width="260" height="80" />
+    <div style="background-image: linear-gradient(to right top, #000000, #060003, #090009, #080110, #030316); padding-top: 10px; padding-bottom: 10px;">
+        <img style="display: block; margin-left: auto; margin-right: auto;" src="http://conecte.co/assets/img/brand/logoc.png" width="350" height="55" />
     </div>
     <div class="container-fluid">
         <h3 style="text-align: center;">Hola,&nbsp;{{$data['nombre_usuario']}}</h3>
-        <p>{{$data['nombre_usuario']}} Conecte ha decidido cambiar tu contraseña, tu nueva contraseña es la siguiente. te recomendamos cambiar tu contraseña en la opcion Mi Perfil</p>
+        <p>{{$data['nombre_usuario']}} Conecte ha decidido cambiar tu contraseña, tu nueva contraseña es la siguiente.</p>
         <p>Clave: {{$data['password']}}</p>
         <table style="width: 100%; border: none; margin-left: auto; margin-right: auto;">
             <tbody>

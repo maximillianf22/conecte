@@ -12,7 +12,7 @@
                                                 <tr>
                                                     <td width="80">
                                                         <a href="#" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable">
-                                                            <img data-imagetype="External" src="http://conecte.develop-app.com/assets/img/logoConecta.png" border="0" width="64" height="64" alt="Conecte">
+                                                            <img data-imagetype="External" src="http://conecte.co/assets/img/logo.png" border="0" width="100" height="60" alt="Conecte">
                                                         </a>
                                                     </td>
                                                     <td width="230">
