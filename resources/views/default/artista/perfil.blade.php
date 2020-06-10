@@ -167,7 +167,7 @@
                           <input type="file" name="...">
                           </span>
                         <br>
-                        <a href="javascript:;" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="tim-icons icon-simple-remove"></i> Remove</a>
+                        <a href="javascript:;" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fas fa-window-close"></i> Remove</a>
                         </div>
                         </div>
                       </div>

@@ -23,7 +23,7 @@
             </div>
             <div class="col-6 collapse-close text-right">
               <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="tim-icons icon-simple-remove"></i>
+                <i class="fas fa-window-close"></i>
               </button>
             </div>
           </div>
@@ -84,35 +84,13 @@
                 </div>
                 <div class="card-body">
                   <div class="row">
-                    <div class="col">
+                    <div class="col-6">
                       <div class="form-group">
                         <div class="input-group mb-4">
                           <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-name"></i></span>
                           </div>
                           <input class="form-control" name="name" placeholder="Nombres y apellidos" aria-label="Nombre" type="text" required>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- <div class="col-6 pl-2">
-                        <div class="form-group">
-                          <div class="input-group">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-collection"></i></span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido">
-                          </div>
-                        </div>
-                      </div> -->
-                  </div>
-                  <div class="row">
-                    <div class="col-6">
-                      <div class="form-group">
-                        <div class="input-group mb-4">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
-                          </div>
-                          <input class="form-control" name="email" placeholder="Email" aria-label="Email" type="email" required>
                         </div>
                       </div>
                     </div>
@@ -128,13 +106,57 @@
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col-6 pl-2">
+                    <div class="col-6">
+                      <div class="form-group">
+                        <div class="input-group mb-4">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
+                          </div>
+                          <input class="form-control" name="email" placeholder="Email" aria-label="Email" type="email" required>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6">
                       <div class="form-group">
                         <div class="input-group">
                           <div class="input-group-prepend">
                             <span class="input-group-text"><i class="ni ni-collection"></i></span>
                           </div>
                           <input type="text" class="form-control" name="celular" placeholder="Telefono" aria-label="Telefono" required>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6 pl-2">
+                      <div class="form-group">
+                        <div class="input-group mb-4">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
+                          </div>
+                          <input name="nombre_manager" class="form-control" placeholder="Nombre Manager" aria-label="Nombre Manager" type="text">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-group">
+                        <div class="input-group mb-4">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
+                          </div>
+                          <input name="email_manager" class="form-control" placeholder="Email Manager" aria-label="Nombre Manager" type="text">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6 pl-2">
+                      <div class="form-group">
+                        <div class="input-group mb-4">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
+                          </div>
+                          <input name="celular_manager" class="form-control" placeholder="Celular Manager" aria-label="Nombre Manager" type="text">
                         </div>
                       </div>
                     </div>
@@ -149,35 +171,17 @@
                       </div>
                     </div>
                   </div>
-                  <div class="row">
-                     <div class="col-6 pl-2">
-                      <div class="form-group">
-                        <div class="input-group">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="ni ni-collection"></i></span>
-                          </div>
-                          <input type="text" class="form-control" name="celular" placeholder="Telefono" aria-label="Telefono" required>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-6 pl-2">
-                      <div class="form-group">
-                        <select class="form-control" data-trigger name="choices-single-default" id="choices-single-default">
-                          <option disabled selected>¿Especifica el Medio?</option>
-                          <option value="2" class="text-dark">Facebook</option>
-                          <option value="3" class="text-dark">Twitter</option>
-                          <option value="3" class="text-dark">Instagram</option>
-                          <option value="3" class="text-dark">Youtube</option>
-                        </select>
-                      </div><br>
-                      <div class="custom-control custom-checkbox mt-2">
+                  <div class="row mt-0 pl-0">
+                    <div class="col-8 offset-2 ">
+                      <br>
+                      <div class="custom-control custom-checkbox">
                         <input class="custom-control-input" id="customCheck" type="checkbox">
                         <label class="custom-control-label" for="customCheck">
                           <span><small>he leido y <strong>Acepto los terminos y condiciones</strong></small></span>
                         </label>
                       </div>
                       <div >
-                        <button type="submit" class="btn btn-success btn-lg pull-center">Siguiente</button>
+                        <button type="submit" class="btn btn-success btn-lg pull-center btn-block">Siguiente</button>
                       </div>
                     </div>
                   </div>

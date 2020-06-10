@@ -87,20 +87,17 @@ class RegisterController extends Controller {
 		$user->nombre_artistico = $request->nombre_artistico;//$request->nombre_artistico;
 		$user->password = bcrypt($request->password);
 		$user->id_sexo = 64;//$request->valueGenero;
-		$user->celular = intval(preg_replace('/[^0-9]+/','', $request->telefono_artista), 10);
+		$user->celular = intval(preg_replace('/[^0-9]+/','', $request->celular), 10);
 		$user->id_genero = 6;
 		/*
 		$user->fecha_nac = $request->fechanac;
 		*/
-		$user->nombre_manager = $request->name_manager;
+		$user->nombre_manager = $request->nombre_manager;
 		$user->email_manager = $request->email_manager;
 		$user->celular_manager = intval(preg_replace('/[^0-9]+/','', $request->celular_manager), 10);
 		$user->foto_perfil = 'user.png';
-		$user->foto_perfil = $request->foto_perfil;
 		$user->id_perfil = 1;
-		$user->id_estado = 10;
-		// Subida de la miniatura
-    	
+		$user->id_estado = 10;    	
 
 		$user->remember_token = str_random(100);
 		$user->confirm_token = str_random(100);

@@ -24,7 +24,7 @@
             </div>
             <div class="col-6 collapse-close text-right">
               <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="tim-icons icon-simple-remove"></i>
+                <i class="fas fa-window-close"></i>
               </button>
             </div>
           </div>
@@ -111,7 +111,7 @@
       <div class="modal-content">
         <div class="modal-header justify-content-center">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-            <i class="tim-icons icon-simple-remove text-white"></i>
+            <i class="fas fa-window-close text-white"></i>
           </button>
           <div class="modal-profile">
             <i class="fas fa-user"></i>

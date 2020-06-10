@@ -208,7 +208,7 @@
           <div class="modal-content">
             <div class="modal-header justify-content-center">
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                <i class="tim-icons icon-simple-remove text-white"></i>
+                <i class="fas fa-window-close text-white"></i>
               </button>
               <div class="modal-profile">
                 <i class="fas fa-check mt-4 text-success"></i>
