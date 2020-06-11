@@ -28,7 +28,17 @@
 @endsection
 
 @section('middle')
-
+<div class="row mx-auto mt-2 d-block d-sm-block d-md-none d-lg-none bg-dark " style="z-index: 9; border-radius: 3rem">
+    <div class="row mx-auto mt-3">
+      <div class="col-md-12">
+        <ul class="nav nav-pills nav-pills-info flex-column">
+          <li class="nav-item"><a class="nav-link {{Request::is('*/informacion') ? 'active' : ''}} btn-block" href="informacion">Informacion</a></li>
+          <li class="nav-item"><a class="nav-link {{Request::is('*/pagos') ? 'active' : ''}} btn-block" href="pagos">Pagos</a></li>
+          <li class="nav-item"><a class="nav-link {{Request::is('*/historial') ? 'active' : ''}} btn-block" href="historial">Historial de Solicitudes</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 @if($section == 'informacion')
 @include('default.persona.perfil.informacion')
 @endif
@@ -44,7 +54,7 @@
 @endsection
 
 @section('sidebarR')
-@include('template.default.sidebar.persona.artista-independiente')
+@include('template.default.sidebar.persona.artista-relacionado')
 @endsection
 
 @section('modals')
@@ -59,28 +69,14 @@
       <div class="modal-body">
         <div class="row">
           <div class="col text-center">
-            <video id="videoPlayer" controls>
+            <video id="videoPlayer" controls class="d-none d-sm-none d-ms-block d-lg-block mx-auto">
               <source id="video" type="video/mp4" src="">
             </video>
-            <p style="color:white; font-weight: bold;padding-top: 30px;">Compartir a través de </p>
-            <ul class="list-inline" style="padding-top: 30px;">
-              <li class="list-inline-item link-actions" onclick="share()" style="color: rgb(255,255,255); cursor: pointer">
-                <img src="http://conecte.co/assets/img/instagram.svg" style="padding: 8px;">
-              </li>
-              <li class="list-inline-item" onclick="share()" style="color: rgb(255,255,255); cursor: pointer">
-                <img src="http://conecte.co/assets/img/twiter.svg" style="padding: 8px;">
-              </li>
-              <li class="list-inline-item" onclick="share()" style="color: rgb(255,255,255); cursor: pointer">
-                <img src="http://conecte.co/assets/img/facebook.svg" style="padding: 8px;">
-              </li>
-              <li class="list-inline-item" style="color: rgb(255,255,255); cursor: pointer">
-                <a class="videoLinkDownload" download="dedicatoria.mp4">
-                  <img src="http://conecte.co/assets/img/descargar.svg" style="padding: 8px;" height="45px">
-                </a>
-              </li>
-              <p style="font-size:14px; color:white; font-weight: 400; padding-top: 30px;">también puedes compartir el link</p>
-              <p class="videoLink" style="border:1px solid #FF578A;color:#FF578A; width: fit-content;padding:5px 60px;border-radius:30px;"></p>
-            </ul>
+            <video id="videoPlayer" controls style="width: 100%;" class="d-block d-sm-block d-ms-none d-lg-none mx-auto">
+              <source id="video" type="video/mp4" src="">
+            </video>
+            <p style="color:white; font-weight: bold;padding-top: 30px;">Compartir a través del link </p>
+            <p class="videoLink" style="border:1px solid #FF578A;color:#FF578A; width: 100%;padding:5px 60px;border-radius:30px;"></p>
           </div>
         </div>
       </div>

@@ -29,7 +29,7 @@
             <div class="row">
                 <div class="col">
                     <div class="card p-3">
-                        <table class="table">
+                        <table class="table table-responsive">
                             <thead>
                                 <tr>
                                     <th class="text-center">#</th>

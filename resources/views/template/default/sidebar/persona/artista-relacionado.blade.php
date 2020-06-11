@@ -4,7 +4,7 @@
    		<h5 class="text-uppercase">Artistas Relacionados</h5>
    	</div>
         @foreach($artistas as $artista)
-          @if($loop->iteration < 8)
+          @if($loop->iteration < 9)
             <div class="col-md-3 col-3 p-2 mx-auto">
                 <div class="avatar " style="height: 60px; width: 60px; border: .2rem solid !important; border-color: #d89d7a !important;">
                   <img class="media-object img-raised" src="{{asset('/assets/img/artistas/'.$artista->foto_perfil)}}" alt="..." style="height: 100% !important;">

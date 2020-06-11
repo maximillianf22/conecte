@@ -121,6 +121,26 @@ class DedicatoriasController extends Controller
 
                             $message = 'Bien hecho, dedicatoria respondida exitosamente';
                             $response = array('state' => 'success', 'message' => $message, 'code' => 200);
+
+                            $url = 'https://api.hablame.co/sms/envio/';
+                            $data = array(
+                              'cliente' => 10014491,
+                              'api' => 'gEL4JmJYZByMezDP4vpyvKp5wfXnHL',
+                              'numero' => '3275373254',
+                              'sms' => 'hola como estas',
+                              'fecha' => '',
+                              'referencia' => 'Conecte',
+                            );
+                            $options = array(
+                              'http' => array(
+                                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+                                'method'  => 'POST',
+                                'content' => http_build_query($data)
+                              )
+                            );
+                            $context  = stream_context_create($options);
+                            $result = json_decode((file_get_contents($url, false, $context)), true);
+
                             return response()->json($response);
                         }else{
                             $message = 'Ups.. presentamos problemas, ya lo estamos resolviendo pedimos disculpa contacte a soporte';

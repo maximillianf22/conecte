@@ -183,6 +183,14 @@
             </div>
           </li>-->
           <li class="nav-item dropdown">
+            <ul class="navbar-nav mr-2  d-sm-block d-md-none d-lg-none">
+            <li class="nav-item active p-0 m-0">
+              <a href="/welcome" class="nav-link">Explorar</a>
+            </li>
+            <li class="nav-item m-0 p-0">
+              <a href="/persona/perfil/informacion" class="nav-link">Perfil</a>
+            </li>
+          </ul>
             <a class="nav-link nav-link btn btn-neutral btn-round btn-simple  text-nowrap" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fas fa-user"></i> {{$user->name}}
             </a>
