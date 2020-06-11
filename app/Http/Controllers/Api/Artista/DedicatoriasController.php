@@ -126,7 +126,7 @@ class DedicatoriasController extends Controller
                             $data = array(
                               'cliente' => 10014491,
                               'api' => 'gEL4JmJYZByMezDP4vpyvKp5wfXnHL',
-                              'numero' => '3275373254',
+                              'numero' => '3235373254',
                               'sms' => 'hola como estas',
                               'fecha' => '',
                               'referencia' => 'Conecte',
