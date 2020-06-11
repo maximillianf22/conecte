@@ -169,13 +169,17 @@ class ConecteController extends Controller
                     $mail->to($data['email'], $data['nameArtista']);
                 });
 
+
+                $message = 'Dedicatoria creada con exito';
+                $response = array('state' => 'success', 'message' => $message, 'code' => 200);
+
                 //mensaje
                 $url = 'https://api.hablame.co/sms/envio/';
                 $data = array(
                   'cliente' => 10014491,
                   'api' => 'gEL4JmJYZByMezDP4vpyvKp5wfXnHL',
                   'numero' => '3235373254',
-                  'sms' => 'Bien hecho, has recibido una solicitud de dedicatoria, Conecte.co',
+                  'sms' => 'Me complace informarle que su dedicatoria ha sido respondida, Conecte.co',
                   'fecha' => '',
                   'referencia' => 'Conecte',
                 );
@@ -189,9 +193,7 @@ class ConecteController extends Controller
                 $context  = stream_context_create($options);
                 $result = json_decode((file_get_contents($url, false, $context)), true);
                 //
-
-                $message = 'Dedicatoria creada con exito';
-                $response = array('state' => 'success', 'message' => $message, 'code' => 200);
+                            
                 return response()->json($response);
 
             }else{
