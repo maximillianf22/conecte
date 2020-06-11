@@ -163,6 +163,28 @@ class ArtistasController extends Controller
                     $name = $id . '.' . $file->getClientOriginalExtension();
                     $file->move(public_path() . '/assets/img/artistas/', $name);
                     $user->foto_perfil = $name;
+
+                    //mensaje
+                        $url = 'https://api.hablame.co/sms/envio/';
+                        $data = array(
+                          'cliente' => 10014491,
+                          'api' => 'gEL4JmJYZByMezDP4vpyvKp5wfXnHL',
+                          'numero' => '3235373254',
+                          'sms' => 'Me complace informarle que su usuario ha sido verificado, Conecte.co',
+                          'fecha' => '',
+                          'referencia' => 'Conecte',
+                        );
+                        $options = array(
+                          'http' => array(
+                            'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+                            'method'  => 'POST',
+                            'content' => http_build_query($data)
+                          )
+                        );
+                        $context  = stream_context_create($options);
+                        $result = json_decode((file_get_contents($url, false, $context)), true);
+                    //
+
                 }else{
                     Session::flash('message_error', 'La imagen debe ser de 350x350');
                     return Redirect::back();

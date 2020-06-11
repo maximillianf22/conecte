@@ -122,12 +122,13 @@ class DedicatoriasController extends Controller
                             $message = 'Bien hecho, dedicatoria respondida exitosamente';
                             $response = array('state' => 'success', 'message' => $message, 'code' => 200);
 
+                            //mensaje
                             $url = 'https://api.hablame.co/sms/envio/';
                             $data = array(
                               'cliente' => 10014491,
                               'api' => 'gEL4JmJYZByMezDP4vpyvKp5wfXnHL',
                               'numero' => '3235373254',
-                              'sms' => 'hola como estas',
+                              'sms' => 'Me complace informarle que su dedicatoria ha sido respondida, Conecte.co',
                               'fecha' => '',
                               'referencia' => 'Conecte',
                             );
@@ -140,6 +141,8 @@ class DedicatoriasController extends Controller
                             );
                             $context  = stream_context_create($options);
                             $result = json_decode((file_get_contents($url, false, $context)), true);
+                            //
+
 
                             return response()->json($response);
                         }else{
