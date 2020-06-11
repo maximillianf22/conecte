@@ -6,7 +6,7 @@
     <nav class="navbar navbar-expand-lg fixed-top" style="background-image: linear-gradient(to right top, #000000, #060003, #090009, #080110, #030316);">
         <div class="container">
             <div class="navbar-translate">
-                <a class="navbar-brand" href="#" rel="tooltip" title="Designed and Coded by Developapp" data-placement="bottom">
+                <a class="navbar-brand" href="/" rel="tooltip" title="Designed and Coded by Developapp" data-placement="bottom">
                     <img src="{{ asset('assets/img/brand/logoc.png')}}" width="55%">
                 </a>
             </div>
