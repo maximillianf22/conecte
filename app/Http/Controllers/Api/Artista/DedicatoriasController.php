@@ -127,7 +127,7 @@ class DedicatoriasController extends Controller
                             $data = array(
                               'cliente' => 10014491,
                               'api' => 'gEL4JmJYZByMezDP4vpyvKp5wfXnHL',
-                              'numero' => '3235373254',
+                              'numero' => $dataCliente->celular,
                               'sms' => 'Me complace informarle que su dedicatoria ha sido respondida, Conecte.co',
                               'fecha' => '',
                               'referencia' => 'Conecte',

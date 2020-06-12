@@ -169,8 +169,8 @@ class ArtistasController extends Controller
                         $data = array(
                           'cliente' => 10014491,
                           'api' => 'gEL4JmJYZByMezDP4vpyvKp5wfXnHL',
-                          'numero' => '3235373254',
-                          'sms' => 'Me complace informarle que su usuario ha sido verificado, Conecte.co',
+                          'numero' => $user->celular,
+                          'sms' => 'Me complace informarle que su usuario ha sido verificado y su foto actualizada, Conecte.co',
                           'fecha' => '',
                           'referencia' => 'Conecte',
                         );

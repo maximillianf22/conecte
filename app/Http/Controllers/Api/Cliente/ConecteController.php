@@ -178,8 +178,8 @@ class ConecteController extends Controller
                 $data = array(
                   'cliente' => 10014491,
                   'api' => 'gEL4JmJYZByMezDP4vpyvKp5wfXnHL',
-                  'numero' => '3235373254',
-                  'sms' => 'Me complace informarle que su dedicatoria ha sido respondida, Conecte.co',
+                  'numero' => $artista->celular,
+                  'sms' => 'Felicitaciones, has recibido una nueva solicitud de dedicatoria, Conecte.co',
                   'fecha' => '',
                   'referencia' => 'Conecte',
                 );
@@ -193,7 +193,7 @@ class ConecteController extends Controller
                 $context  = stream_context_create($options);
                 $result = json_decode((file_get_contents($url, false, $context)), true);
                 //
-                            
+
                 return response()->json($response);
 
             }else{
