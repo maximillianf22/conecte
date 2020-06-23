@@ -51,7 +51,7 @@
           @include('template.default.sidebar.persona.artista-perfil')
           <div class="col-lg-6 bg-light pt-4">
             <div id="carouselExampleIndicators" class="carousel slide d-none d-sm-none d-md-block d-lg-block" data-ride="carousel" style="
-              top: -130; 
+              top: -130;
               margin-bottom: -130;">
               <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -129,7 +129,7 @@
               </div>
               <div class="col-lg-6 mb-3">
                 <h4 class="text-center text-dark mt-3"> Solicita tu <strong>Saludo</strong></h4>
-                <form class="mb-0 card shadow-lg" style="background-image: linear-gradient(to right top, #000000, #060003, #090009, #080110, #030316);" action="{{ route('pedirDedicatoria') }}" method="POST">
+                <form class="mb-0 card shadow-lg" id="formSendGreeting" style="background-image: linear-gradient(to right top, #000000, #060003, #090009, #080110, #030316);" action="{{ route('pedirDedicatoria') }}" method="POST">
                   {{ csrf_field() }}
                   <input type="hidden" name="ID_ARTISTA" value="{{$artista->id}}">
                   <input name="DE_PARTE_DE" id="DE_PARTE_DE" type="hidden" placeholder="De parte de " class="form-control" value="{{ $user->name }}" required autofocus>
@@ -153,7 +153,14 @@
 
                   <div class="card p-2" style="background-image: linear-gradient(to right top, #000000, #060003, #090009, #080110, #030316);">
                     <h4 class="text-white text-center ml-5 mr-5"><strong>Total</strong> &dollar;150.000,00</h4>
-                    <button type="submit" class="btn mx-auto btn-success btn-block">Siguiente</button>
+                    <div class="row">
+                      <div class="col">
+                        <button type="submit" class="btn mx-auto btn-success btn-block">Billetera</button>
+                      </div>
+                      <div class="col">
+                        <button type="button" class="btn mx-auto btn-primary btn-block" onclick="sendGreeting()">PayU</button>
+                      </div>
+                    </div>
                   </div>
                 </form>
               </div>
@@ -165,5 +172,86 @@
       </div>
     </div>
   </div>
+
+  <form id="formBtnPayuPayment" action="{{env('PAYU_URL')}}" method="post"></form>
+
 </body>
+@endsection
+
+@section('js')
+  <script type="text/javascript">
+    var protocol = window.location.protocol;
+    var urlHost = protocol+"//"+"{{$_SERVER["HTTP_HOST"]}}";
+  </script>
+  <script type="text/javascript">
+    var apiKey = "{{ env("PAYU_API_KEY") }}";
+    var merchantId = "{{ env('PAYU_MERCHANT_ID') }}";
+    var accountId = "{{ env('PAYU_ACCOUNT_ID') }}";
+    var currency = "{{ env('PAYU_CURRENCY') }}";
+    var description = "{{ Auth::user()->name }} - Conecte";
+    var getResponseUrl = "{{ env('PAYU_RESPONSE_GET_PAY') }}";
+    var postResponseUrl = "{{ env('PAYU_RESPONSE_POST_PAY') }}";
+
+    var reference = null;
+    var value = 0;
+    var signature = null;
+    var idUser = null;
+    var idArtist = null;
+
+    function sendGreeting() {
+      var formData = new FormData(document.getElementById("formSendGreeting"));
+      var urlPath = urlHost + "/ajax/sendGreeting";
+      $.ajax({
+        type: 'POST',
+        url: urlPath,
+        data: formData,
+        dataType: 'json',
+        processData: false,
+        contentType: false,
+        cache: false,
+        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+        beforeSend:function(){},
+        success:function(response){
+          console.log(response);
+          alert('success');
+          if (response.state == 1) {
+            reference = response.data.reference;
+            value = response.data.value;
+            signature = response.data.signature;
+            idUser = response.data.idUser;
+            idArtist = response.data.idArtist;
+
+            paymentGreeting();
+          }
+        },
+        error: function(xhr){
+          console.log("error");
+          console.log(xhr);
+        }
+      });
+    }
+
+    function paymentGreeting() {
+      $("#formBtnPayuPayment").append('<input name="ApiKey" type="hidden" value="' + apiKey + '">');
+      $("#formBtnPayuPayment").append('<input name="merchantId" type="hidden" value="' + merchantId + '">');
+      $("#formBtnPayuPayment").append('<input name="accountId" type="hidden" value="' + accountId + '">');
+      $("#formBtnPayuPayment").append('<input name="description" type="hidden" value="' + description + '">');
+      $("#formBtnPayuPayment").append('<input name="referenceCode" type="hidden" value="' + reference + '">');
+
+      $("#formBtnPayuPayment").append('<input name="tax" type="hidden" value="0">');
+      $("#formBtnPayuPayment").append('<input name="taxReturnBase" type="hidden" value="0">');
+      $("#formBtnPayuPayment").append('<input name="currency" type="hidden" value="' + currency + '">');
+
+      $("#formBtnPayuPayment").append('<input name="test" type="hidden" value="1">');
+      $("#formBtnPayuPayment").append('<input name="extra1" type="hidden" value="' + idUser + '">');
+      $("#formBtnPayuPayment").append('<input name="extra2" type="hidden" value="' + idArtist + '">');
+
+      $("#formBtnPayuPayment").append('<input name="responseUrl" type="hidden" value="' + getResponseUrl + '">');
+      $("#formBtnPayuPayment").append('<input name="confirmationUrl" type="hidden" value="' + postResponseUrl + '">');
+
+      $("#formBtnPayuPayment").append('<input name="amount" type="hidden" value="' + value + '">');
+      $("#formBtnPayuPayment").append('<input name="signature" type="hidden" value="' + signature + '">');
+      document.getElementById("formBtnPayuPayment").submit();
+    }
+  </script>
 @endsection

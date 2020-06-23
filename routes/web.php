@@ -149,4 +149,13 @@ Route::group(['prefix' => '/',  'middleware' => 'auth'], function () {
     Route::get('/mis-pendientes', ['uses' => 'HomeController@misPedientes', 'as' => 'misPendientes']);
     Route::get('/solicitudes', ['uses' => 'HomeController@miHistorial', 'as' => 'miHistorial']);
     Route::get('/ver-respuesta/{id}', ['uses' => 'HomeController@verRespuesta', 'as' => 'verRespuesta']);
+
+    Route::post('/ajax/sendGreeting', ['uses' => 'HomeController@ajaxSendGreeting']);
 });
+
+/*PAGOS PAYU*/
+Route::get('/payu/response/recharge/get', ['uses' => 'PayuController@getRecharge']);
+Route::post('/payu/response/recharge/post', ['uses' => 'PayuController@postRecharge']);
+
+Route::get('/payu/response/payment/get', ['uses' => 'PayuController@getPayment']);
+Route::post('/payu/response/payment/post', ['uses' => 'PayuController@postPayment']);
