@@ -460,8 +460,10 @@ class HomeController extends Controller
       $artista = User::findOrFail($request->ID_ARTISTA);
 
       if (count($dedicatorias) > 0) {
-        Session::flash('message_error', 'Actualmete tienes una solicitud de dedicatoria en proceso');
-        return redirect::to('artista/' . $artista->nombre_artistico);
+        return response()->json([
+          'state' => 2,
+          'data' => null
+        ]);
       }
 
       //Conocer el costo que tiene una dedicatoria
