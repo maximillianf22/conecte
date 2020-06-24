@@ -290,7 +290,6 @@ class PayuController extends Controller
 
     $state = $request->state_pol;
     if ($state==4) {
-      $value = $request->value;
 
       $artistData = User::findOrFail($idArtist);
 
