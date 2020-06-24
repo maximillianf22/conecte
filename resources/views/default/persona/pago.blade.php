@@ -222,8 +222,8 @@
 
             paymentGreeting();
           }else if(response.state == 2) {
-            console.log(response.state);
-            $("#idTextErrorMessage").text("Actualmete tienes una solicitud de dedicatoria en proceso");
+            $("#idTextErrorMessage").text("Actualmente tienes una solicitud de dedicatoria en proceso");
+            alert("Actualmente tienes una solicitud de dedicatoria en proceso");
           }
         },
         error: function(xhr){
