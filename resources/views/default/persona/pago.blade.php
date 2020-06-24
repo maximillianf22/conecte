@@ -147,7 +147,7 @@
                       <textarea class="form-control text-dark" id="exampleFormControlTextarea1" rows="7" name="MENSAJE"></textarea>
                     </div>
                     @if(session('message_error'))
-                    <p class="text-danger" id="idTextErrorMessage">{{session('message_error')}}</p>
+                      <p class="text-danger" id="idTextErrorMessage">{{session('message_error')}}</p>
                     @endif
                   </div>
 
@@ -212,6 +212,7 @@
         headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
         beforeSend:function(){},
         success:function(response){
+          console.log(response);
           if (response.state == 1) {
             reference = response.data.reference;
             value = response.data.value;
@@ -221,6 +222,7 @@
 
             paymentGreeting();
           }else if(response.state == 2) {
+            console.log(response.state);
             $("#idTextErrorMessage").text("Actualmete tienes una solicitud de dedicatoria en proceso");
           }
         },
