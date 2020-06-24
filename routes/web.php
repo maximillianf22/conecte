@@ -153,9 +153,16 @@ Route::group(['prefix' => '/',  'middleware' => 'auth'], function () {
     Route::post('/ajax/sendGreeting', ['uses' => 'HomeController@ajaxSendGreeting']);
 });
 
-/*PAGOS PAYU*/
+/*PAYU*/
 Route::get('/payu/response/recharge/get', ['uses' => 'PayuController@getRecharge']);
 Route::post('/payu/response/recharge/post', ['uses' => 'PayuController@postRecharge']);
 
 Route::get('/payu/response/payment/get', ['uses' => 'PayuController@getPayment']);
 Route::post('/payu/response/payment/post', ['uses' => 'PayuController@postPayment']);
+
+/*WebView*/
+  Route::get('/webview/payment/user/{idUser}/dedications/{id}', ['uses' => 'PayuController@webviewPayment']);
+
+  Route::get('/webview/response/payu/payment/get', ['uses' => 'PayuController@webviewPaymentResponseGet']);
+  Route::post('/webview/response/payu/payment/post', ['uses' => 'PayuController@webviewPaymentResponsePost']);
+/*End WebView*/

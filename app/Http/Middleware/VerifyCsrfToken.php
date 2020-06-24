@@ -39,5 +39,6 @@ class VerifyCsrfToken extends BaseVerifier
         '/payu/confirmation/recarga',
         '/payu/response/recharge/post',
         '/payu/response/payment/post',
+        '/webview/response/payu/payment/post',
     ];
 }
