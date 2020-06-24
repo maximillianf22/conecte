@@ -147,8 +147,9 @@
                       <textarea class="form-control text-dark" id="exampleFormControlTextarea1" rows="7" name="MENSAJE"></textarea>
                     </div>
                     @if(session('message_error'))
-                      <p class="text-danger" id="idTextErrorMessage">{{session('message_error')}}</p>
+                      <p class="text-danger">{{session('message_error')}}</p>
                     @endif
+                    <p class="text-danger" id="idTextErrorMessage"></p>
                   </div>
 
                   <div class="card p-2" style="background-image: linear-gradient(to right top, #000000, #060003, #090009, #080110, #030316);">
