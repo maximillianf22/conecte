@@ -169,9 +169,8 @@ class ConecteController extends Controller
                     $mail->to($data['email'], $data['nameArtista']);
                 });
 
-
                 $message = 'Dedicatoria creada con exito';
-                $response = array('state' => 'success', 'message' => $message, 'code' => 200);
+                $response = array('state' => 'success', 'data'=> $dedicatoria ,'message' => $message, 'code' => 200);
 
                 //mensaje
                 $url = 'https://api.hablame.co/sms/envio/';
