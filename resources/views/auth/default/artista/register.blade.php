@@ -177,7 +177,7 @@
                       <div class="custom-control custom-checkbox">
                         <input class="custom-control-input" id="customCheck" type="checkbox">
                         <label class="custom-control-label" for="customCheck">
-                          <span><small>he leido y <strong>Acepto los terminos y condiciones</strong></small></span>
+                          <a href="{{ url('/assets/img/legal/TYC-ARTISTAS.pdf') }}" target="new"><span><small>he leido y <strong>Acepto los terminos y condiciones</strong></small></span></a>
                         </label>
                       </div>
                       <div >
