@@ -37,5 +37,8 @@ class VerifyCsrfToken extends BaseVerifier
         'cliente/editarPerfil',
         'cliente/generos/celebridades',
         '/payu/confirmation/recarga',
+        '/payu/response/recharge/post',
+        '/payu/response/payment/post',
+        '/webview/response/payu/payment/post',
     ];
 }

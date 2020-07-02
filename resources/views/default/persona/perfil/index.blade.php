@@ -51,6 +51,8 @@
 @include('default.persona.perfil.historial')
 @endif
 
+<form id="formBtnPayuRechargeAccount" action="{{env('PAYU_URL')}}" method="post"></form>
+
 @endsection
 
 @section('sidebarR')
@@ -81,9 +83,106 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
       </div>
     </div>
   </div>
 </div>
+
+<div class="modal" id="idModalOpenRecharge" tabindex="-1" role="dialog" aria-labelledby="idModalOpenRechargeLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content" style="background-color: #525f7f">
+      <div class="modal-header">
+        <h4 class="modal-title" id="idModalOpenRechargeLabel" style="color: #fff">Depositar</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-12">
+            <div class="form-group">
+              <div class="input-group bg-default rounded">
+                <div class="input-group-prepend">
+                  <span class="input-group-text p-2">
+                    <i class="fas fa-money-bill-alt"></i>
+                  </span>
+                </div>
+                <input class="form-control text-dark input-number" id="idValueRecharge" placeholder="Valor a depositar" type="text" style="font-size: 15px;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="m-0" style="width: 100%;">
+          <div class="row">
+            <div class="col-md-auto">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-success" style="width: 100%;" onclick="rechargeAccount()">Depositar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+@endsection
+
+@section('js')
+  <script src="{{ asset('assets/js/md5.min.js') }}"></script>
+  <script type="text/javascript">
+    $( document ).ready(function() {
+      $('.input-number').on('input', function () {
+        this.value = this.value.replace(/[^0-9]/g,'');
+      });
+    });
+
+    var apiKey = "{{ env("PAYU_API_KEY") }}";
+    var merchantId = "{{ env('PAYU_MERCHANT_ID') }}";
+    var accountId = "{{ env('PAYU_ACCOUNT_ID') }}";
+    var currency = "{{ env('PAYU_CURRENCY') }}";
+    var idUser = "{{ Auth::user()->id }}";
+    var description = "{{ Auth::user()->name }} - Conecte";
+    var getResponseUrl = "{{env('PAYU_RESPONSE_GET_RCG') }}";
+    var postResponseUrl = "{{env('PAYU_RESPONSE_POST_RCG') }}";
+  </script>
+
+  <script type="text/javascript">
+    function rechargeAccount() {
+      var valueRecharge = $("#idValueRecharge").val();
+      if (isNaN(valueRecharge)) {
+        return false;
+      }
+
+      if (valueRecharge!=0 && valueRecharge>10000) {
+        var value = valueRecharge;
+        var reference = Date.now();
+
+        var signature = md5(apiKey+"~"+merchantId+"~"+reference+"~"+value+"~"+currency);
+
+        $("#formBtnPayuRechargeAccount").append('<input name="ApiKey" type="hidden" value="' + apiKey + '">');
+        $("#formBtnPayuRechargeAccount").append('<input name="merchantId" type="hidden" value="' + merchantId + '">');
+        $("#formBtnPayuRechargeAccount").append('<input name="accountId" type="hidden" value="' + accountId + '">');
+        $("#formBtnPayuRechargeAccount").append('<input name="description" type="hidden" value="' + description + '">');
+        $("#formBtnPayuRechargeAccount").append('<input name="referenceCode" type="hidden" value="' + reference + '">');
+
+        $("#formBtnPayuRechargeAccount").append('<input name="tax" type="hidden" value="0">');
+        $("#formBtnPayuRechargeAccount").append('<input name="taxReturnBase" type="hidden" value="0">');
+        $("#formBtnPayuRechargeAccount").append('<input name="currency" type="hidden" value="' + currency + '">');
+
+        $("#formBtnPayuRechargeAccount").append('<input name="test" type="hidden" value="1">');
+        $("#formBtnPayuRechargeAccount").append('<input name="extra1" type="hidden" value="' + idUser + '">');
+
+        $("#formBtnPayuRechargeAccount").append('<input name="responseUrl" type="hidden" value="' + getResponseUrl + '">');
+        $("#formBtnPayuRechargeAccount").append('<input name="confirmationUrl" type="hidden" value="' + postResponseUrl + '">');
+
+        $("#formBtnPayuRechargeAccount").append('<input name="amount" type="hidden" value="' + value + '">');
+        $("#formBtnPayuRechargeAccount").append('<input name="signature" type="hidden" value="' + signature + '">');
+        document.getElementById("formBtnPayuRechargeAccount").submit();
+      }
+    }
+  </script>
 @endsection

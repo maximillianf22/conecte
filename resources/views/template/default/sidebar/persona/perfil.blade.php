@@ -1,5 +1,5 @@
 <div class="col-lg-3 pt-4" style="
-    top: -160; 
+    top: -160;
     margin-bottom: -160;">
   <div class="card card-profile" data-background="full" style="height: 435px;">
     <a href="javascript:;">
@@ -56,6 +56,7 @@
           <li class="nav-item"><a class="nav-link {{Request::is('*/informacion') ? 'active' : ''}} btn-block" href="informacion">Informacion</a></li>
           <li class="nav-item"><a class="nav-link {{Request::is('*/pagos') ? 'active' : ''}} btn-block" href="pagos">Metodo de Pago</a></li>
           <li class="nav-item"><a class="nav-link {{Request::is('*/historial') ? 'active' : ''}} btn-block" href="historial">Historial de Solicitudes</a></li>
+          <li class="nav-item"><a class="nav-link {{Request::is('*/pagos') ? 'active' : ''}} btn-block" href="#" data-toggle="modal" data-target="#idModalOpenRecharge">Depositar</a></li>
         </ul>
       </div>
       <div class="mx-auto">

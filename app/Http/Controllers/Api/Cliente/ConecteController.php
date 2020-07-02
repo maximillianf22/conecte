@@ -57,7 +57,7 @@ class ConecteController extends Controller
             $response = array('state' => 'error', 'message' => $message, 'code' => 300);
             return response()->json($response);
         }
-        
+
     }
 
     public function listFinalizado(Request $request)
@@ -90,6 +90,7 @@ class ConecteController extends Controller
         $deParte = $request->deParte;
         $dirigidoA = $request->dirigidoA;
         $mensaje = $request->mensaje;
+        $isPayu = $request->isPayu;
 
         if (!empty($idCliente)) {
             $cliente = User::findOrFail($idCliente);
@@ -113,93 +114,125 @@ class ConecteController extends Controller
             $billeteraAdmin = tbl_billeteras::where('ID_USER', 1)->first();
             //Conocer cuanto tiene el cliente en la billetera
             $billetera = tbl_billeteras::where('ID_USER', $idCliente)->first();
-            
-            //validamos si cliente tiene suficiente dinero para pagar la licitacion
-            //validamos si cliente tiene suficiente dinero para pagar la licitacion
-            if ($billetera->SALDO >= $configArtista->PRECIO_DEDICATORIA) {
 
-                //Registramos la movimiento
-                $movimiento                        = new tbl_movimientos();
-                $movimiento->ID_ARTISTA            = $idArtista;
-                $movimiento->ID_CLIENTE            = $idCliente;
-                $movimiento->ID_TIPO               = 31;
-                $movimiento->ID_ESTADO             = 40;
-                $movimiento->COSTO_TOTAL           = $configArtista->PRECIO_DEDICATORIA;
-                $movimiento->PORCENTAJE_PLATAFORMA = $configArtista->COMICION_DECICATORIAS;
-                $movimiento->COMICION_PLATAFORMA   = ($configArtista->COMICION_DECICATORIAS / 100) * $configArtista->PRECIO_DEDICATORIA;
-                $movimiento->PORCENTAJE_ARTISTA    = (100 - $configArtista->COMICION_DECICATORIAS);
-                $movimiento->COMICION_ARTISTA      = $configArtista->PRECIO_DEDICATORIA - (($configArtista->COMICION_DECICATORIAS / 100) * $configArtista->PRECIO_DEDICATORIA);
-                $movimiento->save();
+            if ($isPayu) {
 
-                //Registramos la solicitud
-                $dedicatoria                    = new tbl_solicitudes_de_dedicatorias();
-                $dedicatoria->ID_ARTISTA        = $idArtista;
-                $dedicatoria->ID_CLIENTE        = $idCliente;
-                $dedicatoria->ID_ESTADO         = 13;
-                $dedicatoria->DE_PARTE_DE       = $deParte;
-                $dedicatoria->DIRIGIDO_A        = $dirigidoA;
-                $dedicatoria->MENSAJE           = $mensaje;
-                $dedicatoria->COSTO_DEDICATORIA = $configArtista->PRECIO_DEDICATORIA;
-                $dedicatoria->ID_MOVIMIENTO     = $movimiento->ID;
-                $dedicatoria->save();
-                
-                //Actulizamos la billetera
-                $billetera->SALDO = ($billetera->SALDO - $configArtista->PRECIO_DEDICATORIA);
-                $billetera->update();
+              //Registramos la movimiento
+              $movimiento                        = new tbl_movimientos();
+              $movimiento->ID_ARTISTA            = $idArtista;
+              $movimiento->ID_CLIENTE            = $idCliente;
+              $movimiento->ID_TIPO               = 31;
+              $movimiento->ID_ESTADO             = 42;
+              $movimiento->COSTO_TOTAL           = $configArtista->PRECIO_DEDICATORIA;
+              $movimiento->PORCENTAJE_PLATAFORMA = $configArtista->COMICION_DECICATORIAS;
+              $movimiento->COMICION_PLATAFORMA   = ($configArtista->COMICION_DECICATORIAS / 100) * $configArtista->PRECIO_DEDICATORIA;
+              $movimiento->PORCENTAJE_ARTISTA    = (100 - $configArtista->COMICION_DECICATORIAS);
+              $movimiento->COMICION_ARTISTA      = $configArtista->PRECIO_DEDICATORIA - (($configArtista->COMICION_DECICATORIAS / 100) * $configArtista->PRECIO_DEDICATORIA);
+              $movimiento->save();
 
-                //Acreditamos el porcentaje de ganacia al artista
-                $billeteraArtista->SALDO = $billeteraArtista->SALDO + $movimiento->COMICION_ARTISTA;
-                $billeteraArtista->SALDO_TOTAL = $billeteraArtista->SALDO_TOTAL + $billeteraArtista->SALDO;
-                $billeteraArtista->update();
+              //Registramos la solicitud
+              $dedicatoria                    = new tbl_solicitudes_de_dedicatorias();
+              $dedicatoria->ID_ARTISTA        = $idArtista;
+              $dedicatoria->ID_CLIENTE        = $idCliente;
+              $dedicatoria->ID_ESTADO         = 12;
+              $dedicatoria->DE_PARTE_DE       = $deParte;
+              $dedicatoria->DIRIGIDO_A        = $dirigidoA;
+              $dedicatoria->MENSAJE           = $mensaje;
+              $dedicatoria->COSTO_DEDICATORIA = $configArtista->PRECIO_DEDICATORIA;
+              $dedicatoria->ID_MOVIMIENTO     = $movimiento->ID;
+              $dedicatoria->save();
 
-                //Acreditamos el porcentaje de ganacia al administrador
-                $billeteraAdmin->SALDO       = $billeteraAdmin->SALDO + $movimiento->COMICION_PLATAFORMA;
-                $billeteraAdmin->SALDO_TOTAL = $billeteraAdmin->SALDO_TOTAL + $billeteraAdmin->SALDO;
-                $billeteraAdmin->update();
-
-                $msg = tbl_parametros::where('ID', '38')->get();
-
-                $data['nameArtista'] = $artista->name;
-                $data['nameCliente'] = $cliente->name;
-                $data['msg'] = $mensaje;
-                $data['email'] = $artista->email;
-
-                Mail::send('mail.dedicatoria', ['data' => $data, 'msg' => $msg->first()], function ($mail) use ($data) {
-                    $mail->subject('Nueva solicitud de dedicatoria');
-                    $mail->to($data['email'], $data['nameArtista']);
-                });
-
-
-                $message = 'Dedicatoria creada con exito';
-                $response = array('state' => 'success', 'message' => $message, 'code' => 200);
-
-                //mensaje
-                $url = 'https://api.hablame.co/sms/envio/';
-                $data = array(
-                  'cliente' => 10014491,
-                  'api' => 'gEL4JmJYZByMezDP4vpyvKp5wfXnHL',
-                  'numero' => $artista->celular,
-                  'sms' => 'Felicitaciones, has recibido una nueva solicitud de dedicatoria, Conecte.co',
-                  'fecha' => '',
-                  'referencia' => 'Conecte',
-                );
-                $options = array(
-                  'http' => array(
-                    'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-                    'method'  => 'POST',
-                    'content' => http_build_query($data)
-                  )
-                );
-                $context  = stream_context_create($options);
-                $result = json_decode((file_get_contents($url, false, $context)), true);
-                //
-
-                return response()->json($response);
+              $message = 'Redireccionando a PayU';
+              $response = array('state' => 'success', 'data'=> $dedicatoria ,'message' => $message, 'code' => 200);
+              return response()->json($response);
 
             }else{
-                $message = 'No hemos podido enviar tu solicitud ya que no cuentas con fondos suficientes';
-                $response = array('state' => 'success', 'message' => $message, 'code' => 400);
-                return response()->json($response);
+              //validamos si cliente tiene suficiente dinero para pagar la licitacion
+              //validamos si cliente tiene suficiente dinero para pagar la licitacion
+              if ($billetera->SALDO >= $configArtista->PRECIO_DEDICATORIA) {
+
+                  //Registramos la movimiento
+                  $movimiento                        = new tbl_movimientos();
+                  $movimiento->ID_ARTISTA            = $idArtista;
+                  $movimiento->ID_CLIENTE            = $idCliente;
+                  $movimiento->ID_TIPO               = 31;
+                  $movimiento->ID_ESTADO             = 40;
+                  $movimiento->COSTO_TOTAL           = $configArtista->PRECIO_DEDICATORIA;
+                  $movimiento->PORCENTAJE_PLATAFORMA = $configArtista->COMICION_DECICATORIAS;
+                  $movimiento->COMICION_PLATAFORMA   = ($configArtista->COMICION_DECICATORIAS / 100) * $configArtista->PRECIO_DEDICATORIA;
+                  $movimiento->PORCENTAJE_ARTISTA    = (100 - $configArtista->COMICION_DECICATORIAS);
+                  $movimiento->COMICION_ARTISTA      = $configArtista->PRECIO_DEDICATORIA - (($configArtista->COMICION_DECICATORIAS / 100) * $configArtista->PRECIO_DEDICATORIA);
+                  $movimiento->save();
+
+                  //Registramos la solicitud
+                  $dedicatoria                    = new tbl_solicitudes_de_dedicatorias();
+                  $dedicatoria->ID_ARTISTA        = $idArtista;
+                  $dedicatoria->ID_CLIENTE        = $idCliente;
+                  $dedicatoria->ID_ESTADO         = 13;
+                  $dedicatoria->DE_PARTE_DE       = $deParte;
+                  $dedicatoria->DIRIGIDO_A        = $dirigidoA;
+                  $dedicatoria->MENSAJE           = $mensaje;
+                  $dedicatoria->COSTO_DEDICATORIA = $configArtista->PRECIO_DEDICATORIA;
+                  $dedicatoria->ID_MOVIMIENTO     = $movimiento->ID;
+                  $dedicatoria->save();
+
+                  //Actulizamos la billetera
+                  $billetera->SALDO = ($billetera->SALDO - $configArtista->PRECIO_DEDICATORIA);
+                  $billetera->update();
+
+                  //Acreditamos el porcentaje de ganacia al artista
+                  $billeteraArtista->SALDO = $billeteraArtista->SALDO + $movimiento->COMICION_ARTISTA;
+                  $billeteraArtista->SALDO_TOTAL = $billeteraArtista->SALDO_TOTAL + $billeteraArtista->SALDO;
+                  $billeteraArtista->update();
+
+                  //Acreditamos el porcentaje de ganacia al administrador
+                  $billeteraAdmin->SALDO       = $billeteraAdmin->SALDO + $movimiento->COMICION_PLATAFORMA;
+                  $billeteraAdmin->SALDO_TOTAL = $billeteraAdmin->SALDO_TOTAL + $billeteraAdmin->SALDO;
+                  $billeteraAdmin->update();
+
+                  $msg = tbl_parametros::where('ID', '38')->get();
+
+                  $data['nameArtista'] = $artista->name;
+                  $data['nameCliente'] = $cliente->name;
+                  $data['msg'] = $mensaje;
+                  $data['email'] = $artista->email;
+
+                  Mail::send('mail.dedicatoria', ['data' => $data, 'msg' => $msg->first()], function ($mail) use ($data) {
+                      $mail->subject('Nueva solicitud de dedicatoria');
+                      $mail->to($data['email'], $data['nameArtista']);
+                  });
+
+                  $message = 'Dedicatoria creada con exito';
+                  $response = array('state' => 'success', 'data'=> $dedicatoria ,'message' => $message, 'code' => 200);
+
+                  //mensaje
+                  $url = 'https://api.hablame.co/sms/envio/';
+                  $data = array(
+                    'cliente' => 10014491,
+                    'api' => 'gEL4JmJYZByMezDP4vpyvKp5wfXnHL',
+                    'numero' => $artista->celular,
+                    'sms' => 'Felicitaciones, has recibido una nueva solicitud de dedicatoria, Conecte.co',
+                    'fecha' => '',
+                    'referencia' => 'Conecte',
+                  );
+                  $options = array(
+                    'http' => array(
+                      'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+                      'method'  => 'POST',
+                      'content' => http_build_query($data)
+                    )
+                  );
+                  $context  = stream_context_create($options);
+                  $result = json_decode((file_get_contents($url, false, $context)), true);
+                  //
+
+                  return response()->json($response);
+
+              }else{
+                  $message = 'No hemos podido enviar tu solicitud ya que no cuentas con fondos suficientes';
+                  $response = array('state' => 'success', 'message' => $message, 'code' => 400);
+                  return response()->json($response);
+              }
             }
         }else{
             $message = 'Debe enviar los valores correctamente';
@@ -222,7 +255,7 @@ class ConecteController extends Controller
         $desde = $request->fecha1;
         $hasta = $request->fecha2;
         $hora = $request->hora;
-        $mensaje = $request->mensaje; 
+        $mensaje = $request->mensaje;
 
         if (!empty($idCliente)) {
             $cliente = User::findOrFail($idCliente);
@@ -352,7 +385,7 @@ class ConecteController extends Controller
             $response = array('state' => 'error', 'message' => $message, 'code' => 300);
             return response()->json($response);
         }
-        
+
     }
 
     public function sliders()

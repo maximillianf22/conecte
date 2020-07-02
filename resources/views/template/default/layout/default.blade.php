@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/img/apple-icon.png') }}">
   <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}">
   <title>
@@ -53,4 +54,5 @@
 <!-- Argon JS -->
 <script src="{{ asset('assets/js/argon.js?v=1.2.0') }}"></script>
 <script src="{{ asset('assets/js/blk-design-system.min.js?v=1.0.0') }}" type="text/javascript"></script>
+@yield('js')
 </body>

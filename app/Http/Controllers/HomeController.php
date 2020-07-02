@@ -56,7 +56,7 @@ class HomeController extends Controller
 
     public function music()
     {
-        //-- Musica 
+        //-- Musica
         $Artistasfilter = artistas_celebridade::get()->take(8);
         $Artistas = artistas_celebridade::get();
         // return $Artistas;
@@ -135,7 +135,7 @@ class HomeController extends Controller
 
     public function profile($name)
     {
-        //-- Musica 
+        //-- Musica
         $Profile = artistas_celebridade::where('nombre_artistico', $name)->first();
         if (!empty($Profile)) {
             $details = tbl_configuraciones_artistas::where('ID_ARTISTA', $Profile->id)->first();
@@ -159,7 +159,7 @@ class HomeController extends Controller
 
     public function profile_campaigns($name)
     {
-        //-- Musica 
+        //-- Musica
         $Profile = artistas_celebridade::where('nombre_artistico', $name)->first();
         if (!empty($Profile)) {
             $titulos = tbl_parametros::where('ID_VALOR', '11')->get();
@@ -282,7 +282,7 @@ class HomeController extends Controller
 
     public function profile_dedication($name)
     {
-        //-- Musica 
+        //-- Musica
         $Profile = artistas_celebridade::where('nombre_artistico', $name)->first();
         $titulos = tbl_parametros::where('ID_VALOR', '11')->get();
         $redesSociales = tbl_parametros::where('ID_VALOR', '12')->get();
@@ -342,7 +342,6 @@ class HomeController extends Controller
         //Billetera del artista
         $billeteraArtista = tbl_billeteras::where('ID_USER', $artista->id)->get();
         $billeteraArtista = $billeteraArtista->first();
-
 
         //Billetera del administrador
         $billeteraAdmin = tbl_billeteras::where('ID_USER', 1)->get();
@@ -448,6 +447,85 @@ class HomeController extends Controller
             Session::flash('message_error', 'No hemos podido enviar tu solicitud ya que no cuentas con fondos suficientes');
             return redirect::to('artista/' . $artista->nombre_artistico);
         }
+    }
+
+    public function ajaxSendGreeting(Request $request)
+    {
+      $dedicatorias = tbl_solicitudes_de_dedicatorias::where('ID_CLIENTE', Auth::user()->id)
+        ->where('ID_ARTISTA', $request->ID_ARTISTA)
+        ->whereIn('ID_ESTADO', [12, 13])
+        ->get();
+
+      //Información del artista
+      $artista = User::findOrFail($request->ID_ARTISTA);
+
+      if (count($dedicatorias) > 0) {
+        return response()->json([
+          'state' => 2,
+          'data' => null
+        ]);
+      }
+
+      //Conocer el costo que tiene una dedicatoria
+      $configArtista = tbl_configuraciones_artistas::where('ID_ARTISTA', $request->ID_ARTISTA)->get();
+      $configArtista = $configArtista->first();
+
+      //Billetera del artista
+      $billeteraArtista = tbl_billeteras::where('ID_USER', $artista->id)->get();
+      $billeteraArtista = $billeteraArtista->first();
+
+      //Billetera del administrador
+      $billeteraAdmin = tbl_billeteras::where('ID_USER', 1)->get();
+      $billeteraAdmin = $billeteraAdmin->first();
+
+      //Conocer cuanto tiene el cliente en la billetera
+      $billetera = tbl_billeteras::where('ID_USER', Auth::user()->id)->get();
+      $billetera = $billetera->first();
+
+
+      //Registramos la movimiento
+      $movimiento                        = new tbl_movimientos();
+      $movimiento->ID_ARTISTA            = $request->ID_ARTISTA;
+      $movimiento->ID_CLIENTE            = Auth::user()->id;
+      $movimiento->ID_TIPO               = 31;
+      $movimiento->ID_ESTADO             = 42;
+      $movimiento->COSTO_TOTAL           = $configArtista->PRECIO_DEDICATORIA;
+      $movimiento->PORCENTAJE_PLATAFORMA = $configArtista->COMICION_DECICATORIAS;
+      $movimiento->COMICION_PLATAFORMA   = ($configArtista->COMICION_DECICATORIAS / 100) * $configArtista->PRECIO_DEDICATORIA;
+      $movimiento->PORCENTAJE_ARTISTA    = (100 - $configArtista->COMICION_DECICATORIAS);
+      $movimiento->COMICION_ARTISTA      = $configArtista->PRECIO_DEDICATORIA - (($configArtista->COMICION_DECICATORIAS / 100) * $configArtista->PRECIO_DEDICATORIA);
+      $movimiento->save();
+
+      //Registramos la solicitud
+      $dedicatoria                    = new tbl_solicitudes_de_dedicatorias();
+      $dedicatoria->ID_ARTISTA        = $request->ID_ARTISTA;
+      $dedicatoria->ID_CLIENTE        = Auth::user()->id;
+      $dedicatoria->ID_ESTADO         = 12;
+      $dedicatoria->DE_PARTE_DE       = $request->DE_PARTE_DE;
+      $dedicatoria->DIRIGIDO_A        = $request->DIRIGIDO_A;
+      $dedicatoria->MENSAJE           = $request->MENSAJE;
+      $dedicatoria->COSTO_DEDICATORIA = $configArtista->PRECIO_DEDICATORIA;
+      $dedicatoria->ID_MOVIMIENTO     = $movimiento->ID;
+      $dedicatoria->save();
+
+      $reference = Auth::user()->id.date("Y").date("m").date("d").time();
+      $value = $configArtista->PRECIO_DEDICATORIA;
+
+      $signature = env('PAYU_API_KEY')."~".env('PAYU_MERCHANT_ID')."~" . $reference . "~" . $value . "~" . env('PAYU_CURRENCY');
+      $signature = md5($signature);
+
+      $data = array(
+        'reference' => $reference,
+        'value' => $value,
+        'signature' => $signature,
+        'idUser' => Auth::user()->id,
+        'idArtist' => $request->ID_ARTISTA
+      );
+
+      return response()->json([
+        'state' => 1,
+        'data' => $data
+      ]);
     }
 
     public function solicitarContratacion(Request $request)
