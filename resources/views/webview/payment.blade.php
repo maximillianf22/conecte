@@ -84,7 +84,7 @@
               </div>
             @endif
           </div>
-          @if ($response->state==1)
+          @if ($response->state == 1 && $response->data->value > 0)
             <div class="card">
               <div class="card-body">
                 <div class="row">
