@@ -32,7 +32,7 @@ Clientes | Conecte
 
                     <div class="box-tools" style="top: 8px;">
                         <div class="input-group input-group-sm" style="width: 150px;margin-right: 50px;">
-                            <form action="administrador/clientes" method="get" autocomplete="off" role="search" class="input-group">
+                            <form action="/administrador/clientes" method="get" autocomplete="off" role="search" class="input-group">
                                 <input type="text" name="query" class="form-control pull-right" placeholder="Search">
                                 <div class="input-group-btn">
                                     <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>

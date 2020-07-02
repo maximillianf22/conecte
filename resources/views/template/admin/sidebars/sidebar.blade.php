@@ -22,11 +22,11 @@
             </a>
         </li>
 
-        <li class="{{ empty($contratacionesPage) ? '' : 'active' }}">
+        {{--<li class="{{ empty($contratacionesPage) ? '' : 'active' }}">
             <a href="{{ route('contrataciones.contrataciones.index') }}" >
                 <i class="fa fa-file-excel-o"></i> <span>Contrataciones</span>
             </a>
-        </li>
+        </li>--}}
 
         <li class="{{ empty($liquidacionesPage) ? '' : 'active' }}">
             <a href="{{ route('liquidaciones.liquidaciones.index') }}" >
