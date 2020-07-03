@@ -99,17 +99,19 @@
                                         <td class="text-center"> {{ $item->estado->first()->NOMBRE }} </td>
                                         <td class="text-center"> {{ $item->CREATED_AT }} </td>
                                         <td class="text-center">
-                                            @if ( (!empty($item->SOPORTE)) || ($item->estado->first()->NOMBRE == 'Rechazado'))
-                                                <a href="{{ asset('/upload/soportes/liquidaciones/'. $item->SOPORTE ) }}" download> 
-                                                    <span class="label label-success">Descargar</span> 
-                                                </a>
-                                            @else
-                                                <a class="btn btn-app" href="" data-toggle="modal" data-target="#myModal-{{ $item->ID}}">
-                                                    <i class="fa fa-check"></i> Aprobar
-                                                </a>
-                                                <a class="btn btn-app" href="" data-toggle="modal" data-target="#myModalDelete-{{ $item->ID}}">
-                                                    <i class="fa fa-close"></i> Rechazar
-                                                </a>
+                                            @if($item->estado->first()->NOMBRE != 'Rechazado')
+                                                @if (!empty($item->SOPORTE))
+                                                    <a href="{{ asset('/upload/soportes/liquidaciones/'. $item->SOPORTE ) }}" download> 
+                                                        <span class="label label-success">Descargar</span> 
+                                                    </a>
+                                                @else
+                                                    <a class="btn btn-app" href="" data-toggle="modal" data-target="#myModal-{{ $item->ID}}">
+                                                        <i class="fa fa-check"></i> Aprobar
+                                                    </a>
+                                                    <a class="btn btn-app" href="" data-toggle="modal" data-target="#myModalDelete-{{ $item->ID}}">
+                                                        <i class="fa fa-close"></i> Rechazar
+                                                    </a>
+                                                @endif
                                             @endif
                                         </td>
                                         @include('administracion.liquidaciones.show')
