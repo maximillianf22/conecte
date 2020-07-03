@@ -120,7 +120,7 @@ class RegisterController extends Controller {
 					$data['email'] = $user->email;
 					$data['confirm_token'] = $user->confirm_token;
 
-					Mail::send('mail.confirmacion', ['data' => $user, 'msg' => $msg->first()], function ($mail) use ($data) {
+					Mail::send('mail.confirmacionArtista', ['data' => $user, 'msg' => $msg->first()], function ($mail) use ($data) {
 						$mail->subject('Confirma tu cuenta');
 						$mail->to($data['email'], $data['name']);
 					});

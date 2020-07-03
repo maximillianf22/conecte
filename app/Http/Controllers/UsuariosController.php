@@ -94,7 +94,6 @@ class UsuariosController extends Controller {
 
 		$data['name'] = $user->name;
 		$data['email'] = $user->email;
-		$data['confirm_token'] = $user->confirm_token;
 
 		Mail::send('mail.confirmacion', ['data' => $user, 'msg' => $msg->first()], function ($mail) use ($data) {
 			$mail->subject('Confirma tu cuenta');

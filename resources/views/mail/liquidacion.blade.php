@@ -33,9 +33,7 @@
                                     <div class="x_body-text" style="font-family: Helvetica, Arial, sans-serif, serif, EmojiFont; font-size: 14px; line-height: 20px; text-align: left; color: rgb(51, 51, 51);">
                                         {{ $msg->DESCRIPCION }}
                                         <br>
-                                        <br>
-                                        <br>
-                                        <a href="{{route('misMovimientos')}}" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" style="color:#fff; background-color:#3EB1D4; padding:10px 16px; display:inline-block; border-radius:3px; font-weight:bold; text-decoration:none">Movimientos y transacciones</a> </div>
+                                    </div>
                                 </div>
                             </td>
                         </tr>

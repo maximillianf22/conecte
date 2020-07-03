@@ -32,7 +32,9 @@
                                         <div style="font-size: 18;">Gracias {{ $data['name'] }}</div>
                                     <br>
                                     <div class="x_body-text" style="font-family: Helvetica, Arial, sans-serif, serif, EmojiFont; font-size: 14px; line-height: 20px; text-align: left; color: rgb(51, 51, 51);">
-                                        {{ $msg->DESCRIPCION }}
+                                            <p>
+                                                Podras ingresar a la plataforma una vez se haya verificado tu cuenta, pronto nos pondremos en contacto contigo. Gracias por confiar en nosotros
+                                            </p>
                                         <br>
                                         <br>
                                         <br>
