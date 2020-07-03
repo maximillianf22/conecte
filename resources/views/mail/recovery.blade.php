@@ -45,7 +45,7 @@
         </div>
           <br />
           <p>Si tienes algun problema para visualizar el correo copie y pegue la siguiente url</p>
-          <p>{{route('confirmationEmail', [$data['email'], $data['confirm_token']] )}}</p>
+          <p>{{route('confirmationEmail', [$data['id'], $data['confirm_token']] )}}</p>
           <p>Si tiene problemas, por favor comuníquenos.</p>
 
           <br><span>Recuerda que por seguridad este&nbsp;</span><strong>enlace es temporal y caducará en 24 Horas</strong><span>. Si no has sido tú quien ha enviado la solicitud, ignora este mensaje.</span><br><br></span>
