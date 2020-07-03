@@ -99,7 +99,7 @@
                                         <td class="text-center"> {{ $item->estado->first()->NOMBRE }} </td>
                                         <td class="text-center"> {{ $item->CREATED_AT }} </td>
                                         <td class="text-center">
-                                            @if (!empty($item->SOPORTE))
+                                            @if ( (!empty($item->SOPORTE)) || ($item->estado->first()->NOMBRE == 'Rechazado'))
                                                 <a href="{{ asset('/upload/soportes/liquidaciones/'. $item->SOPORTE ) }}" download> 
                                                     <span class="label label-success">Descargar</span> 
                                                 </a>
