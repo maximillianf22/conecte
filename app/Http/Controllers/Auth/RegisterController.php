@@ -178,8 +178,8 @@ class RegisterController extends Controller {
 
 		$billetera = new tbl_billeteras();
 		$billetera->ID_USER = $user->id;
-		$billetera->SALDO = 500000;
-		$billetera->SALDO_TOTAL = 500000;
+		$billetera->SALDO = 0;
+		$billetera->SALDO_TOTAL = 0;
 		$billetera->save();
 
 		$data['name'] = $user->name;
